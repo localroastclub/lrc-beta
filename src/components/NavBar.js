@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginButton from './LoginButton';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -8,8 +9,11 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
+
 const styles = {
   root: {
+    background: 'black',
+    height: '10vh',
     flexGrow: 1,
   },
   grow: {
@@ -22,21 +26,26 @@ const styles = {
 };
 
 function NavBar(props) {
+  const { classes } = props;
   return (
-    <div>
-      <AppBar position="static">
+    <div className={classes.root}>
+      <AppBar position="static" className={classes.root}>
         <Toolbar>
-          <IconButton>
+          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" color="inherit">
-            News
+          <Typography variant="h6" color="inherit" className={classes.grow}>
+            Local Roast Club
           </Typography>
-          <Button color="inherit">Login</Button>
+          <LoginButton />
         </Toolbar>
       </AppBar>
     </div>
   );
 }
 
-export default NavBar;
+NavBar.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(NavBar);
