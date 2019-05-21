@@ -4,11 +4,10 @@ import Card from '@material-ui/core/Card';
 
 const StyledCard = withStyles({
   root: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    opacity: 0.5,
+    background: '#e6b5da',
     borderRadius: 3,
     border: 0,
-    color: 'white',
+    color: 'black',
     height: '40vh',
     maxWidth: '55vh',
     padding: '0 30px',

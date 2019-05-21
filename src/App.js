@@ -1,11 +1,14 @@
 import React from 'react';
-import Headline from './components/Headline'
+import NavBar from './components/NavBar'
+import Headline from './components/Headline';
+
 
 function App() {
   return (
-    <div className="App">
+    <>
+      <NavBar/>
       <Headline/>
-    </div>
+    </>
   );
 }
 
