@@ -7,12 +7,11 @@ import Card from '@material-ui/core/Card';
 const StyledCard = withStyles({
   root: {
     background: '#FFF',
-    opacity: 0.5,
     borderRadius: 3,
     border: 0,
-    color: 'white',
+    color: 'black',
     height: '40vh',
-    maxWidth: '55vh',
+    maxWidth: '30vh',
     minWidth: '30vh',
     padding: '0 30px',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
@@ -38,13 +37,19 @@ const SubHeader = () => {
             spacing={24}
           >
             <Grid item={true}>
-              <StyledCard/>
+              <StyledCard>
+                Expand your palette and discover new roasts each month
+              </StyledCard>
             </Grid>
             <Grid item={true}>
-              <StyledCard/>
+              <StyledCard>
+                Free up time from traffic and crowded grocery stores
+              </StyledCard>
             </Grid>
             <Grid item={true}>
-              <StyledCard/>
+              <StyledCard>
+                Enjoy premium flavors while supporting your local businesses
+              </StyledCard>
             </Grid>
           </Grid>
       </Grid>

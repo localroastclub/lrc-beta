@@ -7,6 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import logo from '../lrc-color.png';
 
 
 const styles = {
@@ -22,6 +23,10 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  logo: {
+    maxHeight: '10vh',
+    maxWidth: '10vh'
+  }
 };
 
 function NavBar(props) {
@@ -34,7 +39,7 @@ function NavBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit" className={classes.grow}>
-            Local Roast Club
+            <img className={classes.logo} src={logo} alt="Local Roast Club"/>
           </Typography>
           <LoginButton />
         </Toolbar>

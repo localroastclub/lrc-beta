@@ -9,12 +9,16 @@ import Background from '../coffeebeans.jpg';
 const HeaderBox = withStyles({
   root: {
     backgroundImage: `url(${Background})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center center',              
     borderRadius: 3,
     border: 0,
     color: 'white',
     minHeight: '60vh',
     padding: '0 30px',
     boxShadow: '0 3px 5px 2px #686868',
+    xOverflow: 'hidden',
   },
   label: {
     textTransform: 'capitalize',
@@ -26,8 +30,6 @@ const Headline = () => {
     <Grid
       container={true}
       alignItems="stretch"
-      style={{width: '100% !important'}}
-
     >
       <Grid item xs={12}>
         <HeaderBox>
