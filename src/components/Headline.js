@@ -4,15 +4,15 @@ import HeaderRight from './HeaderRight';
 import { withStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Card from '@material-ui/core/Card';
+import Background from '../coffeebeans.jpg';
 
 const HeaderBox = withStyles({
   root: {
-    backgroundColor: '#FFF',
+    backgroundImage: `url(${Background})`,
     borderRadius: 3,
     border: 0,
     color: 'white',
-    minHeight: '40vh',
+    minHeight: '60vh',
     padding: '0 30px',
     boxShadow: '0 3px 5px 2px #686868',
   },
@@ -26,6 +26,8 @@ const Headline = () => {
     <Grid
       container={true}
       alignItems="stretch"
+      style={{width: '100% !important'}}
+
     >
       <Grid item xs={12}>
         <HeaderBox>

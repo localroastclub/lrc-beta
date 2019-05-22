@@ -22,20 +22,7 @@ const StyledCard = withStyles({
   },
 })(Card);
 
-const PaperGrid = withStyles({
-  root: {
-    backgroundColor: '#FFF',
-    borderRadius: 3,
-    border: 0,
-    color: 'white',
-    minHeight: '40vh',
-    padding: '0 30px',
-    boxShadow: 0,
-  },
-  label: {
-    textTransform: 'capitalize',
-  },
-})(Paper);
+
 
 const SubHeader = () => {
   return(
@@ -44,7 +31,6 @@ const SubHeader = () => {
       alignItems="center"
     >
       <Grid item xs={12}>
-        <PaperGrid>
           <Grid 
             container={true}
             justify="center"
@@ -61,7 +47,6 @@ const SubHeader = () => {
               <StyledCard/>
             </Grid>
           </Grid>
-        </PaperGrid>
       </Grid>
     </Grid>
   )
