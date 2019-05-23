@@ -41,18 +41,18 @@ const SubHeader = () => {
             container={true}
             justify="center"
             alignItems="center"
-            spacing={24}
+            spacing={40}
           >
             <Grid item={true}>
               <StyledCard>
-                <CardText alignItems="center">
+                <CardText>
                   <h3>
                     Expand your palette and discover new roasts each month
                   </h3>
                 </CardText>
               </StyledCard>
             </Grid>
-            <Grid item={true} alignItems="center">
+            <Grid item={true}>
               <StyledCard>
                 <CardText>
                   <h3>
@@ -61,7 +61,7 @@ const SubHeader = () => {
                 </CardText>
               </StyledCard>
             </Grid>
-            <Grid item={true} alignItems="center">
+            <Grid item={true}>
               <StyledCard>
                 <CardText>
                   <h3>
