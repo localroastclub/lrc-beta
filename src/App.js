@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import NavBar from './components/NavBar';
 import Headline from './components/Headline';
 import SubHeader from './components/SubHeader';
-import CopyP1 from './components/CopyP1';
+import Paragraph1 from './components/Paragraph1';
 import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
@@ -44,7 +44,7 @@ function App(props) {
             <SubHeader />
           </Grid>
           <Grid item={true}>
-            <CopyP1 />
+            <Paragraph1 />
           </Grid>
         </Grid>
       </Grid>
