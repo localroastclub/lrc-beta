@@ -37,7 +37,7 @@ const Headline = () => {
             container={true}
             justify="center"
             alignItems="flex-start"
-            spacing={24}
+            spacing={40}
           >
             <Grid item={true}>
               <HeaderLeft/>

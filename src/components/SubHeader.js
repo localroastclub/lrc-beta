@@ -1,8 +1,9 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 
 const StyledCard = withStyles({
   root: {
@@ -10,7 +11,7 @@ const StyledCard = withStyles({
     borderRadius: 3,
     border: 0,
     color: 'black',
-    height: '40vh',
+    height: '20vh',
     maxWidth: '30vh',
     minWidth: '30vh',
     padding: '0 30px',
@@ -20,6 +21,13 @@ const StyledCard = withStyles({
     textTransform: 'capitalize',
   },
 })(Card);
+
+const CardText = withStyles({
+  root: {
+    height: '20vh',
+    maxWidth: '30vh',
+  }
+})(CardContent)
 
 
 
@@ -33,22 +41,34 @@ const SubHeader = () => {
           <Grid 
             container={true}
             justify="center"
-            alignItems="flex-start"
+            alignItems="center"
             spacing={24}
           >
             <Grid item={true}>
               <StyledCard>
-                Expand your palette and discover new roasts each month
+                <CardText alignItems="center">
+                  <h3>
+                    Expand your palette and discover new roasts each month
+                  </h3>
+                </CardText>
               </StyledCard>
             </Grid>
-            <Grid item={true}>
+            <Grid item={true} alignItems="center">
               <StyledCard>
-                Free up time from traffic and crowded grocery stores
+                <CardText>
+                  <h3>
+                    Free up time from traffic and crowded grocery stores
+                  </h3>
+                </CardText>
               </StyledCard>
             </Grid>
-            <Grid item={true}>
+            <Grid item={true} alignItems="center">
               <StyledCard>
-                Enjoy premium flavors while supporting your local businesses
+                <CardText>
+                  <h3>
+                    Enjoy premium flavors while supporting your local businesses
+                  </h3>
+                </CardText>
               </StyledCard>
             </Grid>
           </Grid>
