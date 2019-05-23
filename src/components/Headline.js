@@ -20,9 +20,6 @@ const HeaderBox = withStyles({
     boxShadow: '0 3px 5px 2px #686868',
     xOverflow: 'hidden',
   },
-  label: {
-    textTransform: 'capitalize',
-  },
 })(Paper);
 
 const Headline = () => {
