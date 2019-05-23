@@ -1,15 +1,8 @@
 import React from 'react';
 
-const styles = {
-  marginLeft: "14%",
-  marginRight: "14%",
-  alignItems: "center",
-  justify: "center"
-}
-
 const CopyP1 = () => {
   return(
-    <div style={styles}>
+    <div>
       <h2>
         Be the Hero of your Coffee Club
       </h2>

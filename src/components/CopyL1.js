@@ -1,25 +1,34 @@
 import React from 'react';
 
+const styles = {
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+};
+
 const CopyL1 = () => {
+  const bull = <span style={styles.bullet}>•</span>;
   return (
     <>
       <ul>
-        Gourmet coffees exclusive to the Club
+        {bull} Gourmet coffees exclusive to the Club
       </ul>
       <ul>
-        Keeping it local with coffee roasted only in Austin
+        {bull} Keeping it local with coffee roasted only in Austin
       </ul>
       <ul>
-      7 craft roasters and growing
+        {bull} 7 craft roasters and growing
       </ul>
       <ul>
-        100+ types of premium coffee
+        {bull} 100+ types of premium coffee
       </ul>
       <ul>
-        Full 12-oz bags for variety
+        {bull} Full 12-oz bags for variety
       </ul>
       <ul>
-        5-lb bags for large groups
+        {bull} 5-lb bags for large groups
       </ul>
     </>
   )
