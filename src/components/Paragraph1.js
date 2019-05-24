@@ -2,7 +2,7 @@ import React from 'react';
 import CopyP1 from './CopyP1';
 import CopyL1 from './CopyL1';
 import CopyL2 from './CopyL2';
-import OrderButton from './OrderButton;'
+import OrderButton from './OrderButton';
 import Grid from '@material-ui/core/Grid';
 
 
@@ -23,8 +23,10 @@ const Paragraph1 = () => {
               <CopyL2 />
             </Grid>
           </Grid>
-          <Grid item xs="auto">
+          <Grid container justify="center" wrap="wrap">
+          <Grid item xs={12} lg="auto">
             <OrderButton />
+          </Grid>
           </Grid>
       </Grid>
     </div>
