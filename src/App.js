@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import NavBar from './components/NavBar';
 import Headline from './components/Headline';
 import SubHeader from './components/SubHeader';
 import Paragraph1 from './components/Paragraph1';
+import CopyP2 from './components/CopyP2';
 import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
@@ -45,6 +45,9 @@ function App(props) {
           </Grid>
           <Grid item={true}>
             <Paragraph1 />
+          </Grid>
+          <Grid item={true}>
+            <CopyP2 />
           </Grid>
         </Grid>
       </Grid>

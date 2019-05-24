@@ -17,9 +17,9 @@ const CopyP1 = () => {
     >
       <Grid container justify="center" wrap="wrap">
         <Grid item xs="auto" style={styles.header}>
-        <h2>
-          Be the Hero of your Coffee Club
-        </h2>
+          <h2>
+            Be the Hero of your Coffee Club
+          </h2>
         </Grid>
       </Grid>
       <Grid item xs={12} lg={9} style={styles.p}>
