@@ -1,17 +1,19 @@
 import React from 'react';
+import Grid from '@material-ui/core/Grid';
 
 const styles = {
   bullet: {
     display: 'inline-block',
     margin: '0 2px',
-    transform: 'scale(0.8)',
+    transform: 'scale(1.2)',
   },
 };
 
 const CopyL2 = () => {
   const bull = <span style={styles.bullet}>•</span>;
   return (
-    <>
+    <Grid container justify="center" wrap="wrap">
+    <Grid item xs="auto">
       <ul>
         {bull} Local delivery within 2 days
       </ul>
@@ -27,7 +29,8 @@ const CopyL2 = () => {
       <ul>
         {bull} Peace of mind knowing we’re finding delicious coffee for you every month
       </ul>
-    </>
+    </Grid>
+    </Grid>
     
   )
 };
