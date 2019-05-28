@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Headline from './components/Headline';
 import SubHeader from './components/SubHeader';
 import Paragraph1 from './components/Paragraph1';
+import HowItWorks from './components/HowItWorks';
 import CopyP2 from './components/CopyP2';
 import Grid from '@material-ui/core/Grid';
 
@@ -43,10 +44,13 @@ function App(props) {
           <Grid item={true} xs={12}>  
             <SubHeader />
           </Grid>
-          <Grid item={true}>
+          <Grid item={true} xs={12}>
             <Paragraph1 />
           </Grid>
-          <Grid item={true}>
+          <Grid item={true} xs={12}>
+            <HowItWorks />
+          </Grid>
+          <Grid item={true} xs={12}>
             <CopyP2 />
           </Grid>
         </Grid>

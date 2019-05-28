@@ -27,12 +27,11 @@ const CardText = withStyles({
 
 
 
-const SubHeader = () => {
+const HowItWorks = () => {
   return(
     <Grid
       container={true}
       alignItems="center"
-      justify="space-around"
     >
       <Grid item xs={12}>
           <Grid 
@@ -74,4 +73,4 @@ const SubHeader = () => {
   )
 }
 
-export default SubHeader;
+export default HowItWorks;

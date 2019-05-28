@@ -11,6 +11,7 @@ const StyledCard = withStyles({
     color: 'black',
     height: '55vh',
     maxWidth: '55vh',
+    minWidth: '50vh',
     padding: '0 30px',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
   },

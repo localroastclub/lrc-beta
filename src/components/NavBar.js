@@ -13,7 +13,7 @@ import logo from '../lrc-color.png';
 const styles = {
   root: {
     background: 'black',
-    height: '10vh',
+    height: '12vh',
     flexGrow: 1,
   },
   grow: {
@@ -25,7 +25,8 @@ const styles = {
   },
   logo: {
     maxHeight: '10vh',
-    maxWidth: '10vh'
+    maxWidth: '10vh',
+    flexGrow: 1,
   }
 };
 

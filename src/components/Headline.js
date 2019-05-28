@@ -22,6 +22,23 @@ const HeaderBox = withStyles({
   },
 })(Paper);
 
+const styles = {
+  root: {
+    background: 'black',
+    height: '14vh',
+    flexGrow: 1,
+  },
+  grow: {
+    flexGrow: 2,
+    justify: 'center',
+  },
+  test: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+};
+
 const Headline = () => {
   return(
     <Grid
@@ -37,10 +54,10 @@ const Headline = () => {
             spacing={40}
           >
             <Grid item={true}>
-              <HeaderLeft/>
+              <HeaderLeft />
             </Grid>
             <Grid item={true}>
-              <HeaderRight/>
+              <HeaderRight />
             </Grid>
           </Grid>
         </HeaderBox>

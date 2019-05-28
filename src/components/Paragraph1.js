@@ -5,21 +5,26 @@ import CopyL2 from './CopyL2';
 import OrderButton from './OrderButton';
 import Grid from '@material-ui/core/Grid';
 
-
+const styles = {
+  space: {
+    margin: '20px',
+    boxSizing: 'border-box',
+  }
+}
 
 
 const Paragraph1 = () => {
   return (
     <div>
       <Grid container={true} spacing={16} alignItems="center">
-          <Grid item xs={12}>
+          <Grid item xs={12} style={styles.space}>
             <CopyP1 />
           </Grid>
           <Grid container={true} justify="space-evenly" wrap="wrap">
-            <Grid item xs={12} sm={6} lg="auto" xl="auto">
+            <Grid item xs={12} sm={6} lg="auto" xl="auto" style={styles.space}>
               <CopyL1 />
             </Grid>
-            <Grid item xs={12} sm={6} lg="auto" xl="auto">
+            <Grid item xs={12} sm={6} lg="auto" xl="auto" style={styles.space}>
               <CopyL2 />
             </Grid>
           </Grid>
