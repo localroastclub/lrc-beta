@@ -2,8 +2,8 @@ import React from 'react';
 import '../content.css';
 import { withStyles } from '@material-ui/core/styles';
 
-import NavBar from '../components/NavBar';
-import Header from '../components/Header';
+import NavBar from './NavBar';
+import Header from '../components/sales/Header';
 
 const styles = theme => ({
   root: {

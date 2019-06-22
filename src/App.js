@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 
 import Layout from './containers/Layout';
-import NavBar from './components/NavBar';
-import Header from './components/Header';
-import Content from './components/Content';
 
 const styles = theme => ({
   root: {
