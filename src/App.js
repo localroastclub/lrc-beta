@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
-import './index.css';
-
+import { BrowserRouter as Router } from 'react-router-dom';
+import BaseRouter from './routes';
 import Layout from './containers/Layout';
-
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    padding: 0,
-    margin: 0,
-    overflow: 'hidden'
-  },
-});
-
 
 class App extends Component {
 
   render() {
     return (
-        <Layout {...this.props} />
+      <Router>
+        <Layout {...this.props} >
+          <BaseRouter />
+        </Layout>
+      </Router>
     );
   }
 }

@@ -1,9 +1,7 @@
 import React from 'react';
-import '../content.css';
 import { withStyles } from '@material-ui/core/styles';
 
 import NavBar from './NavBar';
-import Header from '../components/sales/Header';
 
 const styles = theme => ({
   root: {
@@ -25,5 +23,4 @@ function Layout(props) {
   );
 }
 
-// export default App;
 export default withStyles(styles)(Layout);
