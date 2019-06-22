@@ -1,0 +1,9 @@
+.content {
+  grid-template-columns: 1vw auto 1vw;
+  grid-template-rows: 2vh auto
+}
+
+.subheader {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}

@@ -17,12 +17,22 @@ const StyledCard = withStyles({
   },
 })(Card);
 
-const HeaderRight = () => {
+const HeaderLeft = () => {
   return(
-    <StyledCard>
-        Not sure where to start? Start with a sampler of our favorites:
-    </StyledCard>
+    <div className="header-box">
+      <StyledCard>
+        <h1>
+          Discover gourmet coffee in the comfort of your home.
+        </h1>
+        <h4>
+          Now your new favorite coffee is just a click away.
+        </h4>
+      </StyledCard>
+      <StyledCard>
+      Not sure where to start? Start with a sampler of our favorites:
+      </StyledCard>
+    </div>
   )
 };
 
-export default HeaderRight;
+export default HeaderLeft;

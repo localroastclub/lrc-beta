@@ -1,14 +1,16 @@
 import React from 'react';
 import CopyP1 from './CopyP1';
 import CopyL1 from './CopyL1';
-import CopyL2 from './CopyL2';
 import OrderButton from './OrderButton';
 import Grid from '@material-ui/core/Grid';
 
 const styles = {
   space: {
-    margin: '20px',
+    
+  },
+  p: {
     boxSizing: 'border-box',
+    flexGrow: 1
   }
 }
 
@@ -16,20 +18,17 @@ const styles = {
 const Paragraph1 = () => {
   return (
     <div>
-      <Grid container={true} spacing={16} alignItems="center">
-          <Grid item xs={12} style={styles.space}>
+      <Grid container={true} alignItems="center" style={styles.p}>
+          <Grid item>
             <CopyP1 />
           </Grid>
-          <Grid container={true} justify="space-evenly" wrap="wrap">
-            <Grid item xs={12} sm={6} lg="auto" xl="auto" style={styles.space}>
+          <Grid container={true} justify="space-around" wrap="wrap">
+            <Grid item style={styles.space}>
               <CopyL1 />
-            </Grid>
-            <Grid item xs={12} sm={6} lg="auto" xl="auto" style={styles.space}>
-              <CopyL2 />
             </Grid>
           </Grid>
           <Grid container justify="center" wrap="wrap">
-          <Grid item xs={12} lg="auto">
+          <Grid item xs="auto" lg="auto">
             <OrderButton />
           </Grid>
           </Grid>

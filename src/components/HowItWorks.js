@@ -32,42 +32,47 @@ const HowItWorks = () => {
     <Grid
       container={true}
       alignItems="center"
+      justify="center"
     >
-      <Grid item xs={12}>
-          <Grid 
-            container={true}
-            justify="center"
-            alignItems="center"
-            spacing={40}
-          >
-            <Grid item={true}>
-              <StyledCard>
-                <CardText>
-                  <h3>
-                    Expand your palette and discover new roasts each month
-                  </h3>
-                </CardText>
-              </StyledCard>
-            </Grid>
-            <Grid item={true}>
-              <StyledCard>
-                <CardText>
-                  <h3>
-                    Free up time from traffic and crowded grocery stores
-                  </h3>
-                </CardText>
-              </StyledCard>
-            </Grid>
-            <Grid item={true}>
-              <StyledCard>
-                <CardText>
-                  <h3>
-                    Enjoy premium flavors while supporting your local businesses
-                  </h3>
-                </CardText>
-              </StyledCard>
-            </Grid>
-          </Grid>
+      
+      <Grid container={true} justify="center" alignItems="center">
+        <h2>
+          How It Works
+        </h2>
+      </Grid>
+      <Grid 
+        container={true}
+        justify="center"
+        alignItems="center"
+        spacing={40}
+      >
+        <Grid item>
+          <StyledCard>
+            <CardText>
+              <h3>
+                Expand your palette and discover new roasts each month
+              </h3>
+            </CardText>
+          </StyledCard>
+        </Grid>
+        <Grid item={true}>
+          <StyledCard>
+            <CardText>
+              <h3>
+                Free up time from traffic and crowded grocery stores
+              </h3>
+            </CardText>
+          </StyledCard>
+        </Grid>
+        <Grid item={true}>
+          <StyledCard>
+            <CardText>
+              <h3>
+                Enjoy premium flavors while supporting your local businesses
+              </h3>
+            </CardText>
+          </StyledCard>
+        </Grid>
       </Grid>
     </Grid>
   )

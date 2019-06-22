@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.App-root-1 {
+  grid-template-columns: 1vw auto 1vw;
+  grid-template-rows: 2vh auto
+}
+
+.subheader {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
