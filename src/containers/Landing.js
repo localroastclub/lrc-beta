@@ -9,7 +9,6 @@ import Content from '../components/sales/Content'
 const Landing = () => {
   return (
     <>
-      <Header />
       <Content />
     </>
   )

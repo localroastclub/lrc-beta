@@ -1,6 +1,7 @@
 import React from 'react';
 import './content.css'
 import SubHeader from './SubHeader';
+import Header from './Header';
 import Paragraph1 from './Paragraph1';
 import HowItWorks from './HowItWorks';
 import CopyP2 from './CopyP2';
@@ -9,6 +10,7 @@ import CopyP2 from './CopyP2';
 const Content = () => {
   return (
     <div className="content">
+      <Header />
       <SubHeader />
     </div>
   )

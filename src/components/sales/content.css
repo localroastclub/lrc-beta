@@ -3,7 +3,13 @@
   grid-template-rows: 2vh auto
 }
 
+.header-box {
+  background-image: url("../../images/coffeebeans.jpg");
+  display: flex;
+  justify-content: center;
+}
+
 .subheader {
-  grid-column-start: 2;
-  grid-column-end: 3;
+  display: flex;
+  justify-content: center;
 }
