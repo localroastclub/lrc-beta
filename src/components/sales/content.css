@@ -3,11 +3,12 @@
   padding: 0;
   margin: 0;
   overflow: hidden;
+  font-size: 1.5rem;
 }
 
 .content {
   display: grid;
-  grid-template-columns: 10% auto 10%;
+  grid-template-columns: 12% auto 12%;
   grid-template-rows: 2vh auto;
 }
 
@@ -36,9 +37,15 @@
 }
 
 .card-copy {
-  margin: 15px;
+  margin: 2%;
 }
 
+h2 {
+  text-align: center;
+}
+
+
+/* media query these for small screens, make one big list */
 .col-list {
   display: grid;
   grid-auto-columns: 50% 50%;
@@ -46,12 +53,12 @@
 
 .col-1 {
   grid-column-start: 1;
-  margin: 1%;
+  margin: 0;
 }
 
 .col-2 {
   grid-column-start: 2;
-  margin: 1%;
+  margin: 0;
 }
 
 .how-cards {

@@ -6,6 +6,7 @@ import CopyL1 from './CopyL1';
 import Button from '@material-ui/core/Button';
 import HowItWorks from './HowItWorks';
 import CopyP2 from './CopyP2';
+import CopyL2 from './CopyL2';
 import { withStyles } from '@material-ui/styles';
 
 
@@ -34,6 +35,7 @@ const Content = () => {
         <HowItWorks />
         <CopyP2 />
         <OrderBtn>Fresh Coffee</OrderBtn>
+        <CopyL2 />
       </div>
     </div>
   )

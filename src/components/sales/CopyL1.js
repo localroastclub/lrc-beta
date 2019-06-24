@@ -3,7 +3,7 @@ import React from 'react';
 const styles = {
   bullet: {
     display: 'inline-block',
-    margin: '0 2px',
+    margin: 0,
     transform: 'scale(1.2)',
   },
 };
