@@ -1,5 +1,4 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
 
 const styles = {
   bullet: {
@@ -12,7 +11,7 @@ const styles = {
 const CopyL1 = () => {
   const bull = <span style={styles.bullet}>•</span>;
   return (
-    <div container justify="center" wrap="wrap">
+    <div className="col-list">
       <div className="col-1">
         <ul>
           {bull} Gourmet coffees exclusive to the Club

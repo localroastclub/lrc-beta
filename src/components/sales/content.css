@@ -1,15 +1,57 @@
+.page {
+  flex-grow: 1;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
 .content {
-  grid-template-columns: 1vw auto 1vw;
-  grid-template-rows: 2vh auto
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  grid-template-rows: 2vh auto;
+}
+
+.content-pane {
+  grid-column-start: 2;
+  grid-row-start: 2;
 }
 
 .header-box {
   background-image: url("../../images/coffeebeans.jpg");
   display: flex;
   justify-content: center;
+  flex-flow: wrap;
+}
+
+.card-head {
+  margin: 3%;
 }
 
 .subheader {
   display: flex;
   justify-content: center;
+  flex-flow: wrap;
+}
+
+.card-copy {
+  margin: 15px;
+}
+
+.col-list {
+  display: grid;
+  grid-auto-columns: 50% 50%;
+}
+
+.col-1 {
+  grid-column-start: 1;
+}
+
+.col-2 {
+  grid-column-start: 2;
+}
+
+.how-cards {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
 }

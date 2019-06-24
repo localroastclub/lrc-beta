@@ -29,7 +29,7 @@ const CardText = withStyles({
 const SubHeader = () => {
   return(
     <div className="subheader">
-      <StyledCard>
+      <StyledCard className="card-copy">
         <CardText>
           <h3>
             Expand your palette and discover new roasts each month
@@ -37,7 +37,7 @@ const SubHeader = () => {
         </CardText>
       </StyledCard>
 
-      <StyledCard>
+      <StyledCard className="card-copy">
         <CardText>
           <h3>
             Free up time from traffic and crowded grocery stores
@@ -45,7 +45,7 @@ const SubHeader = () => {
         </CardText>
       </StyledCard>
 
-      <StyledCard>
+      <StyledCard className="card-copy">
         <CardText>
           <h3>
             Enjoy premium flavors while supporting your local businesses

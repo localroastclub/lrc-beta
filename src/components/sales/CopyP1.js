@@ -1,11 +1,4 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-
-const styles = {
-  p: {
-    padding: '2rem'
-  }
-}
 
 
 const CopyP1 = () => {

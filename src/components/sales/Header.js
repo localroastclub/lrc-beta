@@ -20,7 +20,7 @@ const StyledCard = withStyles({
 const HeaderLeft = () => {
   return(
     <div className="header-box">
-      <StyledCard>
+      <StyledCard className="card-head">
         <h1>
           Discover gourmet coffee in the comfort of your home.
         </h1>
@@ -28,7 +28,7 @@ const HeaderLeft = () => {
           Now your new favorite coffee is just a click away.
         </h4>
       </StyledCard>
-      <StyledCard>
+      <StyledCard className="card-head">
       Not sure where to start? Start with a sampler of our favorites:
       </StyledCard>
     </div>
