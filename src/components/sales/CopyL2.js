@@ -11,7 +11,7 @@ const styles = {
 const CopyL2 = () => {
   const bull = <span style={styles.bullet}>•</span>;
   return (
-    <>
+    <div className="copy-l2">
       <h2>Still not sure if a coffee subscription is right for you?</h2>
       <div className="col-list">
         <div className="col-1">
@@ -37,7 +37,7 @@ const CopyL2 = () => {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   )
 };
 

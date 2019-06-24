@@ -40,6 +40,10 @@
   margin: 2%;
 }
 
+.paragraph-1 {
+  margin-top: 10%;
+}
+
 h2 {
   text-align: center;
 }
@@ -61,8 +65,25 @@ h2 {
   margin: 0;
 }
 
+.how-it-works {
+  margin-top: 10%;
+}
+
 .how-cards {
   display: flex;
   justify-content: center;
   flex-flow: wrap;
+}
+
+.paragraph-2 {
+  margin-top: 10%;
+}
+
+.copy-l2 {
+  margin-top: 10%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
 }

@@ -31,10 +31,14 @@ const Content = () => {
         <SubHeader />
         <CopyP1 />
         <CopyL1 />
-        <OrderBtn>Join the Club</OrderBtn>
+        <div className="button">
+          <OrderBtn>Join the Club</OrderBtn>
+        </div>
         <HowItWorks />
         <CopyP2 />
-        <OrderBtn>Fresh Coffee</OrderBtn>
+        <div className="button">
+          <OrderBtn>Fresh Coffee</OrderBtn>
+        </div>
         <CopyL2 />
       </div>
     </div>
