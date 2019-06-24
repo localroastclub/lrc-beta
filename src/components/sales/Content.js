@@ -40,18 +40,3 @@ const Content = () => {
 }
 
 export default Content;
-
-{/* <Grid item={true} xs={12}>  
-<SubHeader />
-</Grid>
-<Grid item={true} xs={12}>
-<Paragraph1 />
-</Grid>
-<Grid item={true} xs={12}>
-<HowItWorks />
-</Grid>
-<Grid item={true} xs={12}>
-<CopyP2 />
-</Grid> */}
-
-// moving this stuff  over for now

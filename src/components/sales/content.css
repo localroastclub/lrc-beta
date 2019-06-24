@@ -18,6 +18,8 @@
 
 .header-box {
   background-image: url("../../images/coffeebeans.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   flex-flow: wrap;
@@ -44,10 +46,12 @@
 
 .col-1 {
   grid-column-start: 1;
+  margin: 1%;
 }
 
 .col-2 {
   grid-column-start: 2;
+  margin: 1%;
 }
 
 .how-cards {
