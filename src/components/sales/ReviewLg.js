@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 
 const ReviewCard = withStyles({
   root: {
-    background: '#FFF',
+    background: '#e6b5da',
     borderRadius: 3,
     border: 0,
     color: 'black',
@@ -28,7 +28,7 @@ const CardText = withStyles({
 
 const ReviewLg = () => {
   return (
-    <div>
+    <div className="review-lg">
       <ReviewCard>
         <CardText>
         <h3>Lorem ipsum dolor sit amet</h3>

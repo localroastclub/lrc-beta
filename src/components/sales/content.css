@@ -84,3 +84,13 @@ h2 {
   display: flex;
   justify-content: center;
 }
+
+.review-lg {
+  margin-top: 10%;
+}
+
+.review-cards {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}

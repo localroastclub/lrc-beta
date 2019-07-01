@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewCards from './ReviewCards';
 
 const Reviews = () => {
   return (
@@ -12,6 +13,7 @@ const Reviews = () => {
       ei impetus scaevola contentiones eos, eos ea ridens nominati. Mucius nostrud invenire 
       ex pro, numquam reprimique eum no, quo solum errem sententiae id.
     </p>
+    <ReviewCards />
   </div>
   );
 };
