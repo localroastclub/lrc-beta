@@ -47,6 +47,9 @@ const Content = () => {
         <CopyL2 />
         <ReviewLg />
         <Reviews />
+        <div className="button bottom-btn">
+          <OrderBtn className="order-btn">Join the Club</OrderBtn>
+        </div>
       </div>
     </div>
   )

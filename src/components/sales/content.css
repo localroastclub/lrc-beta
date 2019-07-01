@@ -30,7 +30,9 @@
 
 .subheader {
   display: flex;
+  justify-content: center;
   flex-flow: wrap;
+  margin-top: 5%;
 }
 
 .card-copy {
@@ -38,7 +40,7 @@
 }
 
 .paragraph-1 {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 h2 {
@@ -93,4 +95,10 @@ h2 {
   display: flex;
   justify-content: center;
   flex-flow: wrap;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.bottom-btn {
+  margin-bottom: 5%;
 }
