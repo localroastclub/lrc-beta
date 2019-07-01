@@ -8,11 +8,15 @@ import HowItWorks from './HowItWorks';
 import CopyP2 from './CopyP2';
 import CopyL2 from './CopyL2';
 import { withStyles } from '@material-ui/styles';
+import ReviewLg from './ReviewLg';
 
 
 const OrderBtn = withStyles({
   root: {
-    background: 'linear-gradient(30deg, #e6b5da 50%, #f5f733 90%)',
+    background: '#e6b5da',
+    '&:hover': {
+      background: 'linear-gradient(30deg, #e6b5da 40%, #f5f733 60%)'
+      },
     border: 0,
     borderRadius: 3,
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
@@ -32,7 +36,7 @@ const Content = () => {
         <CopyP1 />
         <CopyL1 />
         <div className="button">
-          <OrderBtn>Join the Club</OrderBtn>
+          <OrderBtn className="order-btn">Join the Club</OrderBtn>
         </div>
         <HowItWorks />
         <CopyP2 />
@@ -40,6 +44,7 @@ const Content = () => {
           <OrderBtn>Fresh Coffee</OrderBtn>
         </div>
         <CopyL2 />
+        <ReviewLg />
       </div>
     </div>
   )
