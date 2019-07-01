@@ -5,13 +5,12 @@ import CardContent from '@material-ui/core/CardContent';
 
 const ReviewCard = withStyles({
   root: {
-    background: '#e6b5da',
-    opacity: 0.5,
+    background: '#FFF',
     borderRadius: 3,
     border: 0,
     color: 'black',
-    height: '55vh',
-    width: '55vh',
+    height: '40vh',
+    width: '72vw',
     padding: '0 30px',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
   },
@@ -20,8 +19,10 @@ const ReviewCard = withStyles({
 const CardText = withStyles({
   root: {
     height: '20vh',
-    maxWidth: '30vh',
-    textAlign: 'center'
+    maxWidth: '68vw',
+    textAlign: 'center',
+    marginTop: '3%',
+    marginBottom: '3%'
   }
 })(CardContent)
 
@@ -29,6 +30,17 @@ const ReviewLg = () => {
   return (
     <div>
       <ReviewCard>
+        <CardText>
+        <h3>Lorem ipsum dolor sit amet</h3>
+          <p>
+          “Lorem ipsum dolor sit amet, viris populo habemus no his, eum utinam dignissim cu, 
+          sed alienum euripidis ut. Te nam nulla oporteat comprehensam. Eam cu modo viris 
+          virtute, ei impetus scaevola contentiones eos, eos ea ridens nominati. Mucius nostrud 
+          invenire ex pro, numquam reprimique eum no, quo solum errem sententiae id. An mea lorem 
+          novum, pro an labore alienum definiebas.”
+          </p>
+        <strong>-Stevie V.</strong>
+        </CardText>
       </ReviewCard>
     </div>
   );

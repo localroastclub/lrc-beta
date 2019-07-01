@@ -9,6 +9,7 @@ import CopyP2 from './CopyP2';
 import CopyL2 from './CopyL2';
 import { withStyles } from '@material-ui/styles';
 import ReviewLg from './ReviewLg';
+import Reviews from './Reviews';
 
 
 const OrderBtn = withStyles({
@@ -45,6 +46,7 @@ const Content = () => {
         </div>
         <CopyL2 />
         <ReviewLg />
+        <Reviews />
       </div>
     </div>
   )
