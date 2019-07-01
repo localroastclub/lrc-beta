@@ -14,7 +14,7 @@ const StyledCard = withStyles({
     borderRadius: 3,
     border: 0,
     color: 'black',
-    height: '40vh',
+    height: '37vh',
     width: '30vh',
     padding: '0 30px',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
@@ -25,6 +25,7 @@ const CardText = withStyles({
   root: {
     height: '20vh',
     maxWidth: '30vh',
+    textAlign: 'center'
   }
 })(CardContent)
 
@@ -38,7 +39,7 @@ const OrderIcon = withStyles({
 
 const BellIcon = withStyles({
   root: {
-    color: '#e6b5da',
+    color: 'cornflowerblue',
     width: '4rem',
     height: '4rem',
   }
