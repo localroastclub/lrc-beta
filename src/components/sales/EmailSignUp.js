@@ -28,7 +28,7 @@ const TextFieldStyled = withStyles({
 })(TextField);
 
 
-export default function EmailSignUp() {
+const EmailSignUp = () => {
   const [values, setValues] = React.useState({
     name: '',
     age: '',
@@ -67,3 +67,5 @@ export default function EmailSignUp() {
     </div>
   );
 }
+
+export default EmailSignUp
