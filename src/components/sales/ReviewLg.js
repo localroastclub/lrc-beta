@@ -29,7 +29,7 @@ const CardText = withStyles({
 const ReviewLg = () => {
   return (
     <div className="review-lg">
-      <ReviewCard>
+      <ReviewCard className="r-lg-card">
         <CardText>
         <h3>Lorem ipsum dolor sit amet</h3>
           <p>
@@ -39,7 +39,7 @@ const ReviewLg = () => {
           invenire ex pro, numquam reprimique eum no, quo solum errem sententiae id. An mea lorem 
           novum, pro an labore alienum definiebas.”
           </p>
-        <strong>-Stevie V.</strong>
+        <strong>-Stevie T.</strong>
         </CardText>
       </ReviewCard>
     </div>

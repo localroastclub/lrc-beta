@@ -29,7 +29,7 @@ const CardText = withStyles({
 const ReviewCards = () => {
   return(
     <div className="review-cards">
-      <StyledCard className="card-copy">
+      <StyledCard className="card-copy r-card">
         <CardText>
           <p>
             I used to buy the cheap big-box coffees and for some time was getting major heartburn every morning. I pivoted to nicer coffees, like those at LRC, and never looked back.
@@ -38,7 +38,7 @@ const ReviewCards = () => {
         </CardText>
       </StyledCard>
 
-      <StyledCard className="card-copy">
+      <StyledCard className="card-copy r-card">
         <CardText>
           <p>
           I love trying new coffees and learning about roasts and bean origins that I like, but rarely have time to drive across town to different coffee shops. Cue Local Roast, now I don’t have to drive around or put in multiple orders from different roasters every month, they take care of it all for me and I can explore coffees with ease! 

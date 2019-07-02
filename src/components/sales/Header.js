@@ -1,11 +1,11 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles';
 import Card from '@material-ui/core/Card';
+import EmailSignUp from './EmailSignUp'
 
 const StyledCard = withStyles({
   root: {
-    background: '#e6b5da',
-    opacity: 0.5,
+    background: 'rgb(230, 181, 218, .5)',
     borderRadius: 3,
     border: 0,
     color: 'black',
@@ -19,7 +19,7 @@ const StyledCard = withStyles({
 const HeaderLeft = () => {
   return(
     <div className="header-box">
-      <StyledCard className="card-head">
+      <StyledCard className="card-head head-left">
         <h1>
           Discover gourmet coffee in the comfort of your home.
         </h1>
@@ -27,8 +27,11 @@ const HeaderLeft = () => {
           Now your new favorite coffee is just a click away.
         </h4>
       </StyledCard>
-      <StyledCard className="card-head">
+      <StyledCard className="card-head head-right">
+        <p>
       Not sure where to start? Start with a sampler of our favorites:
+      </p>
+      <EmailSignUp />
       </StyledCard>
     </div>
   )

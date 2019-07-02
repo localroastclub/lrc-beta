@@ -3,7 +3,7 @@ import ReviewCards from './ReviewCards';
 
 const Reviews = () => {
   return (
-    <div className="paragraph-1">
+    <div className="paragraph-2">
     <h2>
       What’s Everyone Saying about Local Roast Club?
     </h2>
