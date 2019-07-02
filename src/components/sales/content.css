@@ -116,10 +116,6 @@ h2 {
     font-size: 1rem;
   }
 
-  .r-lg-card {
-    height: 60vh;
-  }
-
   .top-email-form {
     margin-left: 15%;
   }
@@ -137,5 +133,9 @@ h2 {
   }
   .r-lg-card {
     height: 60vh;
+  }
+  
+  .r-card {
+    width: 60vw;
   }
 }
