@@ -2,6 +2,9 @@ import React from 'react';
 import ArrowLeft from '@material-ui/icons/ArrowLeft';
 import ArrowRight from '@material-ui/icons/ArrowRight';
 
+// adapted from Alex Devero
+// https://github.com/alexdevero
+// https://alexdevero.com/
 const { Component } = React;
 
 
