@@ -28,7 +28,7 @@ const Reviews = () => {
   return (
     <div className="paragraph-2">
     <h2>
-      What’s Everyone Saying about Local Roast Club?
+      What Local Roast Club Members Say:
     </h2>
     <p>
       Lorem ipsum dolor sit amet, viris populo habemus no his, eum utinam dignissim cu, 

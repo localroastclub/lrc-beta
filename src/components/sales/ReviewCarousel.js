@@ -1,77 +1,74 @@
 import React from 'react';
+import ArrowLeft from '@material-ui/icons/ArrowLeft';
+import ArrowRight from '@material-ui/icons/ArrowRight';
+
 const { Component } = React;
 
 
-class CarouselLeftArrow extends Component {
-  render() {
-    return (
+const CarouselLeftArrow = (props) => {
+  return (
+    <a
+      href="#"
+      className="carousel__arrow carousel__arrow--left"
+      onClick={props.onClick}
+    >
+      <ArrowLeft />
+    </a>
+  );
+}
+
+
+const CarouselRightArrow = (props) => {
+  return (
+    <a
+      href="#"
+      className="carousel__arrow carousel__arrow--right"
+      onClick={props.onClick}
+    >
+      <ArrowRight />
+    </a>
+  );
+}
+
+const CarouselIndicator = (props) => {
+  return (
+    <li>
       <a
-        href="#"
-        className="carousel__arrow carousel__arrow--left"
-        onClick={this.props.onClick}
-      >
-        <span className="fa fa-2x fa-angle-left" />
-      </a>
-    );
-  }
-}
-
-class CarouselRightArrow extends Component {
-  render() {
-    return (
-      <a
-        href="#"
-        className="carousel__arrow carousel__arrow--right"
-        onClick={this.props.onClick}
-      >
-        <span className="fa fa-2x fa-angle-right" />
-      </a>
-    );
-  }
-}
-
-class CarouselIndicator extends Component {
-  render() {
-    return (
-      <li>
-        <a
-          className={
-            this.props.index == this.props.activeIndex
-              ? "carousel__indicator carousel__indicator--active"
-              : "carousel__indicator"
-          }
-          onClick={this.props.onClick}
-        />
-      </li>
-    );
-  }
-}
-
-class CarouselSlide extends Component {
-  render() {
-    return (
-      <li
         className={
-          this.props.index == this.props.activeIndex
-            ? "carousel__slide carousel__slide--active"
-            : "carousel__slide"
+          props.index == props.activeIndex
+            ? "carousel__indicator carousel__indicator--active"
+            : "carousel__indicator"
         }
-      >
-        <p className="carousel-slide__content">{this.props.slide.content}</p>
-
-        <p>
-          <strong className="carousel-slide__author">
-            {this.props.slide.author}
-          </strong>,
-          {" "}
-          <small className="carousel-slide__source">
-            {this.props.slide.location}
-          </small>
-        </p>
-      </li>
-    );
-  }
+        onClick={props.onClick}
+      />
+    </li>
+  );
 }
+
+const CarouselSlide = (props) => {
+  return (
+    <li
+      className={
+        props.index == props.activeIndex
+          ? "carousel__slide carousel__slide--active"
+          : "carousel__slide"
+      }
+    >
+      <p className="carousel-slide__content">{props.slide.content}</p>
+
+      <p>
+        <strong className="carousel-slide__author">
+          {props.slide.author}
+        </strong>,
+        {" "}
+        <small className="carousel-slide__source">
+          {props.slide.location}
+        </small>
+      </p>
+    </li>
+  );
+}
+
 
 // Carousel wrapper component
 class ReviewCarousel extends Component {
