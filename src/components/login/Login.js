@@ -47,7 +47,7 @@ const Login = () => {
           Or
           <NavLink style={{ marginRight: '10px' }} to="/signup">
             {' '}
-            signup
+            sign up
           </NavLink>
         </form>
       </div>

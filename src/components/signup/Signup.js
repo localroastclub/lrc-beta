@@ -23,7 +23,7 @@ const Signup = () => {
   return (
     <div className="signup-container">
       <div className="inner-container">
-        <h1>Signup</h1>
+        <h1>Sign Up</h1>
         <form className="signup-form" noValidate autoComplete="on">
           <TextField
           id="outlined-name"

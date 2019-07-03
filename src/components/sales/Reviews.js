@@ -4,23 +4,24 @@ import './carousel.css'
 
 const carouselSlidesData = [
   {
+    title: "Consistently Great Coffee and Service",
     content:
-      "Tomorrow, you will be released. If you are bored of brawling with thieves and want to achieve something there is a rare blue flower that grows on the eastern slopes. Pick one of these flowers. If you can carry it to the top of the mountain, you may find what you were looking for in the first place.",
-    author: "Bane",
+      "I have lived in Austin for over six years, and the local coffee scene was one of my first loves of the city. I have been ordering coffee from Local Roast Club for almost a year, and the love has truly been rekindled. Local Roast Club offers a HUGE selection from the best roasters in the area. Many of the roasts I get are those used by my beloved coffee shops around town. However, I’ve definitely branched out and found new favorites to order alongside my usuals. Another amazing aspect of Local Roast Club is that the coffee beans are roasted just days before I receive them, making for incredibly fresh and smooth brews. Lastly, the fact that I don’t have to make extra trips to the grocery store just for mediocre coffee is life-changing. I love the convenience of having local coffee delivered to my house!",
+    author: "Katherine Pena",
     avatar: "facebook",
     location: "Austin, Tx"
   }, {
-    content:
-      "You have learn to bury your guilt with anger. I will teach you to confront it and to face the truth.",
-    author: "Ra's Al Ghul",
+    title: "Decafs from all around",
+    content: "I'm only drinking decaf these days, so it's nice to be able to try decaf from roasters all over town!",
+    author: "Meredith",
     avatar: "Snapchat",
     location: "Austin, Tx"
   }, {
-    content:
-      "Introduce a little anarchy, upset the established order and everything becomes chaos. I'm an agent of chaos. Oh, and you know the thing about chaos? It's fair.",
-    author: "Joker",
+    title: "Convenient and Quality!",
+    content: "I was interested in buying local coffee but I never had time to go to actual coffee shops all the time when I ran out of beans. This service is convenient and quality with an emphasis on the local peeps. I would highly reccomend trying it out if you like good coffee at home!",
+    author: "Sam Petty",
     avatar: "facebook",
-    location: "Austin, Tx"
+    location: "Fort Worth, Tx"
   }
 ];
 
@@ -30,12 +31,6 @@ const Reviews = () => {
     <h2>
       What Local Roast Club Members Say:
     </h2>
-    <p>
-      Lorem ipsum dolor sit amet, viris populo habemus no his, eum utinam dignissim cu, 
-      sed alienum euripidis ut. Te nam nulla oporteat comprehensam. Eam cu modo viris virtute, 
-      ei impetus scaevola contentiones eos, eos ea ridens nominati. Mucius nostrud invenire 
-      ex pro, numquam reprimique eum no, quo solum errem sententiae id.
-    </p>
     <div className="carousel-container">
       <ReviewCarousel slides={carouselSlidesData} />
     </div>

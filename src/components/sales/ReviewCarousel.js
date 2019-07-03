@@ -36,7 +36,7 @@ const CarouselIndicator = (props) => {
     <li>
       <a
         className={
-          props.index == props.activeIndex
+          props.index === props.activeIndex
             ? "carousel__indicator carousel__indicator--active"
             : "carousel__indicator"
         }
@@ -50,11 +50,16 @@ const CarouselSlide = (props) => {
   return (
     <li
       className={
-        props.index == props.activeIndex
+        props.index === props.activeIndex
           ? "carousel__slide carousel__slide--active"
           : "carousel__slide"
       }
     >
+      <p>
+        <strong>
+          {props.slide.title}
+        </strong>
+      </p>
       <p className="carousel-slide__content">{props.slide.content}</p>
 
       <p>
