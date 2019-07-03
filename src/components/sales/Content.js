@@ -1,5 +1,6 @@
 import React from 'react';
 import './content.css'
+import Header from './Header';
 import SubHeader from './SubHeader';
 import CopyP1 from './CopyP1';
 import CopyL1 from './CopyL1';
@@ -31,6 +32,8 @@ const OrderBtn = withStyles({
 
 const Content = () => {
   return (
+    <>
+    <Header />
     <div className="content">
       <div className="content-pane">
         <SubHeader />
@@ -52,6 +55,7 @@ const Content = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

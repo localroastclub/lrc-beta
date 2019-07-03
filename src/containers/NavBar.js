@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import LoginButton from './LoginButton';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -40,9 +41,13 @@ function NavBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit" className={classes.grow}>
-            <img className={classes.logo} src={logo} alt="Local Roast Club"/>
+            <Link to="/">
+              <img className={classes.logo} src={logo} alt="Local Roast Club"/>
+            </Link>
           </Typography>
-          <LoginButton />
+          <Link to="/login">
+            <LoginButton />
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

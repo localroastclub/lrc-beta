@@ -12,6 +12,7 @@ const StyledCard = withStyles({
     height: '55vh',
     width: '55vh',
     padding: '0 30px',
+    alignContent: 'center',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
   },
 })(Card);

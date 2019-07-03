@@ -20,10 +20,18 @@
   display: flex;
   justify-content: center;
   flex-flow: wrap;
+  width: 100%;
 }
 
 .card-head {
+  display: flex;
   margin: 3%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header-left-content {
+  width: 100%;
 }
 
 .top-email-form {
@@ -50,8 +58,6 @@ h2 {
   text-align: center;
 }
 
-
-/* media query these for small screens, make one big list */
 .col-list {
   display: grid;
   grid-auto-columns: 50% 50%;
