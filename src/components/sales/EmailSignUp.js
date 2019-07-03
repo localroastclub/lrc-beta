@@ -3,6 +3,9 @@ import { withStyles } from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+// we want to give this button the POST ability to sign up for email list and then
+// redirect to sign up page with first name & email prefilled
+
 const SignUpBtn = withStyles({
   root: {
     background: '#e6b5da',

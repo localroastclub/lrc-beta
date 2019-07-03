@@ -34,7 +34,7 @@ const styles = {
 function NavBar(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <div className="nav">
       <AppBar position="static" className={classes.root}>
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
