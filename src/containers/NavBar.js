@@ -25,8 +25,8 @@ const styles = {
     marginRight: 20,
   },
   logo: {
-    maxHeight: '10vh',
-    maxWidth: '10vh',
+    maxHeight: '12vh',
+    maxWidth: '12vh',
     flexGrow: 1,
   }
 };

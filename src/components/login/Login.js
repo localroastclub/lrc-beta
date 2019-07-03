@@ -23,6 +23,7 @@ const LoginBtn = withStyles({
 const Login = () => {
   return (
     <div className="login-container">
+      <div className="inner-container">
         <h1>Login</h1>
         <form className="login-form" noValidate autoComplete="on">
           <TextField
@@ -49,6 +50,7 @@ const Login = () => {
             signup
           </NavLink>
         </form>
+      </div>
     </div>
   );
 };
