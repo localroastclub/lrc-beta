@@ -10,26 +10,24 @@ const { Component } = React;
 
 const CarouselLeftArrow = (props) => {
   return (
-    <a
-      href="#"
+    <button
       className="carousel__arrow carousel__arrow--left"
       onClick={props.onClick}
     >
       <ArrowLeft />
-    </a>
+    </button>
   );
 }
 
 
 const CarouselRightArrow = (props) => {
   return (
-    <a
-      href="#"
+    <button
       className="carousel__arrow carousel__arrow--right"
       onClick={props.onClick}
     >
       <ArrowRight />
-    </a>
+    </button>
   );
 }
 
