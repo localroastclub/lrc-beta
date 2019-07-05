@@ -5,6 +5,9 @@ class Users_Login(models.Model):
     email = models.CharField(max_length=40)
     hashword = models.TextField
 
+    def __str__(self):
+        return self.email
+
 
 class Users_Data(models.Model):
     firstname = models.CharField(max_length=50)
@@ -19,6 +22,9 @@ class Users_Data(models.Model):
 
 class Roasters(models.Model):
     name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class Coffee(models.Model):
