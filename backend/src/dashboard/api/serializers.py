@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from dashboard.models import Roasters
+from dashboard.models import Users_Login
 
 
-class RoasterSerializer(serializers.ModelSerializer):
+class UserLoginSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Roasters
-        fields = ('id', 'name')
+        model = Users_Login
+        fields = ('id', 'email', 'hashword')

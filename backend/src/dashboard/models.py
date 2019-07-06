@@ -16,25 +16,24 @@ class Users_Data(models.Model):
     address = models.CharField(max_length=255)
     cchash = models.TextField
     subscribed = models.BooleanField
-    order_rotation_id = models.CharField(max_length=20)
+    order_rotation_id = models.CharField(
+        max_length=20)  # group1, group2, inactive
     user_login = models.ForeignKey(Users_Login, on_delete=models.CASCADE)
-
-
-class Roasters(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
-
-
-class Coffee(models.Model):
-    roast_name = models.CharField(max_length=255)
-    roast_type = models.CharField(max_length=30)
-    roaster_id = models.ForeignKey(Roasters, on_delete=models.CASCADE)
 
 
 class Orders(models.Model):
     order_num = models.IntegerField
     order_date = models.DateField(auto_now=False)
     ship_date = models.DateField(auto_now=False)
+    order_total = models.IntegerField
     user_id = models.ForeignKey(Users_Data, on_delete=models.CASCADE)
+
+# This will be posted from the order page
+
+
+class Coffee_order(models.Model):
+    roaster_name = models.CharField(max_length=80)
+    roast_type = models.CharField(max_length=30)
+    coffee_type = models.CharField(max_length=30)
+    bean_status = models.CharField(max_length=15)
+    orders_id = models.ForeignKey(Orders, on_delete=models.CASCADE)
