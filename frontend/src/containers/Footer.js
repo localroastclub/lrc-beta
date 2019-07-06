@@ -5,26 +5,17 @@ const Footer = () => {
     <div className="footer">
       <div className="footer-nav">
         <div className="footer-col-1">
-          <div className="footer-item">
-            My Account
-          </div>
-          <div className="footer-item">
-            Veiw Cart
-          </div>
-          <div className="footer-item">
-            Order Status
-          </div>
+          <div className="footer-item">My Account</div>
+          <div className="footer-item">Veiw Cart</div>
+          <div className="footer-item">Order Status</div>
         </div>
         <div className="footer-col-2">
-          <div className="footer-item">
-            Shipping
-          </div>
-          <div className="footer-item">
-            Returns
-          </div>
-          <div className="footer-item">
-            About Us
-          </div>
+          <div className="footer-item">Shipping</div>
+          <div className="footer-item">Returns</div>
+          <div className="footer-item">About Us</div>
+        </div>
+        <div className="footer-col-3">
+          <i class="fab fa-twitter" />
         </div>
       </div>
       <div className="footer-info">
