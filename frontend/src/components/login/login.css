@@ -1,6 +1,7 @@
 .login-container {
   flex: 1 0 auto;
-  padding: 20px;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 .inner-container {

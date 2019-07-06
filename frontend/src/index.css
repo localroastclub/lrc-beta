@@ -25,6 +25,7 @@ ul {
   flex-shrink: 0;
   padding: 0;
   width: 100%;
+  height: auto;
   height: 30vh;
   background-color: black;
   color: white;
