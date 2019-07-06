@@ -1,4 +1,7 @@
 import React from 'react';
+import Facebook from '../images/facebook-1.svg';
+import Twitter from '../images/twitter.svg';
+import Instagram from '../images/instagram.svg';
 
 const Footer = () => {
   return (
@@ -15,7 +18,27 @@ const Footer = () => {
           <div className="footer-item">About Us</div>
         </div>
         <div className="footer-col-3">
-          <i class="fab fa-twitter" />
+          <a
+            href="https://www.facebook.com/Localroastclub/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span className="icon icon-fb" />
+          </a>
+          <a
+            href="https://twitter.com/localroastclub/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span className="icon icon-tweet" />
+          </a>
+          <a
+            href="https://www.instagram.com/local_roast_club/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span className="icon icon-insta" />
+          </a>
         </div>
       </div>
       <div className="footer-info">

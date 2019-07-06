@@ -30,7 +30,6 @@ ul {
   color: white;
 }
 
-
 .footer {
   display: grid;
   grid-template-columns: 100%;
@@ -43,6 +42,7 @@ ul {
 
 .footer-nav {
   display: grid;
+  width: 100%;
   grid-template-columns: auto auto auto;
   padding-left: 10vw;
   padding-right: 10vw;
@@ -71,6 +71,28 @@ ul {
   display: flex;
   justify-content: center;
   font-size: 0.8rem;
+}
+
+.icon-fb {
+  mask: url(./images/facebook-1.svg);
+}
+.icon-tweet {
+  mask: url(./images/twitter.svg);
+}
+.icon-insta {
+  mask: url(./images/instagram.svg);
+}
+.icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+  background: #ffffff;
+  mask-size: cover;
+}
+.icon:hover,
+.icon:focus {
+  background: #e6b5da;
 }
 
 @media only screen and (max-width: 768px) {
@@ -103,7 +125,7 @@ ul {
   .r-lg-card {
     height: 60vh;
   }
-  
+
   .r-card {
     width: 60vw;
   }
@@ -116,15 +138,15 @@ ul {
 
   .col-1 {
     margin-left: 10%;
-    margin-right: 10%
+    margin-right: 10%;
   }
-  
+
   .col-2 {
     margin-left: 10%;
     margin-right: 10%;
   }
 
   .footer-info {
-    font-size: 0.5rem
+    font-size: 0.5rem;
   }
 }
