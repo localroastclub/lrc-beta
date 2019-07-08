@@ -116,6 +116,20 @@ ul {
 
   .footer-nav {
     font-size: 0.8rem;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .footer-col-3 {
+    display: flex;
+    overflow-wrap: initial;
+    flex-wrap: wrap;
+  }
+
+  .icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
   }
 }
 
