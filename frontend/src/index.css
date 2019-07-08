@@ -75,13 +75,13 @@ ul {
 }
 
 .icon-fb {
-  mask: url(./images/facebook-1.svg);
+  mask: url(https://lrcimages.s3.us-east-2.amazonaws.com/facebook-1.svg);
 }
 .icon-tweet {
-  mask: url(./images/twitter.svg);
+  mask: url(https://lrcimages.s3.us-east-2.amazonaws.com/twitter.svg);
 }
 .icon-insta {
-  mask: url(./images/instagram.svg);
+  mask: url(https://lrcimages.s3.us-east-2.amazonaws.com/instagram.svg);
 }
 .icon {
   display: inline-block;

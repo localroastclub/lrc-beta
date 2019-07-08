@@ -1,16 +1,14 @@
 import React from 'react';
-import Bean from '../../images/bean.svg';
-
-const styles = {
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(1.2)'
-  }
-};
+const Bean = 'https://lrcimages.s3.us-east-2.amazonaws.com/bean.svg';
 
 const CopyL2 = () => {
-  const bull = <img src={Bean} style={{ width: '30px', height: '30px' }} />;
+  const bull = (
+    <img
+      src={Bean}
+      style={{ width: '30px', height: '30px' }}
+      alt="bullet point"
+    />
+  );
   return (
     <div className="copy-l2">
       <h2>Still not sure if a coffee subscription is right for you?</h2>

@@ -23,7 +23,7 @@ ul {
   list-style-type: none;
   text-align: center;
 }
-@media (max-width: 991px) {
+@media (max-width: 2000px) {
   .carousel__slide {
     padding-right: 60px;
     padding-left: 60px;

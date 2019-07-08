@@ -1,16 +1,14 @@
 import React from 'react';
-import Bean from '../../images/bean.svg';
-
-const styles = {
-  bullet: {
-    display: 'inline-block',
-    margin: 0,
-    transform: 'scale(1.2)'
-  }
-};
+const Bean = 'https://lrcimages.s3.us-east-2.amazonaws.com/bean.svg';
 
 const CopyL1 = () => {
-  const bull = <img src={Bean} style={{ width: '30px', height: '30px' }} />;
+  const bull = (
+    <img
+      src={Bean}
+      style={{ width: '30px', height: '30px' }}
+      alt="bullet point"
+    />
+  );
   return (
     <>
       <div>

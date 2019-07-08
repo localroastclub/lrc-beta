@@ -1,9 +1,9 @@
 from rest_framework.generics import ListAPIView
 
-from dashboard.models import Users_Login
-from .serializers import UserLoginSerializer
+from dashboard.models import Roaster
+from .serializers import RoasterSerializer
 
 
-class UserLoginListView(ListAPIView):
-    queryset = Users_Login.objects.all()
-    serializer_class = UserLoginSerializer
+class RoasterListView(ListAPIView):
+    queryset = Roaster.objects.all()
+    serializer_class = RoasterSerializer

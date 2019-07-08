@@ -7,8 +7,7 @@ import ArrowRight from '@material-ui/icons/ArrowRight';
 // https://alexdevero.com/
 const { Component } = React;
 
-
-const CarouselLeftArrow = (props) => {
+const CarouselLeftArrow = props => {
   return (
     <button
       className="carousel__arrow carousel__arrow--left"
@@ -17,10 +16,9 @@ const CarouselLeftArrow = (props) => {
       <ArrowLeft />
     </button>
   );
-}
+};
 
-
-const CarouselRightArrow = (props) => {
+const CarouselRightArrow = props => {
   return (
     <button
       className="carousel__arrow carousel__arrow--right"
@@ -29,52 +27,45 @@ const CarouselRightArrow = (props) => {
       <ArrowRight />
     </button>
   );
-}
+};
 
-const CarouselIndicator = (props) => {
+const CarouselIndicator = props => {
   return (
     <li>
-      <a
+      <button
         className={
           props.index === props.activeIndex
-            ? "carousel__indicator carousel__indicator--active"
-            : "carousel__indicator"
+            ? 'carousel__indicator carousel__indicator--active'
+            : 'carousel__indicator'
         }
         onClick={props.onClick}
       />
     </li>
   );
-}
+};
 
-const CarouselSlide = (props) => {
+const CarouselSlide = props => {
   return (
     <li
       className={
         props.index === props.activeIndex
-          ? "carousel__slide carousel__slide--active"
-          : "carousel__slide"
+          ? 'carousel__slide carousel__slide--active'
+          : 'carousel__slide'
       }
     >
       <p>
-        <strong>
-          {props.slide.title}
-        </strong>
+        <strong>{props.slide.title}</strong>
       </p>
       <p className="carousel-slide__content">{props.slide.content}</p>
 
       <p>
-        <strong className="carousel-slide__author">
-          {props.slide.author}
-        </strong>,
-        {" "}
-        <small className="carousel-slide__source">
-          {props.slide.location}
-        </small>
+        <strong className="carousel-slide__author">{props.slide.author}</strong>
+        ,{' '}
+        <small className="carousel-slide__source">{props.slide.location}</small>
       </p>
     </li>
   );
-}
-
+};
 
 // Carousel wrapper component
 class ReviewCarousel extends Component {
@@ -138,32 +129,32 @@ class ReviewCarousel extends Component {
         <CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
 
         <ul className="carousel__slides">
-          {this.props.slides.map((slide, index) =>
+          {this.props.slides.map((slide, index) => (
             <CarouselSlide
               key={index}
               index={index}
               activeIndex={this.state.activeIndex}
               slide={slide}
             />
-          )}
+          ))}
         </ul>
 
         <CarouselRightArrow onClick={e => this.goToNextSlide(e)} />
 
         <ul className="carousel__indicators">
-          {this.props.slides.map((slide, index) =>
+          {this.props.slides.map((slide, index) => (
             <CarouselIndicator
               key={index}
               index={index}
               activeIndex={this.state.activeIndex}
-              isActive={this.state.activeIndex==index} 
+              isActive={this.state.activeIndex === index}
               onClick={e => this.goToSlide(index)}
             />
-          )}
+          ))}
         </ul>
       </div>
     );
   }
 }
 
-export default ReviewCarousel
+export default ReviewCarousel;
