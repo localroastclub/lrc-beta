@@ -1,10 +1,10 @@
 import React from 'react';
+import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import './login.css';
-
 
 const LoginBtn = withStyles({
   root: {
@@ -16,11 +16,74 @@ const LoginBtn = withStyles({
     height: 48,
     width: '10vh',
     padding: '10px 30px',
-    marginBottom: '10%',
-  },
+    marginBottom: '10%'
+  }
 })(Button);
 
 const Login = () => {
+  const [AUTH_START, setAUTH_START] = useState('');
+  const [AUTH_SUCCESS, setAUTH_SUCCESS] = useState('');
+  const [AUTH_FAIL, setAUTH_FAIL] = useState('');
+  const [AUTH_LOGOUT, setAUTH_LOGOUT] = useState('');
+
+  const authStart = () => {
+    return {
+      type: actionTypes.AUTH_START
+    };
+  };
+
+  const authSuccess = token => {
+    return {
+      type: actionTypes.AUTH_SUCCESS,
+      token: token
+    };
+  };
+
+  const authFail = error => {
+    return {
+      type: actionTypes.AUTH_FAIL,
+      error: error
+    };
+  };
+
+  const logout = () => {
+    localStorage.removeItem('user');
+    localStorage.removeItem('expirationDate');
+    return {
+      type: actionTypes.AUTH_LOGOUT
+    };
+  };
+
+  const checkAuthTimeout = expirationDate => {
+    return dispatch => {
+      setTimeout(() => {
+        dispatch(logout());
+      }, expirationTime * 1000);
+    };
+  };
+
+  const authLogin = (username, password) => {
+    return dispatch => {
+      dispatch(authStart());
+      axios
+        .post('http://localhost:8000/rest-auth/login/', {
+          username: username,
+          password: password
+        })
+        .then(res => {
+          const token = res.data.key;
+          const expirationDate = new Date(new Date().getTime() + 3600 * 1000); // gives one hour in the future
+          localStorage.setItem('token', token);
+          localStorage.setItem('expirationDate', expirationDate);
+          dispatch(authSuccess(token));
+          dispatch(checkAuthTimeout(3600));
+        })
+        .catch(err => {
+          dispatch(authFail(err));
+        });
+    };
+  };
+
   return (
     <div className="login-container">
       <div className="inner-container">

@@ -15,8 +15,8 @@ const SignupBtn = withStyles({
     height: 48,
     width: '10vh',
     padding: '10px 30px',
-    marginBottom: '10%',
-  },
+    marginBottom: '10%'
+  }
 })(Button);
 
 const Signup = () => {
@@ -26,12 +26,12 @@ const Signup = () => {
         <h1>Sign Up</h1>
         <form className="signup-form" noValidate autoComplete="on">
           <TextField
-          id="outlined-name"
-          label="Name"
-          // value={values.name}
-          // onChange={//handlechange here}
-          margin="normal"
-          variant="outlined"
+            id="outlined-name"
+            label="Name"
+            // value={values.name}
+            // onChange={//handlechange here}
+            margin="normal"
+            variant="outlined"
           />
           <TextField
             id="outlined-email-input"
@@ -51,7 +51,7 @@ const Signup = () => {
             variant="outlined"
           />
           <TextField
-            id="outlined-password-input"
+            id="outlined-password-verify-input"
             label="Confirm Password"
             type="password"
             autoComplete="current-password"
