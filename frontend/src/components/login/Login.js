@@ -21,36 +21,16 @@ const LoginBtn = withStyles({
 })(Button);
 
 const Login = () => {
-  const [AUTH_START, setAUTH_START] = useState('');
-  const [AUTH_SUCCESS, setAUTH_SUCCESS] = useState('');
-  const [AUTH_FAIL, setAUTH_FAIL] = useState('');
-  const [AUTH_LOGOUT, setAUTH_LOGOUT] = useState('');
-
-  const authStart = () => {
-    return {
-      type: actionTypes.AUTH_START
-    };
-  };
-
-  const authSuccess = token => {
-    return {
-      type: actionTypes.AUTH_SUCCESS,
-      token: token
-    };
-  };
-
-  const authFail = error => {
-    return {
-      type: actionTypes.AUTH_FAIL,
-      error: error
-    };
-  };
+  const [userEmail, setUserEmail] = React.useState('');
+  const [userPassword, setUserPassword] = React.useState('');
+  const [loading, setLoading] = React.useCallback(false);
+  const { error, showError } = useErrorHandler(null); // this is for custom hook
 
   const logout = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('expirationDate');
     return {
-      type: actionTypes.AUTH_LOGOUT
+      type: AUTH_LOGOUT
     };
   };
 
