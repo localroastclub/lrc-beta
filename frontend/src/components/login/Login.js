@@ -21,48 +21,56 @@ const LoginBtn = withStyles({
 })(Button);
 
 const Login = () => {
-  const [userEmail, setUserEmail] = React.useState('');
-  const [userPassword, setUserPassword] = React.useState('');
-  const [loading, setLoading] = React.useCallback(false);
-  const { error, showError } = useErrorHandler(null); // this is for custom hook
-
-  const logout = () => {
-    localStorage.removeItem('user');
-    localStorage.removeItem('expirationDate');
-    return {
-      type: AUTH_LOGOUT
-    };
+  const initialState = {
+    email: '',
+    password: '',
+    isSubmitting: false,
+    errorMEssage: null
   };
-
-  const checkAuthTimeout = expirationDate => {
-    return dispatch => {
-      setTimeout(() => {
-        dispatch(logout());
-      }, expirationTime * 1000);
-    };
+  const [data, setData] = React.useState(initialState);
+  const handleInputChange = event => {
+    setData({
+      ...data,
+      [event.target.name]: event.target.value
+    });
   };
+  // const [loading, setLoading] = React.useCallback(false);
+  // const { error, showError } = useErrorHandler(null); // this is for custom hook
 
-  const authLogin = (username, password) => {
-    return dispatch => {
-      dispatch(authStart());
-      axios
-        .post('http://localhost:8000/rest-auth/login/', {
-          username: username,
-          password: password
-        })
-        .then(res => {
-          const token = res.data.key;
-          const expirationDate = new Date(new Date().getTime() + 3600 * 1000); // gives one hour in the future
-          localStorage.setItem('token', token);
-          localStorage.setItem('expirationDate', expirationDate);
-          dispatch(authSuccess(token));
-          dispatch(checkAuthTimeout(3600));
-        })
-        .catch(err => {
-          dispatch(authFail(err));
-        });
-    };
-  };
+  // const logout = () => {
+  //   localStorage.removeItem('user');
+  //   localStorage.removeItem('expirationDate');
+  // };
+
+  // const checkAuthTimeout = expirationDate => {
+  //   return dispatch => {
+  //     setTimeout(() => {
+  //       dispatch(logout());
+  //     }, expirationTime * 1000);
+  //   };
+  // };
+
+  // const authLogin = (username, password) => {
+  //   return dispatch => {
+  //     dispatch(authStart());
+  //     axios
+  //       .post('http://localhost:8000/rest-auth/login/', {
+  //         username: username,
+  //         password: password
+  //       })
+  //       .then(res => {
+  //         const token = res.data.key;
+  //         const expirationDate = new Date(new Date().getTime() + 3600 * 1000); // gives one hour in the future
+  //         localStorage.setItem('token', token);
+  //         localStorage.setItem('expirationDate', expirationDate);
+  //         dispatch(authSuccess(token));
+  //         dispatch(checkAuthTimeout(3600));
+  //       })
+  //       .catch(err => {
+  //         dispatch(authFail(err));
+  //       });
+  //   };
+  // };
 
   return (
     <div className="login-container">
@@ -77,6 +85,8 @@ const Login = () => {
             autoComplete="email"
             margin="normal"
             variant="outlined"
+            value={data.email}
+            onChange={handleInputChange}
           />
           <TextField
             id="outlined-password-input"
@@ -85,6 +95,8 @@ const Login = () => {
             autoComplete="current-password"
             margin="normal"
             variant="outlined"
+            value={data.password}
+            onChange={handleInputChange}
           />
           <LoginBtn>Login</LoginBtn>
           Or
