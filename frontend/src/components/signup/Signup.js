@@ -1,4 +1,6 @@
 import React from 'react';
+import Axios from 'axios';
+import _ from 'lodash';
 import { NavLink } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
@@ -19,17 +21,57 @@ const SignupBtn = withStyles({
   }
 })(Button);
 
-const Signup = () => {
+const Signup = props => {
+  const email = _.get(props, 'location.state.email');
+  const name = _.get(props, 'location.state.name');
+  const initialState = {
+    name: name ? name : '',
+    email: email ? email : '',
+    password: '',
+    confirmPassword: '',
+    isSubmitting: false,
+    errorMEssage: null
+  };
+  const [data, setData] = React.useState(initialState);
+  const handleInputChange = event => {
+    setData({
+      ...data,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  const handleFormSubmit = event => {
+    event.preventDefault();
+    setData({
+      ...data,
+      isSubmitting: true
+    });
+    Axios.post('http://localhost:8000/rest-auth/signup/', {
+      name: event.name,
+      username: event.email,
+      password: event.password
+    }).then(res => {
+      console.log('here is the response!', res.body);
+    });
+  };
+
   return (
     <div className="signup-container">
       <div className="inner-container">
         <h1>Sign Up</h1>
-        <form className="signup-form" noValidate autoComplete="on">
+        <form
+          className="signup-form"
+          name="signup-form"
+          noValidate
+          autoComplete="on"
+          onSubmit={handleFormSubmit}
+        >
           <TextField
             id="outlined-name"
             label="Name"
-            // value={values.name}
-            // onChange={//handlechange here}
+            name="name"
+            value={data.name}
+            onChange={handleInputChange}
             margin="normal"
             variant="outlined"
           />
@@ -38,6 +80,8 @@ const Signup = () => {
             label="Email"
             type="email"
             name="email"
+            value={data.email}
+            onChange={handleInputChange}
             autoComplete="email"
             margin="normal"
             variant="outlined"
@@ -46,6 +90,8 @@ const Signup = () => {
             id="outlined-password-input"
             label="Password"
             type="password"
+            name="password"
+            onChange={handleInputChange}
             autoComplete="current-password"
             margin="normal"
             variant="outlined"
@@ -54,11 +100,19 @@ const Signup = () => {
             id="outlined-password-verify-input"
             label="Confirm Password"
             type="password"
+            name="confirmPassword"
+            onChange={handleInputChange}
             autoComplete="current-password"
             margin="normal"
             variant="outlined"
           />
-          <SignupBtn>Signup</SignupBtn>
+          <SignupBtn
+            onClick={() => {
+              document.forms['signup-form'].submit();
+            }}
+          >
+            Signup
+          </SignupBtn>
           Or
           <NavLink style={{ marginRight: '10px' }} to="/login">
             {' '}

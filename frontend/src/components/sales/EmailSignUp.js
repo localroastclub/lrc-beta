@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -39,6 +40,13 @@ const EmailSignUp = () => {
   const handleChange = e => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
+    console.log('what are values?', values);
+  };
+
+  const handleSignUp = () => {
+    console.log('hi');
+    // redirect user to Sign up page, and pass the values entered into the sign up values
+    // put them in local storage and
   };
 
   return (
@@ -69,7 +77,9 @@ const EmailSignUp = () => {
             onChange={handleChange}
           />
         </div>
-        <SignUpBtn> Sign Up </SignUpBtn>
+        <Link to={{ pathname: '/signup', state: values }}>
+          <SignUpBtn> Sign Up </SignUpBtn>
+        </Link>
       </form>
     </div>
   );

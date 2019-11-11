@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import Axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
@@ -32,6 +32,20 @@ const Login = () => {
     setData({
       ...data,
       [event.target.name]: event.target.value
+    });
+  };
+
+  const handleFormSubmit = event => {
+    event.preventDefault();
+    setData({
+      ...data,
+      isSubmitting: true
+    });
+    Axios.post('http://localhost:8000/rest-auth/login/', {
+      username: event.email,
+      password: event.password
+    }).then(res => {
+      console.log('here is the response!', res.body);
     });
   };
   // const [loading, setLoading] = React.useCallback(false);
@@ -76,7 +90,13 @@ const Login = () => {
     <div className="login-container">
       <div className="inner-container">
         <h1>Login</h1>
-        <form className="login-form" noValidate autoComplete="on">
+        <form
+          className="login-form"
+          name="login-form"
+          noValidate
+          autoComplete="on"
+          onSubmit={handleFormSubmit}
+        >
           <TextField
             id="outlined-email-input"
             label="Email"
@@ -92,13 +112,20 @@ const Login = () => {
             id="outlined-password-input"
             label="Password"
             type="password"
+            name="password"
             autoComplete="current-password"
             margin="normal"
             variant="outlined"
             value={data.password}
             onChange={handleInputChange}
           />
-          <LoginBtn>Login</LoginBtn>
+          <LoginBtn
+            onClick={() => {
+              document.forms['login-form'].submit();
+            }}
+          >
+            Login
+          </LoginBtn>
           Or
           <NavLink style={{ marginRight: '10px' }} to="/signup">
             {' '}
