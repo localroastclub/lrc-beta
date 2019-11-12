@@ -45,10 +45,9 @@ const Login = () => {
     });
     Axios.post('http://localhost:8000/rest-auth/login/', {
       email: data.email,
-      // username: data.username,
       password: data.password
     }).then(res => {
-      console.log('here is the response!', res.body);
+      console.log('here is the response!', res.data);
     });
   };
   // const [loading, setLoading] = React.useCallback(false);
@@ -111,17 +110,6 @@ const Login = () => {
             value={data.email}
             onChange={handleInputChange}
           />
-          {/* <TextField
-            id="standard-required"
-            label="Required"
-            type="username"
-            name="username"
-            autoComplete="username"
-            margin="normal"
-            variant="outlined"
-            value={data.username}
-            onChange={handleInputChange}
-          /> */}
           <TextField
             id="outlined-password-input"
             label="Password"
