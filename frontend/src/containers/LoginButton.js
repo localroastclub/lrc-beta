@@ -6,14 +6,21 @@ const LoginBtn = withStyles({
   root: {
     color: '#ffffff',
     fontFamily: 'Actor',
-    textDecoration: 'none',
-  },
+    textDecoration: 'none'
+  }
 })(Button);
 
-const LoginButton = () => {
+const LoginButton = props => {
+  const isAuthenticated = props.isAuthenticated;
   return (
-    <LoginBtn color="inherit">Login</LoginBtn>
-  )
+    <>
+      {isAuthenticated ? (
+        <LoginBtn color="inherit">Logout</LoginBtn>
+      ) : (
+        <LoginBtn color="inherit">Login</LoginBtn>
+      )}
+    </>
+  );
 };
 
 export default LoginButton;

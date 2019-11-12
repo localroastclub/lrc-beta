@@ -33,6 +33,8 @@ const logo = 'https://lrcimages.s3.us-east-2.amazonaws.com/lrc-color.png';
 
 function NavBar(props) {
   const { classes } = props;
+  let isAuthenticated = props.user.state.isAuthenticated;
+  console.log('this is the navbar', props.user.state.isAuthenticated);
   return (
     <div className="nav">
       <AppBar position="static" className={classes.root}>
@@ -49,9 +51,13 @@ function NavBar(props) {
               <img className={classes.logo} src={logo} alt="Local Roast Club" />
             </Link>
           </Typography>
-          <Link to="/login">
-            <LoginButton />
-          </Link>
+          {isAuthenticated ? (
+            <LoginButton isAuthenticated={isAuthenticated} />
+          ) : (
+            <Link to="/login">
+              <LoginButton isAuthenticated={isAuthenticated} />
+            </Link>
+          )}
         </Toolbar>
       </AppBar>
     </div>

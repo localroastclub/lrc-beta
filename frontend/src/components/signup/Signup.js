@@ -133,7 +133,7 @@ const Signup = props => {
             variant="outlined"
           />
           <SignupBtn type="submit" value="Submit">
-            Signup
+            {data.isSubmitting ? 'Submitting...' : 'Signup'}
           </SignupBtn>
           Or
           <NavLink style={{ marginRight: '10px' }} to="/login">

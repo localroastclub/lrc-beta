@@ -1,5 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
+import _ from 'lodash';
+import { AuthContext } from '../../contexts/AuthContext';
 import { NavLink } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
@@ -21,6 +23,7 @@ const LoginBtn = withStyles({
 })(Button);
 
 const Login = () => {
+  const { dispatch } = React.useContext(AuthContext);
   const initialState = {
     email: '',
     username: '',
@@ -46,9 +49,31 @@ const Login = () => {
     Axios.post('http://localhost:8000/rest-auth/login/', {
       email: data.email,
       password: data.password
-    }).then(res => {
-      console.log('here is the response!', res.data);
-    });
+    })
+      .then(res => {
+        try {
+          return res.data.key;
+        } catch (e) {
+          // do nothing?
+        }
+        console.log('here is the response!', res.data);
+      })
+      .then(token => {
+        dispatch({
+          type: 'LOGIN',
+          payload: { user: data.email, token }
+        });
+      })
+      .catch(err => {
+        const errorMsg = [];
+        _.forEach(err.response.data, e => {
+          errorMsg.push(e[0]);
+        });
+        setData({
+          ...data,
+          errorMessage: errorMsg
+        });
+      });
   };
   // const [loading, setLoading] = React.useCallback(false);
   // const { error, showError } = useErrorHandler(null); // this is for custom hook
@@ -92,6 +117,15 @@ const Login = () => {
     <div className="login-container">
       <div className="inner-container">
         <h1>Login</h1>
+        {data.errorMessage
+          ? _.map(data.errorMessage, (msg, index) => {
+              return (
+                <li className="error-message" key={index}>
+                  {msg}
+                </li>
+              );
+            })
+          : null}
         <form
           className="login-form"
           name="login-form"
@@ -122,7 +156,7 @@ const Login = () => {
             onChange={handleInputChange}
           />
           <LoginBtn type="submit" value="Submit">
-            Login
+            {data.isSubmitting ? 'Loading...' : 'Login'}
           </LoginBtn>
           Or
           <NavLink style={{ marginRight: '10px' }} to="/signup">
