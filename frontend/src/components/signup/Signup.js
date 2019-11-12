@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Axios from 'axios';
 import _ from 'lodash';
 import { NavLink } from 'react-router-dom';
@@ -30,7 +30,7 @@ const Signup = props => {
     password: '',
     confirmPassword: '',
     isSubmitting: false,
-    errorMessage: ''
+    errorMessage: null
   };
   const [data, setData] = React.useState(initialState);
   const handleInputChange = event => {
@@ -54,25 +54,37 @@ const Signup = props => {
     })
       .then(res => {
         console.log('here is the response!', res.data);
+        // on success send them to their new user dashboard
       })
       .catch(err => {
-        let errorMsg = '';
-        console.log('error!', err.response.data);
+        const errorMsg = [];
         _.forEach(err.response.data, e => {
-          errorMsg = `${errorMsg}${e[0]}\n`;
+          errorMsg.push(e[0]);
         });
         setData({
           ...data,
           errorMessage: errorMsg
         });
-        console.log('errorMessage:', data.errorMessage);
       });
   };
+
+  useEffect(() => {
+    // if error message
+  }, [data.errorMessage]);
 
   return (
     <div className="signup-container">
       <div className="inner-container">
         <h1>Sign Up</h1>
+        {data.errorMessage
+          ? _.map(data.errorMessage, (msg, index) => {
+              return (
+                <li className="error-message" key={index}>
+                  {msg}
+                </li>
+              );
+            })
+          : null}
         <form
           className="signup-form"
           name="signup-form"
