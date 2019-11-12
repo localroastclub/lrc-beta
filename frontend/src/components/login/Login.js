@@ -43,8 +43,8 @@ const Login = () => {
       isSubmitting: true
     });
     Axios.post('http://localhost:8000/rest-auth/login/', {
-      username: event.email,
-      password: event.password
+      email: data.email,
+      password: data.password
     }).then(res => {
       console.log('here is the response!', res.body);
     });
