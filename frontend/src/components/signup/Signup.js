@@ -30,7 +30,7 @@ const Signup = props => {
     password: '',
     confirmPassword: '',
     isSubmitting: false,
-    errorMEssage: null
+    errorMessage: ''
   };
   const [data, setData] = React.useState(initialState);
   const handleInputChange = event => {
@@ -46,13 +46,27 @@ const Signup = props => {
       ...data,
       isSubmitting: true
     });
-    Axios.post('http://localhost:8000/rest-auth/signup/', {
-      name: event.name,
-      username: event.email,
-      password: event.password
-    }).then(res => {
-      console.log('here is the response!', res.body);
-    });
+    console.log('what is data?', data);
+    Axios.post('http://localhost:8000/rest-auth/registration/', {
+      email: data.email,
+      password1: data.password,
+      password2: data.confirmPassword
+    })
+      .then(res => {
+        console.log('here is the response!', res.data);
+      })
+      .catch(err => {
+        let errorMsg = '';
+        console.log('error!', err.response.data);
+        _.forEach(err.response.data, e => {
+          errorMsg = `${errorMsg}${e[0]}\n`;
+        });
+        setData({
+          ...data,
+          errorMessage: errorMsg
+        });
+        console.log('errorMessage:', data.errorMessage);
+      });
   };
 
   return (
@@ -106,11 +120,7 @@ const Signup = props => {
             margin="normal"
             variant="outlined"
           />
-          <SignupBtn
-            onClick={() => {
-              document.forms['signup-form'].submit();
-            }}
-          >
+          <SignupBtn type="submit" value="Submit">
             Signup
           </SignupBtn>
           Or

@@ -37,6 +37,7 @@ const Login = () => {
 
   const handleFormSubmit = event => {
     event.preventDefault();
+    console.log('we are submitting....');
     setData({
       ...data,
       isSubmitting: true
@@ -119,11 +120,7 @@ const Login = () => {
             value={data.password}
             onChange={handleInputChange}
           />
-          <LoginBtn
-            onClick={() => {
-              document.forms['login-form'].submit();
-            }}
-          >
+          <LoginBtn type="submit" value="Submit">
             Login
           </LoginBtn>
           Or
