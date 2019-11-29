@@ -47,11 +47,17 @@ const Login = () => {
       isSubmitting: true
     });
     Axios.post('http://localhost:8000/rest-auth/login/', {
+      username: '',
       email: data.email,
       password: data.password
     })
       .then(res => {
+        console.log('res???', res.data);
         try {
+          setData({
+            ...data,
+            isSubmitting: false
+          });
           return res.data.key;
         } catch (e) {
           // do nothing?
@@ -59,6 +65,7 @@ const Login = () => {
         console.log('here is the response!', res.data);
       })
       .then(token => {
+        console.log('what is token?', token);
         dispatch({
           type: 'LOGIN',
           payload: { user: data.email, token }
@@ -66,11 +73,16 @@ const Login = () => {
       })
       .catch(err => {
         const errorMsg = [];
-        _.forEach(err.response.data, e => {
-          errorMsg.push(e[0]);
-        });
+        if (typeof err.response.data === 'object') {
+          _.forEach(err.response.data, e => {
+            errorMsg.push(e[0]);
+          });
+        } else {
+          errorMsg.push('Ooops something went wrong');
+        }
         setData({
           ...data,
+          isSubmitting: false,
           errorMessage: errorMsg
         });
       });

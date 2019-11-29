@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import { BrowserRouter } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/styles';
@@ -13,7 +14,7 @@ const LoginBtn = withStyles({
 })(Button);
 
 const LoginButton = props => {
-  const isAuthenticated = props.isAuthenticated;
+  const isAuthenticated = localStorage.getItem('isMember') === 'true';
   const { dispatch } = React.useContext(AuthContext);
 
   const handleLogout = event => {
@@ -23,10 +24,15 @@ const LoginButton = props => {
       .then(res => {
         console.log('here is the response', res.status);
         if (res.status === 200) {
-          dispatch({
+          return dispatch({
             type: 'LOGOUT'
           });
         }
+      })
+      .then(() => {
+        console.log('in the sencond then', props);
+        // props.history.push('/');
+        window.location.href = '/';
       })
       .catch(err => {
         console.log('error!', err);

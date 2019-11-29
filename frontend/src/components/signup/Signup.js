@@ -54,13 +54,22 @@ const Signup = props => {
     })
       .then(res => {
         console.log('here is the response!', res.data);
+        setData({
+          ...data,
+          isSubmitting: false
+        });
         // on success send them to their new user dashboard
       })
       .catch(err => {
         const errorMsg = [];
-        _.forEach(err.response.data, e => {
-          errorMsg.push(e[0]);
-        });
+        console.log('what is err?', err.response.data);
+        if (typeof err.response.data === 'object') {
+          _.forEach(err.response.data, e => {
+            errorMsg.push(e[0]);
+          });
+        } else {
+          errorMsg.push('Ooops something went wrong');
+        }
         setData({
           ...data,
           errorMessage: errorMsg

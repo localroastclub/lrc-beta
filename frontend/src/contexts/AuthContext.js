@@ -12,6 +12,7 @@ export const reducer = (state, action) => {
     case 'LOGIN':
       localStorage.setItem('user', JSON.stringify(action.payload.user));
       localStorage.setItem('token', JSON.stringify(action.payload.token));
+      localStorage.setItem('isMember', 'true');
       return {
         ...state,
         isAuthenticated: true,
