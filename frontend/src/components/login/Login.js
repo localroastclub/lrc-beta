@@ -143,6 +143,7 @@ const Login = () => {
           name="login-form"
           noValidate
           autoComplete="on"
+          method="POST"
           onSubmit={handleFormSubmit}
         >
           <TextField

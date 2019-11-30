@@ -99,6 +99,7 @@ const Signup = props => {
           name="signup-form"
           noValidate
           autoComplete="on"
+          method="POST"
           onSubmit={handleFormSubmit}
         >
           <TextField

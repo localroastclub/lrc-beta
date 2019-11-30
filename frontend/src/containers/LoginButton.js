@@ -8,7 +8,8 @@ import { withStyles } from '@material-ui/styles';
 const LoginBtn = withStyles({
   root: {
     color: '#ffffff',
-    fontFamily: 'Actor',
+    fontFamily: 'Lato',
+    fontSize: 16,
     textDecoration: 'none'
   }
 })(Button);
@@ -31,7 +32,6 @@ const LoginButton = props => {
       })
       .then(() => {
         console.log('in the sencond then', props);
-        // props.history.push('/');
         window.location.href = '/';
       })
       .catch(err => {
