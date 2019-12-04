@@ -11,7 +11,7 @@ const SignUpBtn = withStyles({
   root: {
     background: '#e6b5da',
     '&:hover': {
-      background: 'linear-gradient(30deg, #e6b5da 40%, #f5f733 60%)'
+      background: '#e0e0e0'
     },
     border: 0,
     borderRadius: 3,
