@@ -9,16 +9,26 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import './itemcard.css';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   card: {
-    background: '#e6b5da',
+    background: 'rgb(230, 181, 218, 0.5)',
     display: 'flex',
     width: '80vw',
     height: '20vh',
     marginLeft: 0,
     marginRight: 0,
     margin: 10,
-    font: 'Lato'
+    font: 'Lato',
+    [theme.breakpoints.down(665)]: {
+      height: '30vh',
+      width: '70vw'
+    },
+    [theme.breakpoints.down(450)]: {
+      height: '60vh',
+      width: '70vw',
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
   },
   details: {
     display: 'flex',
@@ -35,12 +45,13 @@ const useStyles = makeStyles({
     height: 151
   },
   root: {
-    marginBottom: '.2em'
+    marginBottom: '.2em',
+    fontSize: '4vh'
   },
   text: {
-    fontSize: 18
+    fontSize: '2vh'
   }
-});
+}));
 
 const ItemCard = props => {
   const classes = useStyles();
@@ -76,14 +87,14 @@ const ItemCard = props => {
           </Typography>
         </CardContent>
       </div>
-      {/* <CardActions>
+      <CardActions>
         <Button size="small" color="primary">
           Share
         </Button>
         <Button size="small" color="primary">
           Learn More
         </Button>
-      </CardActions> */}
+      </CardActions>
     </Card>
   );
 };

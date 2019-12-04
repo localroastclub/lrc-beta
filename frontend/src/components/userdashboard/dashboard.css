@@ -16,6 +16,36 @@ h2 {
   align-items: center;
 }
 
+.order-box {
+  /* display: flex; */
+  flex-grow: 1;
+  width: 80vw;
+  /* height: 20vh; */
+}
+
+.order-total-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-top: 3vh;
+}
+
+.button-cell {
+  display: flex;
+  width: 50vw;
+  justify-content: flex-start;
+}
+
+#order-total {
+  display: flex;
+  /* margin-top: 1vh;
+  margin-bottom: 1vh;
+  margin-left: 1vw;
+  margin-right: 1vw; */
+  justify-self: flex-end;
+}
+
 .login-form {
   display: flex;
   flex-direction: column;

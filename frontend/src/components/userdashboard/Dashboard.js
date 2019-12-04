@@ -5,6 +5,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { NavLink } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
+import DashboardBtn from './DashboardBtn';
 import OrderItems from './OrderItems';
 import './dashboard.css';
 
@@ -65,9 +66,17 @@ const Login = () => {
     <div className="dashboard-container">
       <div className="inner-container">
         <h2>Hey there {userData.name}!</h2>
-        <h2>Your next order is scheduled for {userData.shipDate}</h2>
-        <OrderItems orderItems={userData.orderItems} />
-        <h4>Order Total: {userData.totalPrice}</h4>
+        <div>Your next order is scheduled for {userData.shipDate}</div>
+        <div className="order-box">
+          <OrderItems orderItems={userData.orderItems} />
+          <div className="order-total-box">
+            <div className="button-cell">
+              <DashboardBtn ctaText={'Freeze Subscription'} />
+              <DashboardBtn ctaText={'Cancel Subscription'} />
+            </div>
+            <div id="order-total">Order Total: ${userData.totalPrice}</div>
+          </div>
+        </div>
       </div>
     </div>
   );
