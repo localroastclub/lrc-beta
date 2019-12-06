@@ -7,11 +7,12 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import QuantityMenu from './QuantityMenu';
 import './itemcard.css';
 
 const useStyles = makeStyles(theme => ({
   card: {
-    background: 'rgb(230, 181, 218, 0.5)',
+    background: '#e6b5da',
     display: 'flex',
     width: '80vw',
     height: '20vh',
@@ -45,11 +46,22 @@ const useStyles = makeStyles(theme => ({
     height: 151
   },
   root: {
+    fontFamily: 'Lato',
     marginBottom: '.2em',
     fontSize: '4vh'
   },
   text: {
+    fontFamily: 'Lato',
     fontSize: '2vh'
+  },
+  actions: {
+    flexGrow: 2,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-end'
+  },
+  button: {
+    fontFamily: 'Lato'
   }
 }));
 
@@ -87,13 +99,14 @@ const ItemCard = props => {
           </Typography>
         </CardContent>
       </div>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
+      <CardActions className={classes.actions}>
+        <Button className={classes.button} size="medium" color="black">
+          Remove
         </Button>
-        <Button size="small" color="primary">
-          Learn More
+        <Button className={classes.button} size="medium" color="black">
+          Update Item
         </Button>
+        <QuantityMenu />
       </CardActions>
     </Card>
   );
