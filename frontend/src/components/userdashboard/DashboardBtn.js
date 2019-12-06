@@ -12,7 +12,8 @@ const Btn = withStyles({
     height: 48,
     width: 150,
     marginRight: '2vw',
-    padding: '0 30px'
+    padding: '0 30px',
+    fontFamily: 'Lato'
   }
 })(Button);
 
