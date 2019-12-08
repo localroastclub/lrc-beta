@@ -14,7 +14,7 @@ const AccountIcon = withStyles({
   }
 })(AccountBoxIcon);
 
-const AccountButton = props => {
+const AccountButton = () => {
   const isAuthenticated = localStorage.getItem('isMember') === 'true';
   const { dispatch } = React.useContext(AuthContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -32,7 +32,6 @@ const AccountButton = props => {
         }
       })
       .then(() => {
-        console.log('in the sencond then', props);
         window.location.href = '/';
       })
       .catch(err => {
@@ -80,7 +79,9 @@ const AccountButton = props => {
           </div>
         ) : (
           <div>
-            <MenuItem onClick={handleLogout}>Cart</MenuItem>
+            <Link to="/dashboard">
+              <MenuItem onClick={handleLogout}>Cart</MenuItem>
+            </Link>
             <Link to="/login">
               <MenuItem onClick={handleClose}>Login</MenuItem>
             </Link>
