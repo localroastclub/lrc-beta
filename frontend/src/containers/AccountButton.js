@@ -80,7 +80,7 @@ const AccountButton = () => {
         ) : (
           <div>
             <Link to="/dashboard">
-              <MenuItem onClick={handleLogout}>Cart</MenuItem>
+              <MenuItem onClick={handleClose}>Cart</MenuItem>
             </Link>
             <Link to="/login">
               <MenuItem onClick={handleClose}>Login</MenuItem>
