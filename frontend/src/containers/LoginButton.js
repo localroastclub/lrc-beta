@@ -1,6 +1,5 @@
 import React from 'react';
 import Axios from 'axios';
-import { BrowserRouter } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/styles';

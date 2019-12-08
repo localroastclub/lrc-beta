@@ -1,10 +1,5 @@
 import React from 'react';
-import Axios from 'axios';
-import _ from 'lodash';
 import { AuthContext } from '../../contexts/AuthContext';
-import { NavLink } from 'react-router-dom';
-import { withStyles } from '@material-ui/styles';
-import Button from '@material-ui/core/Button';
 import DashboardBtn from './DashboardBtn';
 import OrderItems from './OrderItems';
 import './dashboard.css';

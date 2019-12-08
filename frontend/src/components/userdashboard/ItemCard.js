@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
+// import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -88,22 +88,18 @@ const ItemCard = props => {
           >
             {props.item.roaster}
           </Typography>
-          <Typography
-            className={classes.text}
-            // variant="body2"
-            component="p"
-          >
+          <div className={classes.text}>
             <p>Roast Type: {props.item.roastType}</p>
             <p>Beans: {props.item.bean}</p>
             <p>Origin: {props.item.origin}</p>
-          </Typography>
+          </div>
         </CardContent>
       </div>
       <CardActions className={classes.actions}>
-        <Button className={classes.button} size="medium" color="black">
+        <Button className={classes.button} size="medium" color="inherit">
           Remove
         </Button>
-        <Button className={classes.button} size="medium" color="black">
+        <Button className={classes.button} size="medium" color="inherit">
           Update Item
         </Button>
         <QuantityMenu />

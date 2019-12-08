@@ -71,6 +71,9 @@ const Login = () => {
           payload: { user: data.email, token }
         });
       })
+      .then(() => {
+        window.location.href = '/dashboard';
+      })
       .catch(err => {
         const errorMsg = [];
         if (typeof err.response.data === 'object') {

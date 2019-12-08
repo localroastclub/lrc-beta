@@ -4,9 +4,6 @@ import { withStyles } from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-// we want to give this button the POST ability to sign up for email list and then
-// redirect to sign up page with first name & email prefilled
-
 const SignUpBtn = withStyles({
   root: {
     background: '#e6b5da',
@@ -43,11 +40,11 @@ const EmailSignUp = () => {
     console.log('what are values?', values);
   };
 
-  const handleSignUp = () => {
-    console.log('hi');
-    // redirect user to Sign up page, and pass the values entered into the sign up values
-    // put them in local storage and
-  };
+  // const handleSignUp = () => {
+  //   console.log('hi');
+  //   // redirect user to Sign up page, and pass the values entered into the sign up values
+  //   // put them in local storage and
+  // };
 
   return (
     <div className="top-email-form">
