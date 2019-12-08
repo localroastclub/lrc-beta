@@ -5,6 +5,8 @@ import Landing from './containers/Landing';
 import Login from './components/login/Login';
 import Signup from './components/signup/Signup';
 import Dashboard from './components/userdashboard/Dashboard';
+import Product from './components/product/Product';
+import SubscriptionSteps from './components/product/SubscriptionSteps';
 
 const BaseRouter = () => (
   <div>
@@ -12,6 +14,8 @@ const BaseRouter = () => (
     <Route exact path="/login" component={Login} />
     <Route exact path="/signup" component={Signup} />
     <Route exact path="/dashboard" component={Dashboard} />
+    <Route exact path="/order" component={Product} />
+    <Route exact path="/subscribe" component={SubscriptionSteps} />
   </div>
 );
 
