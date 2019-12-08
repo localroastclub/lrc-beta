@@ -8,6 +8,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import AccountButton from './AccountButton';
 
 const styles = {
   root: {
@@ -51,6 +52,7 @@ function NavBar(props) {
               <img className={classes.logo} src={logo} alt="Local Roast Club" />
             </Link>
           </Typography>
+          <AccountButton />
           {isAuthenticated ? (
             <LoginButton isAuthenticated={isAuthenticated} />
           ) : (
