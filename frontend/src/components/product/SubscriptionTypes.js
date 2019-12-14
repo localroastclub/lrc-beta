@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import SubscriptionCard from './SubscriptionCard';
+import './subscription.css';
 
 const options = [
   {
@@ -27,10 +28,12 @@ const options = [
 
 const SubscriptionTypes = () => {
   return (
-    <div>
-      {_.map(options, (item, key) => {
-        return <SubscriptionCard item={item} key={key} />;
-      })}
+    <div className="subscription-container">
+      <div className="inner-sub-container">
+        {_.map(options, (item, key) => {
+          return <SubscriptionCard item={item} key={key} />;
+        })}
+      </div>
     </div>
   );
 };

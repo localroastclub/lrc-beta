@@ -22,8 +22,8 @@ const useStyles = makeStyles(theme => ({
 
 function getSteps() {
   return [
-    'Select master blaster campaign settings',
-    'Create an ad group',
+    'Choose your subscription level',
+    'Select your roasts',
     'Create an ad'
   ];
 }
