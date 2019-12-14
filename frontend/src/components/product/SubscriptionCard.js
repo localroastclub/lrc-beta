@@ -12,7 +12,7 @@ const useStyles = makeStyles({
   card: {
     maxWidth: 245,
     height: 300,
-    margin: 10
+    margin: '3vw'
   },
   media: {
     height: 140
@@ -39,14 +39,14 @@ const SubscriptionCard = props => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      {/* <CardActions>
         <Button size="small" color="primary">
           Share
         </Button>
         <Button size="small" color="primary">
           Learn More
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 };

@@ -34,7 +34,8 @@ function getStepContent(stepIndex) {
       // choose your subscription type
       return <SubscriptionTypes />;
     case 1:
-      //
+      // select roasters, take logic from whatever they click on subscription types
+      // we'll probably have to pass state down to subscription types
       return 'What is an ad group anyways?';
     case 2:
       return 'This is the bit I really care about!';
