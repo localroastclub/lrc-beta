@@ -9,14 +9,33 @@ import SubscriptionTypes from './SubscriptionTypes';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%'
+    width: '100%',
+    marginTop: '5%',
+    marginBottom: '5%'
+  },
+  nextButton: {
+    backgroundColor: '#e6b5da'
   },
   backButton: {
-    marginRight: theme.spacing(1)
+    marginRight: theme.spacing(1),
+    backgroundColor: '#e6b5da'
   },
   instructions: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1)
+  },
+  stepper: {
+    backgroundColor: '#e6b5da'
+  },
+  buttons: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    marginRight: '10%'
+  },
+  stepIcon: {
+    '& circle, & path': {
+      color: '#e6b5da'
+    }
   }
 }));
 
@@ -24,7 +43,7 @@ function getSteps() {
   return [
     'Choose your subscription level',
     'Select your roasts',
-    'Create an ad'
+    'Confirm your subscription date'
   ];
 }
 
@@ -35,7 +54,10 @@ function getStepContent(stepIndex) {
       return <SubscriptionTypes />;
     case 1:
       // select roasters, take logic from whatever they click on subscription types
-      // we'll probably have to pass state down to subscription types
+      // we'll probably have to pass state down to subscription types to know which one they've clicked
+      // then render taster's trio with three options
+      // choose your own adventure with one option required, and a + icon
+      // if coffee of the month, skip step 2 (case 1)
       return 'What is an ad group anyways?';
     case 2:
       return 'This is the bit I really care about!';
@@ -66,7 +88,17 @@ const SubscriptionSteps = () => {
       <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map(label => (
           <Step key={label}>
-            <StepLabel>{label}</StepLabel>
+            <StepLabel
+              StepIconProps={{
+                classes: {
+                  active: classes.stepIcon,
+                  completed: classes.stepIcon
+                  // error:
+                }
+              }}
+            >
+              {label}
+            </StepLabel>
           </Step>
         ))}
       </Stepper>
@@ -83,7 +115,7 @@ const SubscriptionSteps = () => {
             <Typography className={classes.instructions}>
               {getStepContent(activeStep)}
             </Typography>
-            <div>
+            <div className={classes.buttons}>
               <Button
                 disabled={activeStep === 0}
                 onClick={handleBack}
@@ -91,7 +123,11 @@ const SubscriptionSteps = () => {
               >
                 Back
               </Button>
-              <Button variant="contained" color="primary" onClick={handleNext}>
+              <Button
+                variant="contained"
+                className={classes.nextButton}
+                onClick={handleNext}
+              >
                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
               </Button>
             </div>

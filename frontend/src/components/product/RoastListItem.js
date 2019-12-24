@@ -65,7 +65,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const ItemCard = props => {
+const RoastListItem = props => {
   const classes = useStyles();
   const alt = `${props.item.roaster} ${props.item.roastType} roast ${props.item.bean} bean`;
   return (
@@ -109,4 +109,4 @@ const ItemCard = props => {
   );
 };
 
-export default ItemCard;
+export default RoastListItem;
