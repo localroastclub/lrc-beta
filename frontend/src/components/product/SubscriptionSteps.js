@@ -6,6 +6,7 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import SubscriptionTypes from './SubscriptionTypes';
+import TastersTrio from './TastersTrio';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -58,7 +59,7 @@ function getStepContent(stepIndex) {
       // then render taster's trio with three options
       // choose your own adventure with one option required, and a + icon
       // if coffee of the month, skip step 2 (case 1)
-      return 'What is an ad group anyways?';
+      return <TastersTrio />;
     case 2:
       return 'This is the bit I really care about!';
     default:

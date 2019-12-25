@@ -7,8 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import QuantityMenu from './QuantityMenu';
-import './itemcard.css';
+// import QuantityMenu from './QuantityMenu';
+import '../userdashboard/itemcard.css';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -65,9 +65,20 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const roasterList = [
+  "Barrett's",
+  'Little City',
+  'Casa Brasil',
+  'Greater Goods',
+  'Trianon',
+  "Mozart's"
+];
+const roast = ['Light', 'Medium', 'Dark', 'Espresso', 'Decaf'];
+const beanStatus = ['Whole', 'Ground'];
+
 const RoastListItem = props => {
   const classes = useStyles();
-  const alt = `${props.item.roaster} ${props.item.roastType} roast ${props.item.bean} bean`;
+  const alt = `${props.item.roaster} ${props.item.roastType} roast ${props.item.beanStatus} bean`;
   return (
     <Card className={classes.card}>
       <CardMedia
@@ -75,8 +86,8 @@ const RoastListItem = props => {
         component="img"
         alt={alt}
         height="140"
-        image={props.item.imageUrl}
-        title={props.item.roaster}
+        // image={props.item.imageUrl}
+        // title={props.item.roaster}
       />
       <div className={classes.details}>
         <CardContent className={classes.content}>
@@ -90,9 +101,9 @@ const RoastListItem = props => {
           </Typography>
           <div className={classes.text}>
             <p>Roast Type: {props.item.roastType}</p>
-            <p>Beans: {props.item.bean}</p>
+            <p>Beans: {props.item.beanStatus}</p>
             <p>Origin: {props.item.origin}</p>
-            <p>Bag Size: 12 oz</p>
+            <p>Bag Size: 4 oz</p>
           </div>
         </CardContent>
       </div>
@@ -103,7 +114,7 @@ const RoastListItem = props => {
         <Button className={classes.button} size="medium" color="inherit">
           Update Item
         </Button>
-        <QuantityMenu />
+        {/* <QuantityMenu /> */}
       </CardActions>
     </Card>
   );

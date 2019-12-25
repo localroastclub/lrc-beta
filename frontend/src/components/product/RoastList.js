@@ -6,7 +6,7 @@ const RoastList = props => {
   return (
     <div>
       <h4>Your upcoming order:</h4>
-      {_.map(props.RoastItems, (item, key) => (
+      {_.map(props.roastItems, (item, key) => (
         <RoastListItem item={item} key={key} />
       ))}
     </div>
