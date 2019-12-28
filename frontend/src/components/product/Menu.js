@@ -24,31 +24,19 @@ const useStyles = makeStyles(theme => ({
   },
   label: {
     [theme.breakpoints.down(390)]: {
-      // height: '20vh',
-      // width: '40vw',
       fontSize: '2.2vh'
-      // minWidth: 80,
-      // maxWidth: 100
-      // flexDirection: 'column',
-      // alignItems: 'center'
     }
   },
   select: {
     [theme.breakpoints.down(390)]: {
       height: '8vh',
       width: '40vw'
-      // minWidth: 80,
-      // maxWidth: 100
-      // flexDirection: 'column',
-      // alignItems: 'center'
     }
   },
   menuItem: {
     [theme.breakpoints.down(390)]: {
       height: '8vh',
       width: '40vw'
-      // flexDirection: 'column',
-      // alignItems: 'center'
     }
   }
 }));

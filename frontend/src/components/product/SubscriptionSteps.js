@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import SubscriptionTypes from './SubscriptionTypes';
 import TastersTrio from './TastersTrio';
+import ChooseYourAdventure from './ChooseYourAdventure';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -48,18 +49,26 @@ function getSteps() {
   ];
 }
 
-function getStepContent(stepIndex) {
+function getStepContent(stepIndex, subscriptionType, handleSubscriptionType) {
   switch (stepIndex) {
     case 0:
       // choose your subscription type
-      return <SubscriptionTypes />;
+      return (
+        <SubscriptionTypes
+          selection={subscriptionType}
+          handleSelection={handleSubscriptionType}
+        />
+      );
     case 1:
+      if (subscriptionType === 'Tasters trio') {
+        return <TastersTrio />;
+      }
       // select roasters, take logic from whatever they click on subscription types
       // we'll probably have to pass state down to subscription types to know which one they've clicked
       // then render taster's trio with three options
       // choose your own adventure with one option required, and a + icon
       // if coffee of the month, skip step 2 (case 1)
-      return <TastersTrio />;
+      return <ChooseYourAdventure />;
     case 2:
       return 'This is the bit I really care about!';
     default:
@@ -82,6 +91,13 @@ const SubscriptionSteps = () => {
 
   const handleReset = () => {
     setActiveStep(0);
+  };
+
+  const [subscriptionType, setSubscriptionType] = React.useState('');
+
+  const handleSubscriptionType = event => {
+    console.log('what is name?', event.target.getAttribute('name'));
+    setSubscriptionType(event.target.getAttribute('name'));
   };
 
   return (
@@ -114,7 +130,11 @@ const SubscriptionSteps = () => {
         ) : (
           <div>
             <div className={classes.instructions}>
-              {getStepContent(activeStep)}
+              {getStepContent(
+                activeStep,
+                subscriptionType,
+                handleSubscriptionType
+              )}
             </div>
             <div className={classes.buttons}>
               <Button

@@ -9,10 +9,14 @@ import './subscription.css';
 // it can then be updated or removed. If the user navigates away from the page, we want it to stay in local storage
 
 const ChooseYourAdventure = () => {
+  const [roastItems, setRoastItems] = React.useState([
+    { roaster: "Barrett's", roastType: 'Light', beanStatus: 'Whole' }
+  ]);
+
   return (
     <div className="subscription-container">
       <div className="inner-sub-container">
-        <RoastList roastItems={roastItems} tastersTrio={true} />
+        <RoastList roastItems={roastItems} />
       </div>
     </div>
   );

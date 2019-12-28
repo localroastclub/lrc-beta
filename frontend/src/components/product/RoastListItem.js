@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     width: '80vw',
     height: '22vh',
-    maxHeight: '90vh',
+    maxHeight: '100vh',
     marginLeft: 0,
     marginRight: 0,
     margin: 10,
@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
       alignItems: 'center'
     },
     [theme.breakpoints.down(600)]: {
-      height: '90vh',
+      height: '95vh',
       width: '70vw',
       flexDirection: 'column',
       alignItems: 'center'
@@ -40,14 +40,17 @@ const useStyles = makeStyles(theme => ({
     width: '20vw',
     flexDirection: 'column',
     [theme.breakpoints.down(940)]: {
-      width: '50vw',
+      width: '80vw',
       flexDirection: 'column',
       alignItems: 'center'
     }
   },
   content: {
     display: 'flex',
-    justifyItems: 'left'
+    justifyItems: 'left',
+    [theme.breakpoints.down(940)]: {
+      margin: 3
+    }
   },
   image: {
     margin: 10,
@@ -62,7 +65,10 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     fontFamily: 'Lato',
-    fontSize: '2vh'
+    fontSize: '2vh',
+    [theme.breakpoints.down(940)]: {
+      fontSize: '3vh'
+    }
   },
   actions: {
     flexGrow: 2,

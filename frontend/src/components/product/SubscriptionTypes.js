@@ -26,12 +26,19 @@ const options = [
   }
 ];
 
-const SubscriptionTypes = () => {
+const SubscriptionTypes = props => {
   return (
     <div className="subscription-container">
       <div className="inner-sub-container">
         {_.map(options, (item, key) => {
-          return <SubscriptionCard item={item} key={key} />;
+          return (
+            <SubscriptionCard
+              item={item}
+              key={key}
+              selection={props.selection}
+              handleSelection={props.handleSelection}
+            />
+          );
         })}
       </div>
     </div>

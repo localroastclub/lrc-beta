@@ -24,18 +24,33 @@ const SubscriptionCard = props => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card}>
+    <Card
+      className={classes.card}
+      name={props.item.name}
+      onClick={props.handleSelection}
+    >
       <CardActionArea>
         <CardMedia
           className={classes.media}
+          name={props.item.name}
           image="/static/images/cards/contemplative-reptile.jpg"
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="h2"
+            name={props.item.name}
+          >
             {props.item.name}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+            name={props.item.name}
+          >
             {props.item.description}
           </Typography>
         </CardContent>
