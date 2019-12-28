@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-// import QuantityMenu from './QuantityMenu';
+import Menu from './Menu';
 import '../userdashboard/itemcard.css';
 
 const useStyles = makeStyles(theme => ({
@@ -15,17 +15,20 @@ const useStyles = makeStyles(theme => ({
     background: '#e6b5da',
     display: 'flex',
     width: '80vw',
-    height: '20vh',
+    height: '22vh',
+    maxHeight: '90vh',
     marginLeft: 0,
     marginRight: 0,
     margin: 10,
     font: 'Lato',
-    [theme.breakpoints.down(665)]: {
-      height: '30vh',
-      width: '70vw'
+    [theme.breakpoints.down(940)]: {
+      height: '80vh',
+      width: '70vw',
+      flexDirection: 'column',
+      alignItems: 'center'
     },
-    [theme.breakpoints.down(450)]: {
-      height: '60vh',
+    [theme.breakpoints.down(600)]: {
+      height: '90vh',
       width: '70vw',
       flexDirection: 'column',
       alignItems: 'center'
@@ -33,15 +36,22 @@ const useStyles = makeStyles(theme => ({
   },
   details: {
     display: 'flex',
-    flexDirection: 'column'
+    // flexGrow: 1.5,
+    width: '20vw',
+    flexDirection: 'column',
+    [theme.breakpoints.down(940)]: {
+      width: '50vw',
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
   },
   content: {
-    flex: '1 0 auto',
+    display: 'flex',
     justifyItems: 'left'
   },
   image: {
-    // paddingLeft: '1%',
     margin: 10,
+    marginRight: 20,
     width: 151,
     height: 151
   },
@@ -56,6 +66,8 @@ const useStyles = makeStyles(theme => ({
   },
   actions: {
     flexGrow: 2,
+    // flexGrow: 1,
+    flexFlow: 'wrap',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'flex-end'
@@ -73,50 +85,102 @@ const roasterList = [
   'Trianon',
   "Mozart's"
 ];
-const roast = ['Light', 'Medium', 'Dark', 'Espresso', 'Decaf'];
-const beanStatus = ['Whole', 'Ground'];
+const roastList = ['Light', 'Medium', 'Dark', 'Espresso', 'Decaf'];
+const beanStatusList = ['Whole', 'Ground'];
+const originList = ['Single', 'Blend'];
+const bagSizeList = ['5 lb', '12 oz', '4 oz'];
 
 const RoastListItem = props => {
   const classes = useStyles();
   const alt = `${props.item.roaster} ${props.item.roastType} roast ${props.item.beanStatus} bean`;
+  const customSelection = props.customSelection;
+  const tastersTrio = props.tastersTrio;
+
+  const [value, setValue] = React.useState({
+    roaster: '',
+    roast: '',
+    bean: '',
+    origin: '',
+    size: tastersTrio ? '4 oz' : ''
+  });
+
+  const handleChange = event => {
+    const property = event.target.name;
+    setValue({ ...value, [property]: event.target.value });
+  };
+
   return (
-    <Card className={classes.card}>
-      <CardMedia
-        className={classes.image}
-        component="img"
-        alt={alt}
-        height="140"
-        // image={props.item.imageUrl}
-        // title={props.item.roaster}
-      />
-      <div className={classes.details}>
-        <CardContent className={classes.content}>
-          <Typography
-            gutterBottom
-            variant="h4"
-            component="h4"
-            className={classes.root}
-          >
-            {props.item.roaster}
-          </Typography>
-          <div className={classes.text}>
-            <p>Roast Type: {props.item.roastType}</p>
-            <p>Beans: {props.item.beanStatus}</p>
-            <p>Origin: {props.item.origin}</p>
-            <p>Bag Size: 4 oz</p>
-          </div>
-        </CardContent>
-      </div>
-      <CardActions className={classes.actions}>
-        <Button className={classes.button} size="medium" color="inherit">
-          Remove
-        </Button>
-        <Button className={classes.button} size="medium" color="inherit">
-          Update Item
-        </Button>
-        {/* <QuantityMenu /> */}
-      </CardActions>
-    </Card>
+    <div>
+      <h3>{`Option ${props.option}:`}</h3>
+      <Card className={classes.card}>
+        {/* <Typography
+          gutterBottom
+          variant="h4"
+          component="h4"
+          className={classes.root}
+        >
+          {`Option ${props.option}`}
+        </Typography> */}
+        <CardMedia
+          className={classes.image}
+          component="img"
+          alt={alt}
+          height="140"
+          // image={props.item.imageUrl}
+          // title={props.item.roaster}
+        />
+        <div className={classes.details}>
+          <CardContent className={classes.content}>
+            <div className={classes.text}>
+              <p>Roaster: {value.roaster}</p>
+              <p>Roast Type: {value.roast}</p>
+              <p>Beans: {value.bean}</p>
+              <p>Origin: {value.origin}</p>
+              <p>Bag Size: {value.size}</p>
+            </div>
+          </CardContent>
+        </div>
+        <CardActions className={classes.actions}>
+          <Menu
+            value={value.roaster}
+            handleChange={handleChange}
+            name={'roaster'}
+            list={roasterList}
+            listName={'Roaster'}
+          />
+          <Menu
+            value={value.roast}
+            handleChange={handleChange}
+            name={'roast'}
+            list={roastList}
+            listName={'Roast'}
+          />
+          <Menu
+            value={value.bean}
+            handleChange={handleChange}
+            name={'bean'}
+            list={beanStatusList}
+            listName={'Bean Status'}
+          />
+          <Menu
+            value={value.origin}
+            handleChange={handleChange}
+            name={'origin'}
+            list={originList}
+            listName={'Origin'}
+          />
+          {customSelection ? (
+            <Menu
+              value={value.size}
+              handleChange={handleChange}
+              name={'size'}
+              list={bagSizeList}
+              listName={'Bag Size'}
+            />
+          ) : null}
+        </CardActions>
+      </Card>
+    </div>
   );
 };
 
