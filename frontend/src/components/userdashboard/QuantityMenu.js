@@ -28,7 +28,7 @@ const QuantityMenu = () => {
   return (
     <>
       <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label">Qty:</InputLabel>
+        <InputLabel id="quantity-selection">Qty:</InputLabel>
         <Select
           labelId="select-quantity"
           id="select-quantity"

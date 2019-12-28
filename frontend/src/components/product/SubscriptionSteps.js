@@ -113,9 +113,9 @@ const SubscriptionSteps = () => {
           </div>
         ) : (
           <div>
-            <Typography className={classes.instructions}>
+            <div className={classes.instructions}>
               {getStepContent(activeStep)}
-            </Typography>
+            </div>
             <div className={classes.buttons}>
               <Button
                 disabled={activeStep === 0}

@@ -20,7 +20,7 @@ const TastersTrio = () => {
   return (
     <div className="subscription-container">
       <div className="inner-sub-container">
-        <RoastList roastItems={roastItems} />
+        <RoastList roastItems={roastItems} tastersTrio={true} />
       </div>
     </div>
   );
