@@ -16,7 +16,7 @@ const ChooseYourAdventure = () => {
   return (
     <div className="subscription-container">
       <div className="inner-sub-container">
-        <RoastList roastItems={roastItems} />
+        <RoastList roastItems={roastItems} customSelection={true} />
       </div>
     </div>
   );

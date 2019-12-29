@@ -14,15 +14,16 @@ const useStyles = makeStyles(theme => ({
   card: {
     background: '#e6b5da',
     display: 'flex',
+    justifyContent: 'space-between',
     width: '80vw',
-    height: '22vh',
+    // height: '22vh',
     maxHeight: '100vh',
     marginLeft: 0,
     marginRight: 0,
     margin: 10,
     font: 'Lato',
-    [theme.breakpoints.down(940)]: {
-      height: '80vh',
+    [theme.breakpoints.down(840)]: {
+      // height: '80vh',
       width: '70vw',
       flexDirection: 'column',
       alignItems: 'center'
@@ -36,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   },
   details: {
     display: 'flex',
-    // flexGrow: 1.5,
+    flexGrow: 1.5,
     width: '20vw',
     flexDirection: 'column',
     [theme.breakpoints.down(940)]: {
@@ -71,12 +72,25 @@ const useStyles = makeStyles(theme => ({
     }
   },
   actions: {
-    flexGrow: 2,
+    // flexGrow: 2,
     // flexGrow: 1,
     flexFlow: 'wrap',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'flex-end'
+    // flexDirection: 'column',
+    justifyContent: 'flex-end',
+    // alignItems: 'flex-end'
+    [theme.breakpoints.down(940)]: {
+      // height: '80vh',
+      // width: '70vw',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    [theme.breakpoints.down(600)]: {
+      // height: '95vh',
+      // width: '70vw',
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
   },
   button: {
     fontFamily: 'Lato'
