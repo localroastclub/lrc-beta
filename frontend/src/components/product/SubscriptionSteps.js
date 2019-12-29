@@ -93,11 +93,16 @@ const SubscriptionSteps = () => {
     setActiveStep(0);
   };
 
-  const [subscriptionType, setSubscriptionType] = React.useState('');
+  const subscriptionChoice = localStorage.getItem('subscriptionChoice');
+  const [subscriptionType, setSubscriptionType] = React.useState(
+    subscriptionChoice || ''
+  );
 
   const handleSubscriptionType = event => {
     console.log('what is name?', event.target.getAttribute('name'));
-    setSubscriptionType(event.target.getAttribute('name'));
+    const subType = event.target.getAttribute('name');
+    setSubscriptionType(subType);
+    localStorage.setItem('subscriptionChoice', subType);
     handleNext();
   };
 
