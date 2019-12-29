@@ -16,14 +16,12 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'space-between',
     width: '80vw',
-    // height: '22vh',
     maxHeight: '100vh',
     marginLeft: 0,
     marginRight: 0,
     margin: 10,
     font: 'Lato',
     [theme.breakpoints.down(840)]: {
-      // height: '80vh',
       width: '70vw',
       flexDirection: 'column',
       alignItems: 'center'
@@ -68,26 +66,18 @@ const useStyles = makeStyles(theme => ({
     fontFamily: 'Lato',
     fontSize: '2vh',
     [theme.breakpoints.down(940)]: {
-      fontSize: '3vh'
+      fontSize: '2.5vh'
     }
   },
   actions: {
-    // flexGrow: 2,
-    // flexGrow: 1,
     flexFlow: 'wrap',
-    // flexDirection: 'column',
     justifyContent: 'flex-end',
-    // alignItems: 'flex-end'
     [theme.breakpoints.down(940)]: {
-      // height: '80vh',
-      // width: '70vw',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center'
     },
     [theme.breakpoints.down(600)]: {
-      // height: '95vh',
-      // width: '70vw',
       flexDirection: 'column',
       alignItems: 'center'
     }
@@ -121,7 +111,7 @@ const RoastListItem = props => {
     roast: '',
     bean: '',
     origin: '',
-    size: tastersTrio ? '4 oz' : ''
+    size: tastersTrio ? '4 oz' : props.option === 1 ? '12 oz' : ''
   });
 
   const handleChange = event => {
@@ -189,7 +179,7 @@ const RoastListItem = props => {
             list={originList}
             listName={'Origin'}
           />
-          {customSelection ? (
+          {customSelection && props.option > 1 ? (
             <Menu
               value={value.size}
               handleChange={handleChange}
