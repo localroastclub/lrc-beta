@@ -98,6 +98,7 @@ const SubscriptionSteps = () => {
   const handleSubscriptionType = event => {
     console.log('what is name?', event.target.getAttribute('name'));
     setSubscriptionType(event.target.getAttribute('name'));
+    handleNext();
   };
 
   return (
