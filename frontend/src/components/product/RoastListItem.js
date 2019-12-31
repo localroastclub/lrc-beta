@@ -64,7 +64,7 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     fontFamily: 'Lato',
-    fontSize: '2vh',
+    fontSize: '2.5vh',
     [theme.breakpoints.down(940)]: {
       fontSize: '2.5vh'
     }
@@ -72,14 +72,18 @@ const useStyles = makeStyles(theme => ({
   actions: {
     flexFlow: 'wrap',
     justifyContent: 'flex-end',
+    width: '35vw',
     [theme.breakpoints.down(940)]: {
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      width: '30vw'
     },
     [theme.breakpoints.down(600)]: {
       flexDirection: 'column',
-      alignItems: 'center'
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '40vw'
     }
   },
   button: {
