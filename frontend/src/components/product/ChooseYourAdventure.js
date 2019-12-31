@@ -1,4 +1,5 @@
 import React from 'react';
+import AddCircle from '@material-ui/icons/AddCircle';
 import RoastList from './RoastList';
 import './subscription.css';
 
@@ -13,10 +14,20 @@ const ChooseYourAdventure = () => {
     { roaster: "Barrett's", roastType: 'Light', beanStatus: 'Whole' }
   ]);
 
+  const addItem = () => {
+    setRoastItems([
+      ...roastItems,
+      { roaster: '', roastType: '', beanStatus: 'Whole' }
+    ]);
+  };
+
   return (
     <div className="subscription-container">
       <div className="inner-sub-container">
         <RoastList roastItems={roastItems} customSelection={true} />
+        <div className="plus">
+          <AddCircle id="plus" style={{ fontSize: 40 }} onClick={addItem} />
+        </div>
       </div>
     </div>
   );
