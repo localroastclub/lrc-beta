@@ -12,8 +12,9 @@ import '../userdashboard/itemcard.css';
 
 const useStyles = makeStyles(theme => ({
   card: {
-    background: '#e6b5da',
+    background: '#fffcfe',
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'space-between',
     width: '80vw',
     maxHeight: '100vh',
@@ -33,6 +34,23 @@ const useStyles = makeStyles(theme => ({
       alignItems: 'center'
     }
   },
+  headerSpace: {
+    display: 'flex',
+    width: '100%',
+    background: '#9bc5ea',
+    // border: '2px solid grey',
+    boxShadow: '2px 2px 4px rgba(0, 0, 0, .5)'
+  },
+  header: {
+    display: 'flex',
+    width: '100%'
+  },
+  content: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%'
+  },
   details: {
     display: 'flex',
     flexGrow: 1.5,
@@ -44,7 +62,7 @@ const useStyles = makeStyles(theme => ({
       alignItems: 'center'
     }
   },
-  content: {
+  paragraph: {
     display: 'flex',
     justifyItems: 'left',
     [theme.breakpoints.down(940)]: {
@@ -70,8 +88,10 @@ const useStyles = makeStyles(theme => ({
     }
   },
   actions: {
-    flexFlow: 'wrap',
+    display: 'flex',
     justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    flexFlow: 'wrap',
     width: '35vw',
     [theme.breakpoints.down(940)]: {
       flexDirection: 'column',
@@ -125,8 +145,19 @@ const RoastListItem = props => {
 
   return (
     <div>
-      <h3>{`Option ${props.option}:`}</h3>
+      {/* <h3>{`Option ${props.option}:`}</h3> */}
       <Card className={classes.card}>
+        <div className={classes.headerSpace}>
+          <CardHeader
+            className={classes.header}
+            title={`Option ${props.option}:`}
+          />
+          {/* <div> */}
+          <Button className={classes.button} size="medium" color="inherit">
+            X
+          </Button>
+          {/* </div> */}
+        </div>
         {/* <Typography
           gutterBottom
           variant="h4"
@@ -135,16 +166,17 @@ const RoastListItem = props => {
         >
           {`Option ${props.option}`}
         </Typography> */}
-        <CardMedia
-          className={classes.image}
-          component="img"
-          alt={alt}
-          height="140"
-          // image={props.item.imageUrl}
-          // title={props.item.roaster}
-        />
-        <div className={classes.details}>
-          <CardContent className={classes.content}>
+        <div className={classes.content}>
+          <CardMedia
+            className={classes.image}
+            component="img"
+            alt={alt}
+            height="140"
+            // image={props.item.imageUrl}
+            // title={props.item.roaster}
+          />
+          {/* <div className={classes.details}> */}
+          <CardContent className={classes.paragraph}>
             <div className={classes.text}>
               <p>Roaster: {value.roaster}</p>
               <p>Roast Type: {value.roast}</p>
@@ -153,46 +185,49 @@ const RoastListItem = props => {
               <p>Bag Size: {value.size}</p>
             </div>
           </CardContent>
-        </div>
-        <CardActions className={classes.actions}>
-          <Menu
-            value={value.roaster}
-            handleChange={handleChange}
-            name={'roaster'}
-            list={roasterList}
-            listName={'Roaster'}
-          />
-          <Menu
-            value={value.roast}
-            handleChange={handleChange}
-            name={'roast'}
-            list={roastList}
-            listName={'Roast'}
-          />
-          <Menu
-            value={value.bean}
-            handleChange={handleChange}
-            name={'bean'}
-            list={beanStatusList}
-            listName={'Bean Status'}
-          />
-          <Menu
-            value={value.origin}
-            handleChange={handleChange}
-            name={'origin'}
-            list={originList}
-            listName={'Origin'}
-          />
-          {customSelection && props.option > 1 ? (
+          {/* </div> */}
+          <CardActions className={classes.actions}>
+            {/* <div className={classes.selections}> */}
             <Menu
-              value={value.size}
+              value={value.roaster}
               handleChange={handleChange}
-              name={'size'}
-              list={bagSizeList}
-              listName={'Bag Size'}
+              name={'roaster'}
+              list={roasterList}
+              listName={'Roaster'}
             />
-          ) : null}
-        </CardActions>
+            <Menu
+              value={value.roast}
+              handleChange={handleChange}
+              name={'roast'}
+              list={roastList}
+              listName={'Roast'}
+            />
+            <Menu
+              value={value.bean}
+              handleChange={handleChange}
+              name={'bean'}
+              list={beanStatusList}
+              listName={'Bean Status'}
+            />
+            <Menu
+              value={value.origin}
+              handleChange={handleChange}
+              name={'origin'}
+              list={originList}
+              listName={'Origin'}
+            />
+            {customSelection && props.option > 1 ? (
+              <Menu
+                value={value.size}
+                handleChange={handleChange}
+                name={'size'}
+                list={bagSizeList}
+                listName={'Bag Size'}
+              />
+            ) : null}
+            {/* </div> */}
+          </CardActions>
+        </div>
       </Card>
     </div>
   );
