@@ -12,7 +12,7 @@ import './itemcard.css';
 
 const useStyles = makeStyles(theme => ({
   card: {
-    background: '#e6b5da',
+    background: '#fffcfe',
     display: 'flex',
     width: '80vw',
     height: '20vh',
