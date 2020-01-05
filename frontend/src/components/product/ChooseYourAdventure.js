@@ -28,9 +28,14 @@ const ChooseYourAdventure = () => {
   };
 
   useEffect(() => {
-    console.log('setting localStorage');
-    localStorage.setItem('orderChoice', JSON.stringify(roastItems));
-  }, [roastItems]);
+    if (localStorage.getItem('orderChoice')) {
+      const orderChoice = JSON.parse(localStorage.getItem('orderChoice'));
+      setRoastItems(orderChoice);
+    } else {
+      console.log('setting localStorage');
+      localStorage.setItem('orderChoice', JSON.stringify(roastItems));
+    }
+  }, []);
 
   return (
     <div className="subscription-container">

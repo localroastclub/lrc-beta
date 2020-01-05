@@ -18,9 +18,14 @@ const TastersTrio = () => {
   ]);
 
   useEffect(() => {
-    console.log('setting localStorage');
-    localStorage.setItem('orderTrio', JSON.stringify(roastItems));
-  }, [roastItems]);
+    if (localStorage.getItem('orderTrio')) {
+      const orderChoice = JSON.parse(localStorage.getItem('orderTrio'));
+      setRoastItems(orderChoice);
+    } else {
+      console.log('setting localStorage');
+      localStorage.setItem('orderTrio', JSON.stringify(roastItems));
+    }
+  }, []);
 
   return (
     <div className="subscription-container">
