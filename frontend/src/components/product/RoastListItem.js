@@ -107,9 +107,17 @@ const roasterList = [
   'Casa Brasil',
   'Greater Goods',
   'Trianon',
-  "Mozart's"
+  "Mozart's",
+  'Club Choice'
 ];
-const roastList = ['Light', 'Medium', 'Dark', 'Espresso', 'Decaf'];
+const roastList = [
+  'Light',
+  'Medium',
+  'Dark',
+  'Espresso',
+  'Decaf',
+  'Club Choice'
+];
 const beanStatusList = ['Whole', 'Ground'];
 const originList = ['Single', 'Blend'];
 const bagSizeList = ['5 lb', '12 oz', '4 oz'];
