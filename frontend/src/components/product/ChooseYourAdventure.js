@@ -30,7 +30,6 @@ const ChooseYourAdventure = () => {
 
   const updateStorage = () => {
     localStorage.removeItem('orderChoice');
-
     localStorage.setItem('orderChoice', JSON.stringify(roastItems));
   };
 
