@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 // import CardActionArea from '@material-ui/core/CardActionArea';
@@ -51,17 +51,6 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%'
-  },
-  details: {
-    display: 'flex',
-    flexGrow: 1.5,
-    width: '20vw',
-    flexDirection: 'column',
-    [theme.breakpoints.down(940)]: {
-      width: '80vw',
-      flexDirection: 'column',
-      alignItems: 'center'
-    }
   },
   paragraph: {
     display: 'flex',
@@ -201,7 +190,6 @@ const RoastListItem = props => {
             // image={props.item.imageUrl}
             // title={props.item.roaster}
           />
-          {/* <div className={classes.details}> */}
           <CardContent className={classes.paragraph}>
             <div className={classes.text}>
               <p>Roaster: {value.roaster}</p>
@@ -211,9 +199,7 @@ const RoastListItem = props => {
               <p>Bag Size: {value.size}</p>
             </div>
           </CardContent>
-          {/* </div> */}
           <CardActions className={classes.actions}>
-            {/* <div className={classes.selections}> */}
             <Menu
               value={value.roaster}
               handleChange={handleChange}
@@ -242,7 +228,7 @@ const RoastListItem = props => {
               list={originList}
               listName={'Origin'}
             />
-            {customSelection && props.option > 1 ? (
+            {customSelection && props.index > 1 ? (
               <Menu
                 value={value.size}
                 handleChange={handleChange}
@@ -251,7 +237,6 @@ const RoastListItem = props => {
                 listName={'Bag Size'}
               />
             ) : null}
-            {/* </div> */}
           </CardActions>
         </div>
       </Card>
