@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import SubscriptionTypes from './SubscriptionTypes';
 import TastersTrio from './TastersTrio';
 import ChooseYourAdventure from './ChooseYourAdventure';
+import ConfirmOrder from './ConfirmOrder';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -71,7 +72,7 @@ function getStepContent(stepIndex, subscriptionType, handleSubscriptionType) {
     // choose your own adventure with one option required, and a + icon
     // if coffee of the month, skip step 2 (case 1)
     case 2:
-      return 'This is the bit I really care about!';
+      return <ConfirmOrder />;
     default:
       return 'Unknown stepIndex';
   }
@@ -100,7 +101,6 @@ const SubscriptionSteps = () => {
   );
 
   const handleSubscriptionType = event => {
-    console.log('what is name?', event.target.getAttribute('name'));
     const subType = event.target.getAttribute('name');
     setSubscriptionType(subType);
     localStorage.setItem('subscriptionChoice', subType);
