@@ -148,13 +148,10 @@ const RoastListItem = props => {
     let storageItems = tastersTrio
       ? localStorage.getItem('orderTrio')
       : localStorage.getItem('orderChoice');
-    console.log('storageItems', storageItems);
 
     storageItems = JSON.parse(storageItems);
     storageItems.splice(props.index - 1, 1, value);
 
-    console.log('storageItems after splice', storageItems);
-    // storageItems[props.index - 1] = value;
     tastersTrio
       ? localStorage.removeItem('orderTrio')
       : localStorage.removeItem('orderChoice');
