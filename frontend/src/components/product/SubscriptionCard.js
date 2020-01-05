@@ -29,14 +29,14 @@ const SubscriptionCard = props => {
       name={props.item.name}
       onClick={props.handleSelection}
     >
-      <CardActionArea>
+      <CardActionArea name={props.item.name}>
         <CardMedia
           className={classes.media}
           name={props.item.name}
           image="/static/images/cards/contemplative-reptile.jpg"
           title="Contemplative Reptile"
         />
-        <CardContent>
+        <CardContent name={props.item.name}>
           <Typography
             gutterBottom
             variant="h5"

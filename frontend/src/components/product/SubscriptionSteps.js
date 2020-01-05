@@ -62,13 +62,14 @@ function getStepContent(stepIndex, subscriptionType, handleSubscriptionType) {
     case 1:
       if (subscriptionType === 'Tasters trio') {
         return <TastersTrio />;
+      } else {
+        return <ChooseYourAdventure />;
       }
-      // select roasters, take logic from whatever they click on subscription types
-      // we'll probably have to pass state down to subscription types to know which one they've clicked
-      // then render taster's trio with three options
-      // choose your own adventure with one option required, and a + icon
-      // if coffee of the month, skip step 2 (case 1)
-      return <ChooseYourAdventure />;
+    // select roasters, take logic from whatever they click on subscription types
+    // we'll probably have to pass state down to subscription types to know which one they've clicked
+    // then render taster's trio with three options
+    // choose your own adventure with one option required, and a + icon
+    // if coffee of the month, skip step 2 (case 1)
     case 2:
       return 'This is the bit I really care about!';
     default:

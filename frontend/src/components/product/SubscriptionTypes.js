@@ -37,6 +37,7 @@ const SubscriptionTypes = props => {
               key={key}
               selection={props.selection}
               handleSelection={props.handleSelection}
+              name={item.name}
             />
           );
         })}
