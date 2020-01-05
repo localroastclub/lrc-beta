@@ -132,41 +132,66 @@ const RoastListItem = props => {
   const tastersTrio = props.tastersTrio;
 
   const [value, setValue] = React.useState({
-    roaster: '',
-    roast: '',
-    bean: '',
-    origin: '',
-    size: tastersTrio ? '4 oz' : props.option === 1 ? '12 oz' : ''
+    roaster: props.item.roaster,
+    roast: props.item.roast,
+    bean: props.item.bean,
+    origin: props.item.origin,
+    size: props.item.size
   });
 
   const handleChange = event => {
     const property = event.target.name;
     setValue({ ...value, [property]: event.target.value });
+    props.item[property] = event.target.value;
+    console.log('what is item', props.item);
+    updateStorage();
   };
+
+  const updateStorage = () => {
+    let storageItems = tastersTrio
+      ? localStorage.getItem('orderTrio')
+      : localStorage.getItem('orderChoice');
+    console.log('storageItems', storageItems);
+
+    storageItems = JSON.parse(storageItems);
+    storageItems.splice(props.index - 1, 1, value);
+
+    console.log('storageItems after splice', storageItems);
+    // storageItems[props.index - 1] = value;
+    tastersTrio
+      ? localStorage.removeItem('orderTrio')
+      : localStorage.removeItem('orderChoice');
+
+    tastersTrio
+      ? localStorage.setItem('orderTrio', JSON.stringify(storageItems))
+      : localStorage.setItem('orderChoice', JSON.stringify(storageItems));
+  };
+
+  useEffect(() => {
+    setValue(props.item);
+  }, [value, props.item]);
 
   return (
     <div>
-      {/* <h3>{`Option ${props.option}:`}</h3> */}
       <Card className={classes.card}>
         <div className={classes.headerSpace}>
           <CardHeader
             className={classes.header}
-            title={`Option ${props.option}:`}
+            title={`Option ${props.index}:`}
           />
-          {/* <div> */}
-          <Button className={classes.button} size="medium" color="inherit">
-            X
-          </Button>
-          {/* </div> */}
+          {customSelection ? (
+            <Button
+              className={classes.button}
+              size="medium"
+              color="inherit"
+              onClick={() => {
+                props.removeItem(props.index - 1);
+              }}
+            >
+              X
+            </Button>
+          ) : null}
         </div>
-        {/* <Typography
-          gutterBottom
-          variant="h4"
-          component="h4"
-          className={classes.root}
-        >
-          {`Option ${props.option}`}
-        </Typography> */}
         <div className={classes.content}>
           <CardMedia
             className={classes.image}
