@@ -13,8 +13,8 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down(390)]: {
       height: '8vh',
       width: '40vw',
-      minWidth: 80,
-      maxWidth: 100
+      minWidth: 80
+      // maxWidth: 100
       // flexDirection: 'column',
       // alignItems: 'center'
     }

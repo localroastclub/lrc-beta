@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     width: '80vw',
-    maxHeight: '100vh',
+    maxHeight: '130vh',
     marginLeft: 0,
     marginRight: 0,
     margin: 10,
@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
       alignItems: 'center'
     },
     [theme.breakpoints.down(600)]: {
-      height: '95vh',
+      // height: '115vh',
       width: '70vw',
       flexDirection: 'column',
       alignItems: 'center'
@@ -50,7 +50,18 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '100%'
+    width: '100%',
+    [theme.breakpoints.down(840)]: {
+      width: '60vw',
+      flexDirection: 'column',
+      alignItems: 'center'
+    },
+    [theme.breakpoints.down(600)]: {
+      minHeight: '105vh',
+      width: '70vw',
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
   },
   paragraph: {
     display: 'flex',
@@ -83,17 +94,17 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'flex-end',
     flexFlow: 'wrap',
     width: '35vw',
-    [theme.breakpoints.down(940)]: {
+    [theme.breakpoints.down(840)]: {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      width: '30vw'
+      width: '35vw'
     },
     [theme.breakpoints.down(600)]: {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      width: '40vw'
+      width: '50vw'
     }
   },
   button: {
