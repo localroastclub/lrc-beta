@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import RoastList from './RoastList';
 import './subscription.css';
 
@@ -12,10 +12,15 @@ import './subscription.css';
 
 const TastersTrio = () => {
   const [roastItems, setRoastItems] = React.useState([
-    { roaster: "Barrett's", roastType: 'Light', beanStatus: 'Whole' },
-    { roaster: "Mozart's", roastType: 'Dark', beanStatus: 'Whole' },
-    { roaster: 'Little City', roastType: 'Medium', beanStatus: 'Whole' }
+    { roaster: '', roast: '', bean: '', origin: '', size: '4 oz' },
+    { roaster: '', roast: '', bean: '', origin: '', size: '4 oz' },
+    { roaster: '', roast: '', bean: '', origin: '', size: '4 oz' }
   ]);
+
+  useEffect(() => {
+    console.log('setting localStorage');
+    localStorage.setItem('orderTrio', JSON.stringify(roastItems));
+  }, [roastItems]);
 
   return (
     <div className="subscription-container">
