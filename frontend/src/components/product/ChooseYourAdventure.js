@@ -25,6 +25,13 @@ const ChooseYourAdventure = () => {
     console.log('');
     roastItems.splice(index, 1);
     setRoastItems([...roastItems]);
+    updateStorage();
+  };
+
+  const updateStorage = () => {
+    localStorage.removeItem('orderChoice');
+
+    localStorage.setItem('orderChoice', JSON.stringify(roastItems));
   };
 
   useEffect(() => {
