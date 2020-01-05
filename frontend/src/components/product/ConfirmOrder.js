@@ -3,7 +3,6 @@ import OrderList from './OrderList';
 import './subscription.css';
 
 const ConfirmOrder = () => {
-  // grab the options from localStorage
   const [orderItems, setOrderItems] = React.useState([]);
 
   useEffect(() => {
@@ -14,7 +13,7 @@ const ConfirmOrder = () => {
     } else if (subscriptionChoice === 'Choose your own adventure') {
       items = JSON.parse(localStorage.getItem('orderChoice'));
     } else {
-      // coffee of the month
+      items = JSON.parse(localStorage.getItem('orderCoffeeOfMonth'));
     }
     setOrderItems(items);
   }, []);

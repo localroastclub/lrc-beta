@@ -50,7 +50,12 @@ function getSteps() {
   ];
 }
 
-function getStepContent(stepIndex, subscriptionType, handleSubscriptionType) {
+function getStepContent(
+  stepIndex,
+  subscriptionType,
+  handleSubscriptionType,
+  handleNext
+) {
   switch (stepIndex) {
     case 0:
       // choose your subscription type
@@ -63,8 +68,20 @@ function getStepContent(stepIndex, subscriptionType, handleSubscriptionType) {
     case 1:
       if (subscriptionType === 'Tasters trio') {
         return <TastersTrio />;
-      } else {
+      } else if (subscriptionType === 'Choose your own adventure') {
         return <ChooseYourAdventure />;
+      } else {
+        const roastItems = [
+          {
+            roaster: 'Coffee of the month',
+            roast: 'Club Choice',
+            bean: 'Whole',
+            origin: '',
+            size: '12 oz'
+          }
+        ];
+        localStorage.setItem('orderCoffeeOfMonth', JSON.stringify(roastItems));
+        handleNext();
       }
     // select roasters, take logic from whatever they click on subscription types
     // we'll probably have to pass state down to subscription types to know which one they've clicked
@@ -89,6 +106,9 @@ const SubscriptionSteps = () => {
 
   const handleBack = () => {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
+    if (localStorage.getItem('subscriptionChoice') === 'Coffee of the month') {
+      setActiveStep(prevActiveStep => activeStep - 2);
+    }
   };
 
   const handleReset = () => {
@@ -140,7 +160,8 @@ const SubscriptionSteps = () => {
               {getStepContent(
                 activeStep,
                 subscriptionType,
-                handleSubscriptionType
+                handleSubscriptionType,
+                handleNext
               )}
             </div>
             <div className={classes.buttons}>
