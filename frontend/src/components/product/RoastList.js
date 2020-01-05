@@ -9,10 +9,11 @@ const RoastList = props => {
         return (
           <RoastListItem
             item={item}
-            option={key + 1}
+            index={key + 1}
             key={key}
             customSelection={props.customSelection}
             tastersTrio={props.tastersTrio}
+            removeItem={props.removeItem}
           />
         );
       })}

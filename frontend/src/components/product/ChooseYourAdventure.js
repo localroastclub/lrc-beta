@@ -11,20 +11,35 @@ import './subscription.css';
 
 const ChooseYourAdventure = () => {
   const [roastItems, setRoastItems] = React.useState([
-    { roaster: "Barrett's", roastType: 'Light', beanStatus: 'Whole' }
+    { roaster: '', roast: '', bean: '', origin: '', size: '12 oz' }
   ]);
 
   const addItem = () => {
     setRoastItems([
       ...roastItems,
-      { roaster: '', roastType: '', beanStatus: 'Whole' }
+      { roaster: '', roast: '', bean: '', origin: '', size: '' }
     ]);
   };
+
+  const removeItem = index => {
+    console.log('');
+    roastItems.splice(index, 1);
+    setRoastItems([...roastItems]);
+  };
+
+  useEffect(() => {
+    console.log('setting localStorage');
+    localStorage.setItem('orderChoice', JSON.stringify(roastItems));
+  }, [roastItems]);
 
   return (
     <div className="subscription-container">
       <div className="inner-sub-container">
-        <RoastList roastItems={roastItems} customSelection={true} />
+        <RoastList
+          roastItems={roastItems}
+          customSelection={true}
+          removeItem={removeItem}
+        />
         <div className="plus">
           <AddCircle id="plus" style={{ fontSize: 40 }} onClick={addItem} />
         </div>
