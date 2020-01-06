@@ -4,7 +4,7 @@ const LargeCard = props => {
   const rowName = props.rowName === 'subheader' ? 'card-copy' : 'how-cards';
   return (
     <div className={rowName}>
-      {props.item.image}
+      <img src={props.item.image} alt={props.item.alt} className="image-box" />
       <h3>{props.item.copy}</h3>
     </div>
   );

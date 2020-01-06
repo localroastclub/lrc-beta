@@ -7,6 +7,10 @@ import Explore from '@material-ui/icons/Explore';
 import Commute from '@material-ui/icons/Commute';
 import StoreMallDirectory from '@material-ui/icons/StoreMallDirectory';
 import LargeCard from './LargeCard';
+import MediaCard from './MediaCard';
+import coffeeSelection from '../../images/coffee-selection.jpg';
+import traffic from '../../images/traffic.jpeg';
+import coffee from '../../images/coffee.jpg';
 
 const StyledCard = withStyles({
   root: {
@@ -57,9 +61,19 @@ const BusinessIcon = withStyles({
 })(StoreMallDirectory);
 
 const copyList = [
-  { copy: 'Expand your palette and discover new roasts each month' },
-  { copy: 'Free up time from traffic and crowded grocery stores' },
   {
+    image: coffeeSelection,
+    alt: 'Coffee Selection',
+    copy: 'Expand your palette and discover new roasts each month'
+  },
+  {
+    image: traffic,
+    alt: 'Traffic',
+    copy: 'Free up time from traffic and crowded grocery stores'
+  },
+  {
+    image: coffee,
+    alt: 'Premium Coffee',
     copy: 'Enjoy premium flavors while supporting your local businesses'
   }
 ];
@@ -68,7 +82,7 @@ const SubHeader = () => {
   return (
     <div className="subheader">
       {_.map(copyList, (item, key) => {
-        return <LargeCard item={item} rowName={'subheader'} key={key} />;
+        return <MediaCard item={item} rowName={'subheader'} key={key} />;
       })}
     </div>
     // <StyledCard className="card-copy">

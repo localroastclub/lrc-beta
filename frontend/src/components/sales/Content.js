@@ -18,7 +18,7 @@ const Content = () => {
       <div className="content">
         {/* <div className="content-pane"> */}
         <SubHeader />
-        <CopyP1 />
+        {/* <CopyP1 /> */}
         <CopyL1 />
         <div className="button">
           <LrcButton className="order-btn" ctaText={'Join the Club'} />
