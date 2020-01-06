@@ -3,9 +3,10 @@
 }
 
 .content {
-  display: grid;
-  grid-template-columns: 12% auto 12%;
-  grid-template-rows: 2vh auto;
+  display: flex;
+  flex-direction: column;
+  /* grid-template-columns: 12% auto 12%;
+  grid-template-rows: 2vh auto; */
 }
 
 .content-pane {
@@ -40,14 +41,26 @@
 }
 
 .subheader {
+  width: 100%;
+  background-color: #9bc5ea;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-flow: wrap;
-  margin-top: 5%;
+
+  /* margin-top: 5%; */
 }
 
 .card-copy {
+  background-color: #9bc5ea;
+  /* border-radius: 15px; */
+  display: flex;
+  align-items: center;
+  /* flex-grow: 1; */
+  width: 40vh;
+  height: 40vh;
   margin: 2%;
+  /* margin-top: 2%;
+  margin-bottom: 2%; */
 }
 
 .paragraph-1 {
@@ -73,14 +86,29 @@ h2 {
   margin: 0;
 }
 
-.how-it-works {
+.how-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffed60;
   margin-top: 10%;
 }
 
-.how-cards {
+.how-it-works {
+  width: 100%;
+  background-color: #ffed60;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-flow: wrap;
+}
+
+.how-cards {
+  background-color: #ffed60;
+  display: flex;
+  align-items: center;
+  /* flex-grow: 1; */
+  width: 40vh;
+  height: 40vh;
+  margin: 2%;
 }
 
 .paragraph-2 {

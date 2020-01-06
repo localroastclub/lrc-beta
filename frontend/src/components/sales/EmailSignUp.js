@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 
 const SignUpBtn = withStyles({
   root: {
-    background: '#ffe200',
+    background: '#ffed60',
     '&:hover': {
       background: '#e0e0e0'
     },
@@ -15,7 +15,8 @@ const SignUpBtn = withStyles({
     boxShadow: '0 3px 5px 2px rgba(90, 90, 27, 0.3)',
     color: 'black',
     height: 48,
-    padding: '0 30px'
+    padding: '0 30px',
+    marginTop: '16px'
   }
 })(Button);
 

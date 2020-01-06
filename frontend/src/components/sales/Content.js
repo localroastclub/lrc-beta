@@ -16,25 +16,25 @@ const Content = () => {
     <>
       <Header />
       <div className="content">
-        <div className="content-pane">
-          <SubHeader />
-          <CopyP1 />
-          <CopyL1 />
-          <div className="button">
-            <LrcButton className="order-btn" ctaText={'Join the Club'} />
-          </div>
-          <HowItWorks />
-          <CopyP2 />
-          <div className="button">
-            <LrcButton ctaText={'Fresh Coffee'} />
-          </div>
-          <CopyL2 />
-          <ReviewLg />
-          <Reviews />
-          <div className="button bottom-btn">
-            <LrcButton className="order-btn" ctaText={'Join the Club'} />
-          </div>
+        {/* <div className="content-pane"> */}
+        <SubHeader />
+        <CopyP1 />
+        <CopyL1 />
+        <div className="button">
+          <LrcButton className="order-btn" ctaText={'Join the Club'} />
         </div>
+        <HowItWorks />
+        <CopyP2 />
+        <div className="button">
+          <LrcButton ctaText={'Fresh Coffee'} />
+        </div>
+        <CopyL2 />
+        <ReviewLg />
+        <Reviews />
+        <div className="button bottom-btn">
+          <LrcButton className="order-btn" ctaText={'Join the Club'} />
+        </div>
+        {/* </div> */}
       </div>
     </>
   );
