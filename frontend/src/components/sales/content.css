@@ -5,6 +5,7 @@
 .content {
   display: flex;
   flex-direction: column;
+  background-color: #fffcfe;
   /* grid-template-columns: 12% auto 12%;
   grid-template-rows: 2vh auto; */
 }

@@ -19,7 +19,7 @@ const CopyL1 = () => {
           <div className="col-1">
             <ul>{bull} Gourmet coffees exclusive to the Club</ul>
             <ul>{bull} Keeping it local with coffee roasted only in Austin</ul>
-            <ul>{bull} 7 craft roasters and growing</ul>
+            <ul>{bull} 7 artisan roasters and growing</ul>
             <ul>{bull} 100+ types of premium coffee</ul>
             <ul>{bull} Full 12-oz bags for variety</ul>
             <ul>{bull} 5-lb bags for large groups</ul>
