@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginButton from './LoginButton';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -10,30 +9,45 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountButton from './AccountButton';
 
-const styles = {
+const useStyles = makeStyles(theme => ({
   root: {
     background: 'black',
     height: '12vh',
     flexGrow: 1
   },
-  grow: {
-    flexGrow: 1
-  },
   menuButton: {
+    display: 'none',
     marginLeft: -12,
-    marginRight: 20
+    marginRight: 20,
+    [theme.breakpoints.down(768)]: {
+      display: 'inline'
+    }
+  },
+  grow: {
+    // flexGrow: 1
+  },
+  links: {
+    margin: '2vw',
+    flexGrow: 2
+  },
+  item: {
+    marginLeft: '1.25vw',
+    marginRight: '1.25vw',
+    [theme.breakpoints.down(768)]: {
+      display: 'none'
+    }
   },
   logo: {
     maxHeight: '12vh',
     maxWidth: '12vh',
     flexGrow: 1
   }
-};
+}));
 
 const logo = 'https://lrcimages.s3.us-east-2.amazonaws.com/lrc-color.png';
 
 function NavBar(props) {
-  const { classes } = props;
+  const classes = useStyles();
   let isAuthenticated = localStorage.getItem('isMember') === 'true';
 
   return (
@@ -52,6 +66,12 @@ function NavBar(props) {
               <img className={classes.logo} src={logo} alt="Local Roast Club" />
             </Link>
           </Typography>
+          <Typography variant="h6" color="white" className={classes.links}>
+            <span className={classes.item}>
+              <Link to="subscribe">Subscriptions</Link>
+            </span>
+            <span className={classes.item}>Shop</span>
+          </Typography>
           <AccountButton />
           {isAuthenticated ? (
             <LoginButton isAuthenticated={isAuthenticated} />
@@ -66,8 +86,4 @@ function NavBar(props) {
   );
 }
 
-NavBar.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(NavBar);
+export default NavBar;
