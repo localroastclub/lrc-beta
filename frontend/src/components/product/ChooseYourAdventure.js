@@ -22,10 +22,15 @@ const ChooseYourAdventure = () => {
   };
 
   const removeItem = index => {
-    console.log('');
-    roastItems.splice(index, 1);
-    setRoastItems([...roastItems]);
-    updateStorage();
+    if (roastItems.length > 1) {
+      console.log('removing index', index);
+      roastItems.splice(index, 1);
+      if (index === 0) {
+        roastItems[0].size = '12 oz';
+      }
+      setRoastItems([...roastItems]);
+      updateStorage();
+    }
   };
 
   const updateStorage = () => {
