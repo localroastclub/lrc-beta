@@ -67,6 +67,7 @@ const useStyles = makeStyles(theme => ({
 const ItemCard = props => {
   const classes = useStyles();
   const alt = `${props.item.roaster} ${props.item.roast} roast ${props.item.bean} bean`;
+  const subscriptionType = localStorage.getItem('subscriptionChoice');
   return (
     <Card className={classes.card}>
       <CardMedia
@@ -89,8 +90,12 @@ const ItemCard = props => {
           </Typography>
           <div className={classes.text}>
             <p>Roast Type: {props.item.roast}</p>
-            <p>Beans: {props.item.bean}</p>
-            <p>Origin: {props.item.origin}</p>
+            {subscriptionType && subscriptionType !== 'Coffee of the month' ? (
+              <>
+                <p>Beans: {props.item.bean}</p>
+                <p>Origin: {props.item.origin}</p>
+              </>
+            ) : null}
             <p>Bag Size: {props.item.size}</p>
           </div>
         </CardContent>
