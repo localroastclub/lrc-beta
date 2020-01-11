@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
+import _ from 'lodash';
 import AddCircle from '@material-ui/icons/AddCircle';
 import RoastList from './RoastList';
+import usePrevious from '../usePrevious';
 import './subscription.css';
 
 // here set up the default of one option, 12 oz, no 4 oz
@@ -38,15 +40,42 @@ const ChooseYourAdventure = () => {
     localStorage.setItem('orderChoice', JSON.stringify(roastItems));
   };
 
-  useEffect(() => {
-    if (localStorage.getItem('orderChoice')) {
-      const orderChoice = JSON.parse(localStorage.getItem('orderChoice'));
-      setRoastItems(orderChoice);
-    } else {
+  const prevRoastItems = usePrevious(roastItems);
+
+  const updateRoastItems = () => {
+    console.log('roastItems length', roastItems);
+    console.log('what is prevRoastItems?', prevRoastItems);
+
+    // we essentially want to check if the page is first loaded then look for localStorage
+    /* else {
       console.log('setting localStorage');
       localStorage.setItem('orderChoice', JSON.stringify(roastItems));
+    } */
+  };
+
+  useEffect(() => {
+    const storedItems = localStorage.getItem('orderChoice');
+    if (
+      roastItems &&
+      prevRoastItems &&
+      roastItems.length !== prevRoastItems.length
+    ) {
+      localStorage.setItem('orderChoice', JSON.stringify(roastItems));
+      const orderChoice = JSON.parse(localStorage.getItem('orderChoice'));
+      console.log('this is local', orderChoice);
+    } else if (
+      storedItems &&
+      JSON.stringify(JSON.parse(storedItems)) !== JSON.stringify(roastItems)
+    ) {
+      console.log(
+        'kfhkadsfjsdhks',
+        JSON.stringify(JSON.parse(storedItems)),
+        JSON.stringify(roastItems)
+      );
+      const orderChoice = JSON.parse(storedItems);
+      setRoastItems(orderChoice);
     }
-  }, []);
+  }, [roastItems]);
 
   return (
     <div className="subscription-container">
