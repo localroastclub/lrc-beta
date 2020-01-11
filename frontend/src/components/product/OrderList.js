@@ -7,7 +7,7 @@ const OrderList = props => {
     <div>
       <h4>Review Your Order:</h4>
       {_.map(props.orderItems, (item, key) => (
-        <ItemCard item={item} key={key} />
+        <ItemCard item={item} selection={props.selection} key={key} />
       ))}
     </div>
   );

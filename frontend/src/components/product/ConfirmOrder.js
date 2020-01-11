@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import OrderList from './OrderList';
 import './subscription.css';
 
-const ConfirmOrder = () => {
+const ConfirmOrder = props => {
   const [orderItems, setOrderItems] = React.useState([]);
 
   useEffect(() => {

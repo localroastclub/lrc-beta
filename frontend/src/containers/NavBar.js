@@ -66,7 +66,7 @@ function NavBar(props) {
               <img className={classes.logo} src={logo} alt="Local Roast Club" />
             </Link>
           </Typography>
-          <Typography variant="h6" color="white" className={classes.links}>
+          <Typography variant="h6" color="inherit" className={classes.links}>
             <span className={classes.item}>
               <Link to="subscribe">Subscriptions</Link>
             </span>
