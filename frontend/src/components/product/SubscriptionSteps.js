@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -54,7 +55,8 @@ function getStepContent(
   stepIndex,
   subscriptionType,
   handleSubscriptionType,
-  handleNext
+  handleNext,
+  handleStepValidation
 ) {
   switch (stepIndex) {
     case 0:
@@ -75,19 +77,12 @@ function getStepContent(
           {
             roaster: 'Coffee of the month',
             roast: 'Club Choice',
-            bean: 'Whole',
-            origin: '',
             size: '12 oz'
           }
         ];
         localStorage.setItem('orderCoffeeOfMonth', JSON.stringify(roastItems));
         handleNext();
       }
-    // select roasters, take logic from whatever they click on subscription types
-    // we'll probably have to pass state down to subscription types to know which one they've clicked
-    // then render taster's trio with three options
-    // choose your own adventure with one option required, and a + icon
-    // if coffee of the month, skip step 2 (case 1)
     case 2:
       return <ConfirmOrder />;
     default:
@@ -98,10 +93,21 @@ function getStepContent(
 const SubscriptionSteps = () => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
+  const [needsRequiredInput, setNeedsRequiredInput] = React.useState(true);
+  const [displayError, setDisplayError] = React.useState(false);
+  // pass display error down to show when an item isn't filled
   const steps = getSteps();
 
   const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
+    if (activeStep === 1) {
+      // render an error
+      handleStepValidation();
+      if (needsRequiredInput) {
+        setDisplayError(true);
+      }
+    } else {
+      setActiveStep(prevActiveStep => prevActiveStep + 1);
+    }
   };
 
   const handleBack = () => {
@@ -119,6 +125,30 @@ const SubscriptionSteps = () => {
   const [subscriptionType, setSubscriptionType] = React.useState(
     subscriptionChoice || ''
   );
+
+  const handleStepValidation = () => {
+    let roastItems;
+    if (subscriptionChoice === 'Choose your own adventure') {
+      roastItems = JSON.parse(localStorage.getItem('orderChoice'));
+      console.log('here are the roastItems validation', roastItems);
+    } else if (subscriptionChoice === 'Tasters trio') {
+      roastItems = JSON.parse(localStorage.getItem('orderTrio'));
+    }
+    // let's look into putting this function into context. We need tasters trio and CYOA to handle this, but it should
+    // only be handled at this stage (AKA when the next button is hit)
+    const needsInput = _.find(roastItems, function(obj) {
+      return _.includes(obj, '');
+    });
+    if (needsInput && !needsRequiredInput) {
+      console.log('hereeeere');
+      setNeedsRequiredInput(true);
+    }
+
+    if (!needsInput) {
+      setNeedsRequiredInput(false);
+      setActiveStep(prevActiveStep => prevActiveStep + 1);
+    }
+  };
 
   const handleSubscriptionType = event => {
     const subType = event.target.getAttribute('name');
@@ -161,7 +191,8 @@ const SubscriptionSteps = () => {
                 activeStep,
                 subscriptionType,
                 handleSubscriptionType,
-                handleNext
+                handleNext,
+                needsRequiredInput
               )}
             </div>
             <div className={classes.buttons}>
