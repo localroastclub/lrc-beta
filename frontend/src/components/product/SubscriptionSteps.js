@@ -55,12 +55,10 @@ function getStepContent(
   stepIndex,
   subscriptionType,
   handleSubscriptionType,
-  handleNext,
-  handleStepValidation
+  handleNext
 ) {
   switch (stepIndex) {
     case 0:
-      // choose your subscription type
       return (
         <SubscriptionTypes
           selection={subscriptionType}
@@ -95,12 +93,12 @@ const SubscriptionSteps = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const [needsRequiredInput, setNeedsRequiredInput] = React.useState(true);
   const [displayError, setDisplayError] = React.useState(false);
-  // pass display error down to show when an item isn't filled
+  // consider setting displayError in context... or localStorage
+
   const steps = getSteps();
 
   const handleNext = () => {
     if (activeStep === 1) {
-      // render an error
       handleStepValidation();
       if (needsRequiredInput) {
         setDisplayError(true);
@@ -130,17 +128,14 @@ const SubscriptionSteps = () => {
     let roastItems;
     if (subscriptionChoice === 'Choose your own adventure') {
       roastItems = JSON.parse(localStorage.getItem('orderChoice'));
-      console.log('here are the roastItems validation', roastItems);
     } else if (subscriptionChoice === 'Tasters trio') {
       roastItems = JSON.parse(localStorage.getItem('orderTrio'));
     }
-    // let's look into putting this function into context. We need tasters trio and CYOA to handle this, but it should
-    // only be handled at this stage (AKA when the next button is hit)
+
     const needsInput = _.find(roastItems, function(obj) {
       return _.includes(obj, '');
     });
     if (needsInput && !needsRequiredInput) {
-      console.log('hereeeere');
       setNeedsRequiredInput(true);
     }
 
@@ -191,8 +186,7 @@ const SubscriptionSteps = () => {
                 activeStep,
                 subscriptionType,
                 handleSubscriptionType,
-                handleNext,
-                needsRequiredInput
+                handleNext
               )}
             </div>
             <div className={classes.buttons}>
