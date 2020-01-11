@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import EmailSignUp from './EmailSignUp';
 
@@ -17,7 +18,21 @@ const StyledCard = withStyles({
   }
 })(Card);
 
+const useStyles = makeStyles(theme => ({
+  leftCardHead: {
+    display: 'flex',
+    alignItems: 'flex-end'
+    // [theme.breakpoints.down(390)]: {
+    //   height: '8vh',
+    //   width: '40vw',
+    //   minWidth: 80
+    // }
+  }
+}));
+
 const HeaderLeft = () => {
+  const classes = useStyles();
+
   return (
     <div className="header-box">
       <StyledCard className="card-head head-left">
