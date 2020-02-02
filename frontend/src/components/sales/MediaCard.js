@@ -24,6 +24,9 @@ const useStyles = makeStyles({
   },
   media: {
     height: 240
+  },
+  cardText: {
+    height: '100px'
   }
 });
 
@@ -44,7 +47,7 @@ export default function MediaCard(props) {
           image={props.item.image}
           title={props.item.alt}
         />
-        <CardContent>
+        <CardContent className={classes.cardText}>
           <Typography gutterBottom variant="h5" component="h2">
             {props.item.copy}
           </Typography>
