@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import _ from 'lodash';
 import AddCircle from '@material-ui/icons/AddCircle';
 import RoastList from './RoastList';
-import usePrevious from '../usePrevious';
+import usePrevious from '../../customHooks/usePrevious';
 import './subscription.css';
 
 // here set up the default of one option, 12 oz, no 4 oz
