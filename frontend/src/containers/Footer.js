@@ -40,7 +40,7 @@ const Footer = () => {
       </div>
       <div className="footer-info">
         <p className="footer-cr">
-          © Copyright 2019 Local Roast Club. All Rights Reserved
+          © Copyright 2020 Local Roast Club. All Rights Reserved
         </p>
       </div>
     </div>
