@@ -18,18 +18,18 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '5%'
   },
   nextButton: {
-    backgroundColor: '#ffe200'
+    backgroundColor: '#f18f36'
   },
   backButton: {
     marginRight: theme.spacing(1),
-    backgroundColor: '#ffe200'
+    backgroundColor: '#f18f36'
   },
   instructions: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1)
   },
   stepper: {
-    backgroundColor: '#e6b5da'
+    backgroundColor: '#f18f36'
   },
   buttons: {
     display: 'flex',
@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
   },
   stepIcon: {
     '& circle, & path': {
-      color: '#9bc5ea'
+      color: '#f18f36'
     }
   }
 }));

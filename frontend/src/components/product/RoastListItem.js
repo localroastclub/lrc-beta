@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
   headerSpace: {
     display: 'flex',
     width: '100%',
-    background: '#9bc5ea',
+    background: '#d7b56e',
     // border: '2px solid grey',
     boxShadow: '2px 2px 4px rgba(0, 0, 0, .5)'
   },
@@ -151,6 +151,7 @@ const RoastListItem = props => {
     const property = event.target.name;
     setValue({ ...value, [property]: event.target.value });
     props.item[property] = event.target.value;
+    console.log('event value', event.target.value);
     console.log('what is item', props.item);
     updateStorage();
   };
