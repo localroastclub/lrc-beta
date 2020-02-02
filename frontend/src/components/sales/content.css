@@ -43,7 +43,7 @@
 
 .subheader {
   width: 100%;
-  background-color: #9bc5ea;
+  background-color: #d7b56e;
   padding-top: 2%;
   padding-bottom: 2%;
   display: flex;
@@ -91,7 +91,7 @@ h2 {
   display: flex;
   flex-flow: wrap;
   justify-content: space-evenly;
-  background-color: #ffed60;
+  background-color: #d7b56e;
   width: 100%;
   padding-top: 2%;
   padding-bottom: 2%;

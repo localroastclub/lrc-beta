@@ -13,7 +13,7 @@ import { ReactComponent as LrcLogo } from '../lrclogo.svg';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    background: 'blue',
+    background: 'black',
     height: '15vh',
     flexGrow: 1
   },

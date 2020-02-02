@@ -6,7 +6,7 @@ import EmailSignUp from './EmailSignUp';
 
 const StyledCard = withStyles({
   root: {
-    background: 'rgba(155, 197, 234, 0.6)',
+    background: 'rgba(241, 143, 54, 0.6)',
     borderRadius: 3,
     border: 0,
     color: 'black',
@@ -14,7 +14,7 @@ const StyledCard = withStyles({
     width: '55vh',
     padding: '0 30px',
     alignContent: 'center',
-    boxShadow: '0 3px 5px 2px rgba(97, 151, 230, 0.3)'
+    boxShadow: '0 3px 5px 2px rgba(241, 143, 54, 0.35)'
   }
 })(Card);
 

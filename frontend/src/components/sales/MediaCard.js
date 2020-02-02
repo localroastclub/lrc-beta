@@ -17,10 +17,10 @@ const useStyles = makeStyles({
     boxShadow: '1px 2px 4px rgba(0, 0, 0, .5)'
   },
   cardCopy: {
-    backgroundColor: '#91b8da'
+    backgroundColor: '#F18F36'
   },
   howCards: {
-    backgroundColor: '#eede59'
+    backgroundColor: '#F18F36'
   },
   media: {
     height: 240
