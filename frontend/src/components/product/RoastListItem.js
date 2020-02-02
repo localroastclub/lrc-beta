@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
   headerSpace: {
     display: 'flex',
     width: '100%',
-    background: '#d7b56e',
+    background: '#6A7933',
     // border: '2px solid grey',
     boxShadow: '2px 2px 4px rgba(0, 0, 0, .5)'
   },
