@@ -1,4 +1,5 @@
 import React from 'react';
+import { ReactSVG } from 'react-svg';
 import { Link } from 'react-router-dom';
 import LoginButton from './LoginButton';
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,11 +9,12 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountButton from './AccountButton';
+import { ReactComponent as LrcLogo } from '../lrclogo.svg';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    background: 'black',
-    height: '12vh',
+    background: 'blue',
+    height: '15vh',
     flexGrow: 1
   },
   menuButton: {
@@ -38,13 +40,14 @@ const useStyles = makeStyles(theme => ({
     }
   },
   logo: {
-    maxHeight: '12vh',
-    maxWidth: '12vh',
-    flexGrow: 1
+    height: '100px',
+    width: '100px',
+    flexGrow: 1,
+    background: 'url(../lrclogo.svg)'
   }
 }));
 
-const logo = 'https://lrcimages.s3.us-east-2.amazonaws.com/lrc-color.png';
+// const logo = 'https://lrcimages.s3.us-east-2.amazonaws.com/lrc-color.png';
 
 function NavBar(props) {
   const classes = useStyles();
@@ -63,7 +66,7 @@ function NavBar(props) {
           </IconButton>
           <Typography variant="h6" color="inherit" className={classes.grow}>
             <Link to="/">
-              <img className={classes.logo} src={logo} alt="Local Roast Club" />
+              <LrcLogo className={classes.logo} alt="Local Roast Club" />
             </Link>
           </Typography>
           <Typography variant="h6" color="inherit" className={classes.links}>
