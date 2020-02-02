@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
 
 const useStyles = makeStyles(theme => ({
@@ -38,6 +39,9 @@ const useStyles = makeStyles(theme => ({
       height: '8vh',
       width: '40vw'
     }
+  },
+  errorText: {
+    color: 'red'
   }
 }));
 
@@ -46,7 +50,7 @@ const Menu = props => {
 
   return (
     <>
-      <FormControl variant="filled" className={classes.formControl}>
+      <FormControl required variant="filled" className={classes.formControl}>
         <InputLabel
           id={`${props.listName}-selection`}
           className={classes.label}
@@ -54,6 +58,7 @@ const Menu = props => {
           {props.listName}
         </InputLabel>
         <Select
+          required
           labelId="select-value"
           id={`select-${props.listName}`}
           className={classes.select}
@@ -69,6 +74,9 @@ const Menu = props => {
             );
           })}
         </Select>
+        {!props.value ? (
+          <FormHelperText className={classes.errorText}>Error</FormHelperText>
+        ) : null}
       </FormControl>
     </>
   );
