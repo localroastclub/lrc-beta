@@ -20,12 +20,12 @@ const Content = () => {
         <SubHeader />
         {/* <CopyP1 /> */}
         <CopyL1 />
-        <div className="button">
+        <div id="cta-first" className="button">
           <LrcButton className="order-btn" ctaText={'Join the Club'} />
         </div>
         <HowItWorks />
         <CopyP2 />
-        <div className="button">
+        <div id="cta-second" className="button">
           <LrcButton ctaText={'Fresh Coffee'} />
         </div>
         <CopyL2 />

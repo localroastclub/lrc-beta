@@ -10,10 +10,11 @@ const StyledCard = withStyles({
     borderRadius: 3,
     border: 0,
     color: 'black',
-    height: '55vh',
-    width: '55vh',
+    height: '70vh',
+    width: '70vh',
     padding: '0 30px',
     alignContent: 'center',
+    justifyContent: 'center',
     boxShadow: '0 3px 5px 2px rgba(241, 143, 54, 0.35)'
   }
 })(Card);

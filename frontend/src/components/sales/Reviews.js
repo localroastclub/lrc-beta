@@ -31,8 +31,8 @@ const carouselSlidesData = [
 
 const Reviews = () => {
   return (
-    <div className="paragraph-2">
-      <h2>What Local Roast Club Members Say:</h2>
+    <div className="paragraph-3">
+      <h2 className="title">What Local Roast Club Members Say:</h2>
       <div className="carousel-container">
         <ReviewCarousel slides={carouselSlidesData} />
       </div>

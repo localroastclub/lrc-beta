@@ -6,8 +6,6 @@
   display: flex;
   flex-direction: column;
   background-color: #fffcfe;
-  /* grid-template-columns: 12% auto 12%;
-  grid-template-rows: 2vh auto; */
 }
 
 .content-pane {
@@ -22,6 +20,7 @@
   display: flex;
   justify-content: space-evenly;
   flex-flow: wrap;
+  min-height: 90vh;
   width: 100%;
 }
 
@@ -43,7 +42,7 @@
 
 .subheader {
   width: 100%;
-  background-color: #d7b56e;
+  background-color: white;
   padding-top: 2%;
   padding-bottom: 2%;
   display: flex;
@@ -51,19 +50,30 @@
   flex-flow: wrap;
 }
 
-.paragraph-1 {
+/* .paragraph-1 {
   margin-top: 5%;
-}
+} */
 
 h2 {
   text-align: center;
 }
 
+.copy-l1 {
+  padding-top: 30px;
+  border-top: 10px dotted #d7b56e;
+}
+
 .list-items {
+  /* background-color: #d7b56e; */
   display: flex;
   justify-content: center;
+  padding-top: 2%;
   margin-left: 10vw;
   margin-right: 10vw;
+}
+
+#cta-first {
+  border-bottom: 10px dotted #d7b56e;
 }
 
 .col-list {
@@ -91,14 +101,13 @@ h2 {
   display: flex;
   flex-flow: wrap;
   justify-content: space-evenly;
-  background-color: #d7b56e;
+  background-color: white;
   width: 100%;
   padding-top: 2%;
   padding-bottom: 2%;
 }
 
 .how-cards {
-  background-color: #ffed60;
   display: flex;
   align-items: center;
   /* flex-grow: 1; */
@@ -108,23 +117,40 @@ h2 {
 }
 
 .paragraph-2 {
-  margin-top: 10%;
+  border-top: 10px dotted #d7b56e;
+  padding-top: 30px;
+  margin-top: 5%;
+}
+
+#cta-second {
+  border-bottom: 10px dotted #d7b56e;
+}
+
+.copy-p2 {
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .copy-l2 {
-  margin-top: 10%;
+  margin-top: 2%;
 }
 
 .button {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .review-lg {
   display: flex;
-  margin-top: 10%;
+  margin-top: 5%;
   justify-content: center;
+}
+
+.paragraph-3 {
+  margin-top: 5%;
 }
 
 .review-cards {

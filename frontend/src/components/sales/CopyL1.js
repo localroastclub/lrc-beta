@@ -1,18 +1,14 @@
 import React from 'react';
-const Bean = 'https://lrcimages.s3.us-east-2.amazonaws.com/bean.svg';
+import { ReactComponent as Bean } from '../../images/bean.svg';
 
 const CopyL1 = () => {
   const bull = (
-    <img
-      src={Bean}
-      style={{ width: '30px', height: '30px' }}
-      alt="bullet point"
-    />
+    <Bean style={{ width: '30px', height: '30px' }} alt="bullet point" />
   );
   return (
-    <>
+    <div className="copy-l1">
       <div>
-        <h2>What you get when you join</h2>
+        <h2 className="title">What you get when you join</h2>
       </div>
       <div className="list-items">
         <div className="col-list">
@@ -36,7 +32,7 @@ const CopyL1 = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
