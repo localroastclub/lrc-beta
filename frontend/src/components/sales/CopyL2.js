@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as Bean } from '../../images/bean.svg';
+import { ReactComponent as Bean } from '../../svg/bean.svg';
 
 const CopyL2 = () => {
   const bull = (
