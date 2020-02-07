@@ -5,7 +5,6 @@
 .content {
   display: flex;
   flex-direction: column;
-  background-color: #fffcfe;
 }
 
 .content-pane {
