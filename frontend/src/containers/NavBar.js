@@ -1,5 +1,4 @@
 import React from 'react';
-import { ReactSVG } from 'react-svg';
 import { Link } from 'react-router-dom';
 import LoginButton from './LoginButton';
 import { makeStyles } from '@material-ui/core/styles';
@@ -42,12 +41,9 @@ const useStyles = makeStyles(theme => ({
   logo: {
     height: '100px',
     width: '100px',
-    flexGrow: 1,
-    background: 'url(../lrclogo.svg)'
+    flexGrow: 1
   }
 }));
-
-// const logo = 'https://lrcimages.s3.us-east-2.amazonaws.com/lrc-color.png';
 
 function NavBar(props) {
   const classes = useStyles();
@@ -64,11 +60,11 @@ function NavBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
+          <div className={classes.grow}>
             <Link to="/">
               <LrcLogo className={classes.logo} alt="Local Roast Club" />
             </Link>
-          </Typography>
+          </div>
           <Typography variant="h6" color="inherit" className={classes.links}>
             <span className={classes.item}>
               <Link to="subscribe">Subscriptions</Link>
