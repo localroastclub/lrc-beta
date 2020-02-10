@@ -1,7 +1,7 @@
 altgraph==0.16.1
 autopep8==1.4.4
 certifi==2018.11.29
-Django==2.2.4
+Django==2.2.9
 django-cors-headers==3.0.2
 djangorestframework==3.9.4
 future==0.17.1
@@ -11,7 +11,7 @@ pep8==1.7.1
 pipenv==2018.11.26
 psycopg2==2.8.3
 pycodestyle==2.5.0
-PyInstaller==3.4
+PyInstaller==3.6
 pytz==2019.1
 pyzmq==18.0.1
 sqlparse==0.3.0
