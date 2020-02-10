@@ -29,7 +29,7 @@ const Login = () => {
     username: '',
     password: '',
     isSubmitting: false,
-    errorMEssage: null
+    errorMessage: null
   };
   const [data, setData] = React.useState(initialState);
   const handleInputChange = event => {
