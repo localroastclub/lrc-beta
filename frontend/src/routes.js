@@ -7,6 +7,7 @@ import Signup from './components/signup/Signup';
 import Dashboard from './components/userdashboard/Dashboard';
 import Product from './components/product/Product';
 import SubscriptionSteps from './components/product/SubscriptionSteps';
+import Shop from './components/product/shop/Shop';
 
 const BaseRouter = () => (
   <div>
@@ -16,6 +17,7 @@ const BaseRouter = () => (
     <Route exact path="/dashboard" component={Dashboard} />
     <Route exact path="/order" component={Product} />
     <Route exact path="/subscribe" component={SubscriptionSteps} />
+    <Route exact path="/shop" component={Shop} />
   </div>
 );
 
