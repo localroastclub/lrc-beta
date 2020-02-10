@@ -130,7 +130,7 @@ const roastList = [
 ];
 const beanStatusList = ['Whole', 'Ground'];
 const originList = ['Single', 'Blend'];
-const bagSizeList = ['5 lb', '12 oz', '4 oz'];
+const bagSizeList = ['12 oz', '4 oz'];
 
 const RoastListItem = props => {
   const classes = useStyles();
