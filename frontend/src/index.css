@@ -79,13 +79,13 @@ ul {
 }
 
 .icon-fb {
-  mask: url(https://lrcimages.s3.us-east-2.amazonaws.com/facebook-1.svg);
+  mask: url(svg/facebook.svg);
 }
 .icon-tweet {
-  mask: url(https://lrcimages.s3.us-east-2.amazonaws.com/twitter.svg);
+  mask: url(svg/twitter.svg);
 }
 .icon-insta {
-  mask: url(https://lrcimages.s3.us-east-2.amazonaws.com/instagram.svg);
+  mask: url(svg/instagram.svg);
 }
 .icon {
   display: inline-block;
@@ -94,10 +94,12 @@ ul {
   margin: 10px;
   background: #ffffff;
   mask-size: cover;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
 .icon:hover,
 .icon:focus {
-  background: #e6b5da;
+  background: #f18f36;
 }
 
 @media only screen and (max-width: 768px) {
