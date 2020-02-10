@@ -93,14 +93,21 @@ const SubscriptionSteps = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const [needsRequiredInput, setNeedsRequiredInput] = React.useState(true);
   const [displayError, setDisplayError] = React.useState(false);
-  // consider setting displayError in context... or localStorage
+  const [pressedNext, setPressedNext] = React.useState(false);
+  // consider setting displayError and pressedNext in context... or localStorage
 
   const steps = getSteps();
 
   const handleNext = () => {
+    console.log(
+      'what is pressedNext?',
+      pressedNext,
+      'what is displayError?',
+      displayError
+    );
     if (activeStep === 1) {
       handleStepValidation();
-      if (needsRequiredInput) {
+      if (needsRequiredInput && pressedNext) {
         setDisplayError(true);
       }
     } else {
@@ -128,6 +135,9 @@ const SubscriptionSteps = () => {
     let roastItems;
     if (subscriptionChoice === 'Choose your own adventure') {
       roastItems = JSON.parse(localStorage.getItem('orderChoice'));
+      if (activeStep === 1 && !pressedNext) {
+        setPressedNext(true);
+      }
     } else if (subscriptionChoice === 'Tasters trio') {
       roastItems = JSON.parse(localStorage.getItem('orderTrio'));
     }
