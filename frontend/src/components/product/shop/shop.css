@@ -1,0 +1,16 @@
+.shop-container {
+  flex: 1 0 auto;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  flex-grow: 1;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
