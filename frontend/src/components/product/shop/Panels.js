@@ -14,11 +14,15 @@ const useStyles = makeStyles(theme => ({
   heading: {
     fontSize: theme.typography.pxToRem(15),
     flexBasis: '33.33%',
-    flexShrink: 0
+    flexShrink: 0,
+    height: '120px'
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary
+  },
+  content: {
+    backgroundColor: '#d7b56e'
   }
 }));
 
@@ -43,7 +47,7 @@ const Panels = props => {
             {/* put some logo pictures in here */}
           </Typography>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
+        <ExpansionPanelDetails className={classes.content}>
           <Typography>
             Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
             Aliquam eget maximus est, id dignissim quam.
