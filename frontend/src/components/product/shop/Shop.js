@@ -3,7 +3,38 @@ import _ from 'lodash';
 import Panels from './Panels';
 import './shop.css';
 
-const roasters = ["Mozart's", 'Little City', 'Casa Brasil', 'Trianon'];
+// import mozarts from './../../../images/roasterlogos/mozartslogo.png';
+
+const roasters = [
+  {
+    roaster: "Mozart's",
+    logo: '/images/roasterlogos/mozartslogo.png'
+  },
+  {
+    roaster: 'Austin Roasting Company',
+    logo: '/images/roasterlogos/arclogo.png'
+  },
+  {
+    roaster: 'Little City',
+    logo: '/images/roasterlogos/lclogo.png'
+  },
+  {
+    roaster: 'Casa Brasil',
+    logo: '/images/roasterlogos/casabrasillogo.png'
+  },
+  {
+    roaster: 'Trianon',
+    logo: '/images/roasterlogos/trianonlogo.png'
+  },
+  {
+    roaster: "Barrett's",
+    logo: '/images/roasterlogos/barrettslogo.png'
+  },
+  {
+    roaster: 'Greater Goods',
+    logo: '/images/roasterlogos/greatergoodslogo.png'
+  }
+];
 
 const Shop = () => {
   const [expanded, setExpanded] = React.useState(null);
@@ -13,12 +44,12 @@ const Shop = () => {
   };
 
   return (
-    <div className="shop-container">
-      <div className="inner-sub-container">
+    <div className='shop-container'>
+      <div className='inner-sub-container'>
         {_.map(roasters, (ele, key) => {
           return (
             <Panels
-              roaster={ele}
+              item={ele}
               i={key}
               expanded={expanded}
               handleChange={handleChange}

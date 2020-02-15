@@ -7,9 +7,6 @@ import LocalCafe from '@material-ui/icons/LocalCafe';
 import RoomService from '@material-ui/icons/RoomService';
 import Edit from '@material-ui/icons/Edit';
 import MediaCard from './MediaCard';
-import signUp from '../../images/signup.jpg';
-import coffeeRoast from '../../images/coffee-roast.jpg';
-import delivery from '../../images/delivery.jpg';
 
 const StyledCard = withStyles({
   root: {
@@ -58,17 +55,17 @@ const MugIcon = withStyles({
 
 const copyList = [
   {
-    image: signUp,
+    image: '/images/signup.jpg',
     header: 'Step 1',
     copy: 'Sign up and select your preference of Roast, Bean, and Roaster'
   },
   {
-    image: coffeeRoast,
+    image: '/images/coffee-roast.jpg',
     header: 'Step 2',
     copy: 'Orders are roasted to order on the 1st or 3rd Monday each month'
   },
   {
-    image: delivery,
+    image: '/images/delivery.jpg',
     header: 'Step 3',
     copy: 'Fresh premium coffee is delivered to your door once every month'
   }
@@ -76,9 +73,9 @@ const copyList = [
 
 const HowItWorks = () => {
   return (
-    <div className="how-container">
+    <div className='how-container'>
       <h2>How It Works</h2>
-      <div className="how-it-works">
+      <div className='how-it-works'>
         {_.map(copyList, (item, key) => {
           return <MediaCard item={item} rowName={'how'} key={key} />;
         })}

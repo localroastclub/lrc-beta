@@ -8,9 +8,6 @@ import Commute from '@material-ui/icons/Commute';
 import StoreMallDirectory from '@material-ui/icons/StoreMallDirectory';
 import LargeCard from './LargeCard';
 import MediaCard from './MediaCard';
-import coffeeSelection from '../../images/coffee-selection.jpg';
-import traffic from '../../images/traffic.jpeg';
-import coffee from '../../images/coffee.jpg';
 
 const StyledCard = withStyles({
   root: {
@@ -62,17 +59,17 @@ const BusinessIcon = withStyles({
 
 const copyList = [
   {
-    image: coffeeSelection,
+    image: '/images/coffee-selection.jpg',
     alt: 'Coffee Selection',
     copy: 'Expand your palette and discover new roasts each month'
   },
   {
-    image: traffic,
+    image: '/images/traffic.jpeg',
     alt: 'Traffic',
     copy: 'Free up time from traffic and crowded grocery stores'
   },
   {
-    image: coffee,
+    image: '/images/coffee.jpg',
     alt: 'Premium Coffee',
     copy: 'Enjoy premium flavors while supporting your local businesses'
   }
@@ -80,7 +77,7 @@ const copyList = [
 
 const SubHeader = () => {
   return (
-    <div className="subheader">
+    <div className='subheader'>
       {_.map(copyList, (item, key) => {
         return <MediaCard item={item} rowName={'subheader'} key={key} />;
       })}

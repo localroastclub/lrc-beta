@@ -23,6 +23,10 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     backgroundColor: '#d7b56e'
+  },
+  logos: {
+    maxWidth: '400px',
+    maxHeight: '250px'
   }
 }));
 
@@ -41,10 +45,11 @@ const Panels = props => {
         onChange={handleChange(`panel${i}`)}
       >
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>{props.roaster}</Typography>
+          <Typography className={classes.heading}>
+            {props.item.roaster}
+          </Typography>
           <Typography className={classes.secondaryHeading}>
-            I am an expansion panel
-            {/* put some logo pictures in here */}
+            <img src={props.item.logo} className={classes.logos} />
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.content}>
