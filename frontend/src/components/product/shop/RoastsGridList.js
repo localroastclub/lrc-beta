@@ -5,6 +5,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
+import AddShoppingCartOutlinedIcon from '@material-ui/icons/AddShoppingCartOutlined';
 // import tileData from './tileData';
 
 const useStyles = makeStyles(theme => ({
@@ -72,14 +73,14 @@ const RoastsGridList = props => {
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
-              titlePosition='top'
+              titlePosition='bottom'
               subtitle={<span>{tile.description}</span>}
               actionIcon={
                 <IconButton
                   aria-label={`star ${tile.title}`}
                   className={classes.icon}
                 >
-                  <StarBorderIcon />
+                  <AddShoppingCartOutlinedIcon />
                 </IconButton>
               }
               actionPosition='left'
