@@ -58,12 +58,12 @@ const AccountButton = () => {
   return (
     <div>
       <AccountIcon
-        aria-controls="account-menu"
-        aria-haspopup="true"
+        aria-controls='account-menu'
+        aria-haspopup='true'
         onClick={handleClick}
       />
       <Menu
-        id="account-menu"
+        id='account-menu'
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
@@ -72,20 +72,26 @@ const AccountButton = () => {
         {isAuthenticated ? (
           <div>
             <MenuItem onClick={handleClose}>Account</MenuItem>
-            <Link to="/dashboard">
-              <MenuItem onClick={handleClose}>My order</MenuItem>
+            <Link to='/cart'>
+              <MenuItem onClick={handleClose}>Cart</MenuItem>
+            </Link>
+            <Link to='/dashboard'>
+              <MenuItem onClick={handleClose}>My Subscription</MenuItem>
             </Link>
             <MenuItem onClick={handleLogout}>Logout</MenuItem>
           </div>
         ) : (
           <div>
-            <Link to="/dashboard">
+            <Link to='/cart'>
               <MenuItem onClick={handleClose}>Cart</MenuItem>
             </Link>
-            <Link to="/login">
+            <Link to='/dashboard'>
+              <MenuItem onClick={handleClose}>Subscription</MenuItem>
+            </Link>
+            <Link to='/login'>
               <MenuItem onClick={handleClose}>Login</MenuItem>
             </Link>
-            <Link to="/signup">
+            <Link to='/signup'>
               <MenuItem onClick={handleClose}>Sign up</MenuItem>
             </Link>
           </div>

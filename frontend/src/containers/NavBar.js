@@ -14,6 +14,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     background: 'black',
     height: '15vh',
+    justifyContent: 'center',
     flexGrow: 1
   },
   menuButton: {
@@ -50,34 +51,34 @@ function NavBar(props) {
   let isAuthenticated = localStorage.getItem('isMember') === 'true';
 
   return (
-    <div className="nav">
-      <AppBar position="static" className={classes.root}>
+    <div className='nav'>
+      <AppBar position='static' className={classes.root}>
         <Toolbar>
           <IconButton
             className={classes.menuButton}
-            color="inherit"
-            aria-label="Menu"
+            color='inherit'
+            aria-label='Menu'
           >
             <MenuIcon />
           </IconButton>
           <div className={classes.grow}>
-            <Link to="/">
-              <LrcLogo className={classes.logo} alt="Local Roast Club" />
+            <Link to='/'>
+              <LrcLogo className={classes.logo} alt='Local Roast Club' />
             </Link>
           </div>
-          <Typography variant="h6" color="inherit" className={classes.links}>
+          <Typography variant='h6' color='inherit' className={classes.links}>
             <span className={classes.item}>
-              <Link to="subscribe">Subscriptions</Link>
+              <Link to='subscribe'>Subscriptions</Link>
             </span>
             <span className={classes.item}>
-              <Link to="shop">Shop</Link>
+              <Link to='shop'>Shop</Link>
             </span>
           </Typography>
           <AccountButton />
           {isAuthenticated ? (
             <LoginButton isAuthenticated={isAuthenticated} />
           ) : (
-            <Link to="/login">
+            <Link to='/login'>
               <LoginButton isAuthenticated={isAuthenticated} />
             </Link>
           )}
