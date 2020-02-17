@@ -21,55 +21,68 @@ const roasters = [
     logo: '/images/roasterlogos/lclogo.png',
     roasts: [
       {
-        title: 'San Ignacio, Costa Rica',
+        title: 'San Ignacio',
+        description: 'Costa Rica',
         img: '/images/roasts/littlecity/SanIgnacio.jpg'
       },
       {
-        title: 'Geisha Mallorca, Colombia',
+        title: 'Geisha Mallorca',
+        description: 'Colombia',
         img: '/images/roasts/littlecity/Geisha.jpg'
       },
       {
-        title: 'Kerinci, Sumatra',
+        title: 'Kerinci',
+        description: 'Sumatra',
         img: '/images/roasts/littlecity/Sumatra.jpg'
       },
       {
-        title: 'La Estrella Del Ostro, Colombia',
+        title: 'La Estrella Del Ostro',
+        description: 'Colombia',
         img: '/images/roasts/littlecity/LaEstrella.png'
       },
       {
-        title: 'Karugiro, Kenya',
+        title: 'Karugiro',
+        description: 'Kenya',
         img: '/images/roasts/littlecity/Kenya.jpg'
       },
       {
-        title: 'Tha Pye Gone, Myanmar',
+        title: 'Tha Pye Gone',
+        description: 'Myanmar',
         img: '/images/roasts/littlecity/ThayPyeGone.png'
       },
       {
         title: 'Congress Avenue Blend',
+        description: '',
         img: '/images/roasts/littlecity/LCCongress.png'
       },
       {
         title: 'Messenger Blend',
+        description: '',
         img: '/images/roasts/littlecity/LCMessenger.png'
       },
       {
         title: 'Republic Blend',
+        description: '',
         img: '/images/roasts/littlecity/LCRepublic.png'
       },
       {
         title: 'Violet Crown Blend',
+        description: '',
         img: '/images/roasts/littlecity/LCVioletCrown.png'
       },
       {
-        title: 'Slacker Blend Swiss Water Process Decaf',
+        title: 'Slacker Blend',
+        description: 'Swiss Water Process Decaf',
         img: '/images/roasts/littlecity/LCSlacker.png'
       },
       {
         title: 'Cold Brew Blend',
+        description: '',
         img: '/images/roasts/littlecity/ColdBrewBag.png'
       },
       {
         title: 'Grackle Blend',
+        description: '',
         img: '/images/roasts/littlecity/Grackle.png'
       }
     ]

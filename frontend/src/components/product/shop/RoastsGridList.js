@@ -73,6 +73,7 @@ const RoastsGridList = props => {
             <GridListTileBar
               title={tile.title}
               titlePosition='top'
+              subtitle={<span>{tile.description}</span>}
               actionIcon={
                 <IconButton
                   aria-label={`star ${tile.title}`}
