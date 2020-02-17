@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
   innerContent: {
     minHeight: '20vh',
-    backgroundColor: '#d7b56e'
+    backgroundColor: '#000000'
   },
   logos: {
     maxWidth: '400px',
