@@ -9,19 +9,30 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%'
+    // display: 'flex',
+    width: '80vw'
+    // alignItems: 'center'
   },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    flexBasis: '33.33%',
-    flexShrink: 0,
-    height: '120px'
+  panel: {
+    display: 'flex',
+    height: '20vh',
+    flexDirection: 'column',
+    justifyContent: 'center'
   },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary
+  summary: {
+    display: 'flex',
+    padding: 0
   },
   content: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  expandIcon: {
+    marginRight: 0,
+    width: '30px'
+  },
+  innerContent: {
     backgroundColor: '#d7b56e'
   },
   logos: {
@@ -35,24 +46,26 @@ const Panels = props => {
   const handleChange = props.handleChange;
   const expanded = props.expanded;
 
-  console.log('props?', props);
-
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <ExpansionPanel
         expanded={expanded === `panel${i}`}
         onChange={handleChange(`panel${i}`)}
+        className={classes.panel}
       >
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>
-            {props.item.roaster}
-          </Typography>
-          <Typography className={classes.secondaryHeading}>
-            <img src={props.item.logo} className={classes.logos} />
-          </Typography>
+        <ExpansionPanelSummary
+          classes={classes}
+          className={classes.summary}
+          expandIcon={<ExpandMoreIcon />}
+        >
+          <img
+            src={props.item.logo}
+            className={classes.logos}
+            aria-label={props.item.roaster}
+          />
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails className={classes.content}>
+        <ExpansionPanelDetails className={classes.innerContent}>
           <Typography>
             Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
             Aliquam eget maximus est, id dignissim quam.
