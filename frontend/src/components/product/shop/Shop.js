@@ -105,7 +105,7 @@ const Shop = () => {
 
   return (
     <div className='shop-container'>
-      <div className='inner-sub-container'>
+      <div className='shop-inner-container'>
         {_.map(roasters, (ele, key) => {
           return (
             <Panels
