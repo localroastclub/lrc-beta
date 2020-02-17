@@ -5,6 +5,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import RoastsGridList from './RoastsGridList';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -65,10 +66,7 @@ const Panels = props => {
           />
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.innerContent}>
-          <Typography>
-            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-            Aliquam eget maximus est, id dignissim quam.
-          </Typography>
+          <RoastsGridList />
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>
