@@ -8,31 +8,91 @@ import './shop.css';
 const roasters = [
   {
     roaster: "Mozart's",
-    logo: '/images/roasterlogos/mozartslogo.png'
+    logo: '/images/roasterlogos/mozartslogo.png',
+    roasts: []
   },
   {
     roaster: 'Austin Roasting Company',
-    logo: '/images/roasterlogos/arclogo.png'
+    logo: '/images/roasterlogos/arclogo.png',
+    roasts: []
   },
   {
     roaster: 'Little City',
-    logo: '/images/roasterlogos/lclogo.png'
+    logo: '/images/roasterlogos/lclogo.png',
+    roasts: [
+      {
+        title: 'San Ignacio, Costa Rica',
+        img: '/images/roasts/littlecity/SanIgnacio.jpg'
+      },
+      {
+        title: 'Geisha Mallorca, Colombia',
+        img: '/images/roasts/littlecity/Geisha.jpg'
+      },
+      {
+        title: 'Kerinci, Sumatra',
+        img: '/images/roasts/littlecity/Sumatra.jpg'
+      },
+      {
+        title: 'La Estrella Del Ostro, Colombia',
+        img: '/images/roasts/littlecity/LaEstrella.png'
+      },
+      {
+        title: 'Karugiro, Kenya',
+        img: '/images/roasts/littlecity/Kenya.jpg'
+      },
+      {
+        title: 'Tha Pye Gone, Myanmar',
+        img: '/images/roasts/littlecity/ThayPyeGone.png'
+      },
+      {
+        title: 'Congress Avenue Blend',
+        img: '/images/roasts/littlecity/LCCongress.png'
+      },
+      {
+        title: 'Messenger Blend',
+        img: '/images/roasts/littlecity/LCMessenger.png'
+      },
+      {
+        title: 'Republic Blend',
+        img: '/images/roasts/littlecity/LCRepublic.png'
+      },
+      {
+        title: 'Violet Crown Blend',
+        img: '/images/roasts/littlecity/LCVioletCrown.png'
+      },
+      {
+        title: 'Slacker Blend Swiss Water Process Decaf',
+        img: '/images/roasts/littlecity/LCSlacker.png'
+      },
+      {
+        title: 'Cold Brew Blend',
+        img: '/images/roasts/littlecity/ColdBrewBag.png'
+      },
+      {
+        title: 'Grackle Blend',
+        img: '/images/roasts/littlecity/Grackle.png'
+      }
+    ]
   },
   {
     roaster: 'Casa Brasil',
-    logo: '/images/roasterlogos/casabrasillogo.png'
+    logo: '/images/roasterlogos/casabrasillogo.png',
+    roasts: []
   },
   {
     roaster: 'Trianon',
-    logo: '/images/roasterlogos/trianonlogo.png'
+    logo: '/images/roasterlogos/trianonlogo.png',
+    roasts: []
   },
   {
     roaster: "Barrett's",
-    logo: '/images/roasterlogos/barrettslogo.png'
+    logo: '/images/roasterlogos/barrettslogo.png',
+    roasts: []
   },
   {
     roaster: 'Greater Goods',
-    logo: '/images/roasterlogos/greatergoodslogo.png'
+    logo: '/images/roasterlogos/greatergoodslogo.png',
+    roasts: []
   }
 ];
 

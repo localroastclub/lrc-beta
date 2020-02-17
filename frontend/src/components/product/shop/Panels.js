@@ -66,7 +66,7 @@ const Panels = props => {
           />
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.innerContent}>
-          <RoastsGridList />
+          <RoastsGridList tileData={props.item.roasts} />
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>

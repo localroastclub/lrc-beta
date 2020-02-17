@@ -11,12 +11,14 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
+    width: '100%',
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper
   },
   gridList: {
-    width: 500,
+    // width: 500,
+    width: '100%',
     height: 450,
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)'
@@ -49,12 +51,18 @@ const useStyles = makeStyles(theme => ({
  *   },
  * ];
  */
-export default function RoastsGridList() {
+const RoastsGridList = props => {
   const classes = useStyles();
+  const { tileData } = props;
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={200} spacing={1} className={classes.gridList}>
+      <GridList
+        cellHeight={200}
+        cols={6}
+        spacing={1}
+        className={classes.gridList}
+      >
         {tileData.map(tile => (
           <GridListTile
             key={tile.img}
@@ -81,4 +89,6 @@ export default function RoastsGridList() {
       </GridList>
     </div>
   );
-}
+};
+
+export default RoastsGridList;
