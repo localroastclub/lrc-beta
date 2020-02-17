@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -9,13 +8,12 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    // display: 'flex',
-    width: '80vw'
-    // alignItems: 'center'
+    width: '80vw',
+    marginTop: '2%'
   },
   panel: {
     display: 'flex',
-    height: '20vh',
+    minHeight: '20vh',
     flexDirection: 'column',
     justifyContent: 'center'
   },
@@ -33,6 +31,7 @@ const useStyles = makeStyles(theme => ({
     width: '30px'
   },
   innerContent: {
+    minHeight: '20vh',
     backgroundColor: '#d7b56e'
   },
   logos: {
