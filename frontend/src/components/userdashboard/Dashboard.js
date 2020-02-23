@@ -44,7 +44,7 @@ const orderItems = [
   }
 ];
 
-const Login = () => {
+const Dashboard = () => {
   const { dispatch } = React.useContext(AuthContext);
   const initialState = {
     email: '',
@@ -52,24 +52,27 @@ const Login = () => {
     name: 'Blah',
     orderItems: orderItems,
     shipDate: 'December 2, 2019',
-    totalPrice: 3000
+    totalPrice: (30.0).toFixed(2)
   };
 
   const [userData, setUserData] = React.useState(initialState);
 
   return (
-    <div className="dashboard-container">
-      <div className="inner-container">
+    <div className='dashboard-container'>
+      <div className='inner-container'>
         <h2>Hey there {userData.name}!</h2>
         <div>Your next order is scheduled for {userData.shipDate}</div>
-        <div className="order-box">
+        <div className='order-box'>
           <OrderItems orderItems={userData.orderItems} />
-          <div className="order-total-box">
-            <div className="button-cell">
-              <DashboardBtn ctaText={'Freeze Subscription'} />
+          <div className='order-total-box'>
+            <div className='button-cell'>
+              <DashboardBtn
+                ctaText={'Freeze Subscription'}
+                style={{ marginRight: '2vw' }}
+              />
               <DashboardBtn ctaText={'Cancel Subscription'} />
             </div>
-            <div id="order-total">Order Total: ${userData.totalPrice}</div>
+            <div id='order-total'>Order Total: ${userData.totalPrice}</div>
           </div>
         </div>
       </div>
@@ -77,7 +80,7 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Dashboard;
 
 // in here add a place to change order
 // add place to pause order (then allow user to select the duration)

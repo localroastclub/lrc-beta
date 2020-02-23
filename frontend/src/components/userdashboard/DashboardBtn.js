@@ -11,7 +11,6 @@ const Btn = withStyles({
     color: 'black',
     height: 48,
     width: 150,
-    marginRight: '2vw',
     padding: '0 30px',
     fontFamily: 'Lato'
   }
@@ -20,7 +19,7 @@ const Btn = withStyles({
 const DashboardBtn = props => {
   return (
     <>
-      <Btn>{props.ctaText}</Btn>
+      <Btn style={props.style}>{props.ctaText}</Btn>
     </>
   );
 };

@@ -16,6 +16,13 @@ h2 {
   align-items: center;
 }
 
+.order-items-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 10vh;
+}
+
 .order-box {
   /* display: flex; */
   flex-grow: 1;
