@@ -18,11 +18,16 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper
   },
   gridList: {
+    justifyContent: 'center',
+    alignItems: 'center',
     // width: 500,
     width: '100%',
-    height: 450,
+    height: 250,
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)'
+  },
+  image: {
+    objectFit: 'scale-down'
   },
   titleBar: {
     background:
@@ -70,7 +75,7 @@ const RoastsGridList = props => {
             cols={tile.featured ? 2 : 1}
             rows={tile.featured ? 2 : 1}
           >
-            <img src={tile.img} alt={tile.title} />
+            <img src={tile.img} alt={tile.title} className={classes.image} />
             <GridListTileBar
               title={tile.title}
               titlePosition='bottom'

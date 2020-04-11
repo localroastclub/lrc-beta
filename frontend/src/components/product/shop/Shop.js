@@ -9,103 +9,219 @@ const roasters = [
   {
     roaster: "Mozart's",
     logo: '/images/roasterlogos/mozartslogo.png',
-    roasts: []
+    roasts: [
+      {
+        title: 'Light Roast',
+        description: '',
+        img: '/images/roasts/mozarts/mozart_light.png'
+      },
+      {
+        title: 'Medium Roast',
+        description: '',
+        img: '/images/roasts/mozarts/mozart_medium.png'
+      },
+      {
+        title: 'Dark Roast',
+        description: '',
+        img: '/images/roasts/mozarts/mozart_dark.png'
+      },
+      {
+        title: 'Espresso',
+        description: '',
+        img: '/images/roasts/mozarts/mozart_dark.png'
+      },
+      {
+        title: 'Decaf',
+        description: '',
+        img: '/images/roasts/mozarts/mozart_decaf.png'
+      }
+    ]
   },
   {
     roaster: 'Austin Roasting Company',
     logo: '/images/roasterlogos/arclogo.png',
-    roasts: []
+    roasts: [
+      {
+        title: 'Light Roast',
+        description: '',
+        img: '/images/roasts/arc/arc_light.jpg'
+      },
+      {
+        title: 'Medium Roast',
+        description: '',
+        img: '/images/roasts/arc/arc_light.jpg'
+      },
+      {
+        title: 'Dark Roast',
+        description: '',
+        img: '/images/roasts/arc/arc_dark.jpg'
+      },
+      {
+        title: 'Espresso',
+        description: '',
+        img: '/images/roasts/arc/arc_dark.jpg'
+      },
+      {
+        title: 'Decaf',
+        description: '',
+        img: '/images/roasts/arc/arc_light.jpg'
+      }
+    ]
   },
   {
     roaster: 'Little City',
     logo: '/images/roasterlogos/lclogo.png',
     roasts: [
       {
-        title: 'San Ignacio',
-        description: 'Costa Rica',
-        img: '/images/roasts/littlecity/SanIgnacio.jpg'
-      },
-      {
-        title: 'Geisha Mallorca',
-        description: 'Colombia',
-        img: '/images/roasts/littlecity/Geisha.jpg'
-      },
-      {
-        title: 'Kerinci',
-        description: 'Sumatra',
-        img: '/images/roasts/littlecity/Sumatra.jpg'
-      },
-      {
-        title: 'La Estrella Del Ostro',
-        description: 'Colombia',
-        img: '/images/roasts/littlecity/LaEstrella.png'
-      },
-      {
-        title: 'Karugiro',
-        description: 'Kenya',
-        img: '/images/roasts/littlecity/Kenya.jpg'
-      },
-      {
-        title: 'Tha Pye Gone',
-        description: 'Myanmar',
-        img: '/images/roasts/littlecity/ThayPyeGone.png'
-      },
-      {
-        title: 'Congress Avenue Blend',
+        title: 'Light Roast',
         description: '',
-        img: '/images/roasts/littlecity/LCCongress.png'
+        img: '/images/roasts/littlecity/LC_generic.png'
       },
       {
-        title: 'Messenger Blend',
+        title: 'Medium Roast',
         description: '',
-        img: '/images/roasts/littlecity/LCMessenger.png'
+        img: '/images/roasts/littlecity/LC_generic.png'
       },
       {
-        title: 'Republic Blend',
+        title: 'Dark Roast',
         description: '',
-        img: '/images/roasts/littlecity/LCRepublic.png'
+        img: '/images/roasts/littlecity/LC_generic.png'
       },
       {
-        title: 'Violet Crown Blend',
+        title: 'Espresso',
         description: '',
-        img: '/images/roasts/littlecity/LCVioletCrown.png'
+        img: '/images/roasts/littlecity/LC_generic.png'
       },
       {
-        title: 'Slacker Blend',
-        description: 'Swiss Water Process Decaf',
-        img: '/images/roasts/littlecity/LCSlacker.png'
-      },
-      {
-        title: 'Cold Brew Blend',
+        title: 'Decaf',
         description: '',
-        img: '/images/roasts/littlecity/ColdBrewBag.png'
-      },
-      {
-        title: 'Grackle Blend',
-        description: '',
-        img: '/images/roasts/littlecity/Grackle.png'
+        img: '/images/roasts/littlecity/LC_generic.png'
       }
     ]
   },
   {
     roaster: 'Casa Brasil',
     logo: '/images/roasterlogos/casabrasillogo.png',
-    roasts: []
+    roasts: [
+      {
+        title: 'Light Roast',
+        description: '',
+        img: '/images/roasts/casabrasil/cb_light.png'
+      },
+      {
+        title: 'Medium Roast',
+        description: '',
+        img: '/images/roasts/casabrasil/cb_medium.png'
+      },
+      {
+        title: 'Dark Roast',
+        description: '',
+        img: '/images/roasts/casabrasil/cb_dark.png'
+      },
+      {
+        title: 'Espresso',
+        description: '',
+        img: '/images/roasts/casabrasil/cb_dark.png'
+      },
+      {
+        title: 'Decaf',
+        description: '',
+        img: '/images/roasts/casabrasil/cb_decaf.png'
+      }
+    ]
   },
   {
     roaster: 'Trianon',
     logo: '/images/roasterlogos/trianonlogo.png',
-    roasts: []
+    roasts: [
+      {
+        title: 'Light Roast',
+        description: '',
+        img: '/images/roasterlogos/trianonlogo.png'
+      },
+      {
+        title: 'Medium Roast',
+        description: '',
+        img: '/images/roasterlogos/trianonlogo.png'
+      },
+      {
+        title: 'Dark Roast',
+        description: '',
+        img: '/images/roasterlogos/trianonlogo.png'
+      },
+      {
+        title: 'Espresso',
+        description: '',
+        img: '/images/roasterlogos/trianonlogo.png'
+      },
+      {
+        title: 'Decaf',
+        description: '',
+        img: '/images/roasterlogos/trianonlogo.png'
+      }
+    ]
   },
   {
     roaster: "Barrett's",
     logo: '/images/roasterlogos/barrettslogo.png',
-    roasts: []
+    roasts: [
+      {
+        title: 'Light Roast',
+        description: '',
+        img: '/images/roasts/barretts/barretts.png'
+      },
+      {
+        title: 'Medium Roast',
+        description: '',
+        img: '/images/roasts/barretts/barretts.png'
+      },
+      {
+        title: 'Dark Roast',
+        description: '',
+        img: '/images/roasts/barretts/barretts.png'
+      },
+      {
+        title: 'Espresso',
+        description: '',
+        img: '/images/roasts/barretts/barretts.png'
+      },
+      {
+        title: 'Decaf',
+        description: '',
+        img: '/images/roasts/barretts/barretts.png'
+      }
+    ]
   },
   {
     roaster: 'Greater Goods',
     logo: '/images/roasterlogos/greatergoodslogo.png',
-    roasts: []
+    roasts: [
+      {
+        title: 'Light Roast',
+        description: '',
+        img: '/images/roasts/greatergoods/gg_light.png'
+      },
+      {
+        title: 'Medium Roast',
+        description: '',
+        img: '/images/roasts/greatergoods/gg_medium.png'
+      },
+      {
+        title: 'Dark Roast',
+        description: '',
+        img: '/images/roasts/greatergoods/gg_dark.png'
+      },
+      {
+        title: 'Espresso',
+        description: '',
+        img: '/images/roasts/greatergoods/gg_dark.png'
+      },
+      {
+        title: 'Decaf',
+        description: '',
+        img: '/images/roasts/greatergoods/gg_decaf.png'
+      }
+    ]
   }
 ];
 
