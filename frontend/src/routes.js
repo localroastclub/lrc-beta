@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Landing from './containers/Landing';
 import Login from './components/login/Login';
@@ -13,15 +13,17 @@ import NotFound from './components/NotFound';
 
 const BaseRouter = () => (
   <div>
-    <Route exact path='/' component={Landing} />
-    <Route exact path='/login' component={Login} />
-    <Route exact path='/signup' component={Signup} />
-    <Route exact path='/dashboard' component={Dashboard} />
-    <Route exact path='/cart' component={Cart} />
-    <Route exact path='/order' component={Product} />
-    <Route exact path='/subscribe' component={SubscriptionSteps} />
-    <Route exact path='/shop' component={Shop} />
-    <NotFound default={true} component={NotFound} />
+    <Switch>
+      <Route exact path='/' component={Landing} />
+      <Route exact path='/login' component={Login} />
+      <Route exact path='/signup' component={Signup} />
+      <Route exact path='/dashboard' component={Dashboard} />
+      <Route exact path='/cart' component={Cart} />
+      <Route exact path='/order' component={Product} />
+      <Route exact path='/subscribe' component={SubscriptionSteps} />
+      <Route exact path='/shop' component={Shop} />
+      <NotFound default={true} component={NotFound} />
+    </Switch>
   </div>
 );
 
