@@ -9,6 +9,7 @@ import Cart from './components/cart/Cart';
 import Product from './components/product/Product';
 import SubscriptionSteps from './components/product/SubscriptionSteps';
 import Shop from './components/product/shop/Shop';
+import NotFound from './components/NotFound';
 
 const BaseRouter = () => (
   <div>
@@ -20,6 +21,7 @@ const BaseRouter = () => (
     <Route exact path='/order' component={Product} />
     <Route exact path='/subscribe' component={SubscriptionSteps} />
     <Route exact path='/shop' component={Shop} />
+    <NotFound default={true} component={NotFound} />
   </div>
 );
 
