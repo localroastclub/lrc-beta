@@ -68,10 +68,10 @@ function NavBar(props) {
           </div>
           <Typography variant='h6' color='inherit' className={classes.links}>
             <span className={classes.item}>
-              <Link to='subscribe'>Subscriptions</Link>
+              <Link to='/subscribe'>Subscriptions</Link>
             </span>
             <span className={classes.item}>
-              <Link to='shop'>Shop</Link>
+              <Link to='/shop'>Shop</Link>
             </span>
           </Typography>
           <AccountButton />
