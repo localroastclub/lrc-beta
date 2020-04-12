@@ -55,10 +55,11 @@ class Roaster(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=255)
     roast_type = models.CharField(max_length=30)
-    coffee_type = models.CharField(max_length=30)
+    coffee_type = models.CharField(max_length=30)  # we'll call this the origin
     bean_status = models.CharField(max_length=15)
     bag_size = models.CharField(max_length=30, null=True)
     price = models.IntegerField()
+    available = models.BooleanField(default=True)
     image_url = models.CharField(max_length=255)
     merchant_id = models.ForeignKey(Roaster, on_delete=models.CASCADE)
 
