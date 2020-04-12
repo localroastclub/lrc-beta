@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from dashboard.models import Roaster
+from lrc.models import Roaster
 
 
 class RoasterSerializer(serializers.ModelSerializer):

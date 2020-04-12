@@ -1,6 +1,6 @@
 from rest_framework.generics import ListAPIView
 
-from dashboard.models import Roaster
+from lrc.models import Roaster
 from .serializers import RoasterSerializer
 
 
