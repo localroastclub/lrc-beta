@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User as User_auth
 
 
 class User(models.Model):
@@ -14,6 +15,8 @@ class User(models.Model):
     order_rotation_id = models.CharField(
         max_length=20)  # group1, group2, inactive
     created_at = models.DateField(auto_now_add=True)
+    auth_user_id = models.ForeignKey(
+        User_auth, on_delete=models.CASCADE, null=True)
 
 
 # This will be posted from one time orders
