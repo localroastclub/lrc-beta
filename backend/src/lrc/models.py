@@ -4,19 +4,22 @@ from django.contrib.auth.models import User as User_auth
 
 class User(models.Model):
     id = models.IntegerField(primary_key=True)
-    firstname = models.CharField(max_length=50)
-    lastname = models.CharField(max_length=50)
+    firstname = models.CharField(max_length=50, null=True)
+    lastname = models.CharField(max_length=50, null=True)
     email = models.CharField(max_length=150)
-    street_address = models.CharField(max_length=150)
-    street_address_two = models.CharField(max_length=60)
-    city = models.CharField(max_length=100)
-    state = models.CharField(max_length=2)
-    zipcode = models.IntegerField
+    street_address = models.CharField(max_length=150, null=True)
+    street_address_two = models.CharField(max_length=60, null=True)
+    city = models.CharField(max_length=100, null=True)
+    state = models.CharField(max_length=2, null=True)
+    zipcode = models.BigIntegerField(null=True)
     order_rotation_id = models.CharField(
-        max_length=20)  # group1, group2, inactive
+        max_length=20, null=True)  # group1, group2, inactive
     created_at = models.DateField(auto_now_add=True)
     auth_user_id = models.ForeignKey(
         User_auth, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.email
 
 
 # This will be posted from one time orders
@@ -62,6 +65,9 @@ class Product(models.Model):
     available = models.BooleanField(default=True)
     image_url = models.CharField(max_length=255)
     merchant_id = models.ForeignKey(Roaster, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
 
 class Order_item(models.Model):
