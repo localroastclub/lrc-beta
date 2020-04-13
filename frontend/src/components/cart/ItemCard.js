@@ -41,7 +41,8 @@ const useStyles = makeStyles(theme => ({
   image: {
     margin: 10,
     width: 151,
-    height: 151
+    height: 151,
+    objectFit: 'scale-down'
   },
   root: {
     fontFamily: 'Lato',
@@ -70,9 +71,9 @@ const ItemCard = props => {
     <Card className={classes.card}>
       <CardMedia
         className={classes.image}
-        component="img"
+        component='img'
         alt={alt}
-        height="140"
+        height='140'
         image={props.item.imageUrl}
         title={props.item.roaster}
       />
@@ -80,8 +81,8 @@ const ItemCard = props => {
         <CardContent className={classes.content}>
           <Typography
             gutterBottom
-            variant="h4"
-            component="h4"
+            variant='h4'
+            component='h4'
             className={classes.root}
           >
             {props.item.roaster}
@@ -95,10 +96,10 @@ const ItemCard = props => {
         </CardContent>
       </div>
       <CardActions className={classes.actions}>
-        <Button className={classes.button} size="medium" color="inherit">
+        <Button className={classes.button} size='medium' color='inherit'>
           Remove
         </Button>
-        <Button className={classes.button} size="medium" color="inherit">
+        <Button className={classes.button} size='medium' color='inherit'>
           Update Item
         </Button>
         <QuantityMenu />

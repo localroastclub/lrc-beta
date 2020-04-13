@@ -41,7 +41,8 @@ const useStyles = makeStyles(theme => ({
   image: {
     margin: 10,
     width: 151,
-    height: 151
+    height: 151,
+    objectFit: 'scale-down'
   },
   root: {
     fontFamily: 'Lato',
