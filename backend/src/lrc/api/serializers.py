@@ -7,3 +7,4 @@ class RoasterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Roaster
         fields = ('id', 'name', 'logo_url', 'description')
+        read_only_fields = ('id', 'name', 'logo_url', 'description')
