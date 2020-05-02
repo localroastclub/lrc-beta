@@ -9,11 +9,11 @@ import Typography from '@material-ui/core/Typography';
 // import QuantityMenu from './QuantityMenu';
 import './itemcard.css';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   card: {
     background: '#fffcfe',
     display: 'flex',
-    width: '50vw',
+    width: '40vw',
     height: '30vh',
     marginLeft: 0,
     marginRight: 0,
@@ -21,50 +21,69 @@ const useStyles = makeStyles(theme => ({
     font: 'Lato',
     [theme.breakpoints.down(665)]: {
       height: '30vh',
-      width: '70vw'
+      width: '70vw',
     },
     [theme.breakpoints.down(450)]: {
       height: '60vh',
       width: '70vw',
       flexDirection: 'column',
-      alignItems: 'center'
-    }
+      alignItems: 'center',
+    },
   },
   details: {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    alignSelf: 'center',
+  },
+  title: {
+    flex: '1 0 auto',
+    justifyItems: 'left',
+    [theme.breakpoints.down(665)]: {
+      textAlign: 'center',
+    },
+    [theme.breakpoints.down(450)]: {
+      textAlign: 'center',
+    },
   },
   content: {
     flex: '1 0 auto',
-    justifyItems: 'left'
+    justifyItems: 'left',
+    [theme.breakpoints.down(665)]: {
+      alignSelf: 'center',
+    },
+    [theme.breakpoints.down(450)]: {
+      alignSelf: 'center',
+    },
   },
   image: {
-    margin: 10,
+    margin: 20,
     width: 151,
-    height: 151
+    height: 151,
+    objectFit: 'scale-down',
+    alignSelf: 'center',
   },
   root: {
     fontFamily: 'Lato',
     marginBottom: '.2em',
-    fontSize: '4vh'
+    fontSize: '4vh',
   },
   text: {
     fontFamily: 'Lato',
-    fontSize: '2vh'
+    fontSize: '2vh',
   },
   actions: {
     flexGrow: 2,
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
   },
   button: {
-    fontFamily: 'Lato'
-  }
+    fontFamily: 'Lato',
+  },
 }));
 // { roaster: '', roast: '', bean: '', origin: '', size: '12 oz' }
 
-const ItemCard = props => {
+const ItemCard = (props) => {
   const classes = useStyles();
   const alt = `${props.item.roaster} ${props.item.roast} roast ${props.item.bean} bean`;
   const subscriptionType = localStorage.getItem('subscriptionChoice');
@@ -72,22 +91,24 @@ const ItemCard = props => {
     <Card className={classes.card}>
       <CardMedia
         className={classes.image}
-        component="img"
+        component='img'
         alt={alt}
-        height="140"
-        // image={props.item.imageUrl}
+        height='140'
+        image={props.item.logo}
         title={props.item.roaster}
       />
       <div className={classes.details}>
-        <CardContent className={classes.content}>
+        <CardContent className={classes.title}>
           <Typography
             gutterBottom
-            variant="h4"
-            component="h4"
+            variant='h4'
+            component='h4'
             className={classes.root}
           >
             {props.item.roaster}
           </Typography>
+        </CardContent>
+        <CardContent className={classes.content}>
           <div className={classes.text}>
             <p>Roast Type: {props.item.roast}</p>
             {subscriptionType && subscriptionType !== 'Coffee of the month' ? (
@@ -100,15 +121,15 @@ const ItemCard = props => {
           </div>
         </CardContent>
       </div>
-      <CardActions className={classes.actions}>
-        {/* <Button className={classes.button} size="medium" color="inherit">
+      {/* <CardActions className={classes.actions}> */}
+      {/* <Button className={classes.button} size="medium" color="inherit">
           Remove
         </Button>
         <Button className={classes.button} size="medium" color="inherit">
           Update Item
         </Button> */}
-        {/* <QuantityMenu /> */}
-      </CardActions>
+      {/* <QuantityMenu /> */}
+      {/* </CardActions> */}
     </Card>
   );
 };

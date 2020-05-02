@@ -160,14 +160,18 @@ const RoastListItem = (props) => {
     bean: props.item.bean,
     origin: props.item.origin,
     size: props.item.size,
+    logo: props.item.logo,
   });
-
-  const [logo, setLogo] = useState('');
 
   const handleChange = (event) => {
     const property = event.target.name;
     console.log('property', event.target.name, '\n', event.target.value);
     setValue({ ...value, [property]: event.target.value });
+    console.log('property', props.item.logo);
+    if (property === 'roaster') {
+      setValue({ ...value, logo: roasterData[event.target.value]['logo'] });
+      props.item.logo = roasterData[event.target.value]['logo'];
+    }
     props.item[property] = event.target.value;
     console.log('event value', event.target.value);
     console.log('what is item', props.item);

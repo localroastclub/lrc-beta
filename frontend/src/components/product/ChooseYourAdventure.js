@@ -13,17 +13,17 @@ import './subscription.css';
 
 const ChooseYourAdventure = () => {
   const [roastItems, setRoastItems] = React.useState([
-    { roaster: '', roast: '', bean: '', origin: '', size: '12 oz' }
+    { roaster: '', roast: '', bean: '', origin: '', size: '12 oz', logo: '' },
   ]);
 
   const addItem = () => {
     setRoastItems([
       ...roastItems,
-      { roaster: '', roast: '', bean: '', origin: '', size: '' }
+      { roaster: '', roast: '', bean: '', origin: '', size: '', logo: '' },
     ]);
   };
 
-  const removeItem = index => {
+  const removeItem = (index) => {
     if (roastItems.length > 1) {
       console.log('removing index', index);
       roastItems.splice(index, 1);
@@ -78,15 +78,15 @@ const ChooseYourAdventure = () => {
   }, [roastItems]);
 
   return (
-    <div className="subscription-container">
-      <div className="inner-sub-container">
+    <div className='subscription-container'>
+      <div className='inner-sub-container'>
         <RoastList
           roastItems={roastItems}
           customSelection={true}
           removeItem={removeItem}
         />
-        <div className="plus">
-          <AddCircle id="plus" style={{ fontSize: 40 }} onClick={addItem} />
+        <div className='plus'>
+          <AddCircle id='plus' style={{ fontSize: 40 }} onClick={addItem} />
         </div>
       </div>
     </div>
