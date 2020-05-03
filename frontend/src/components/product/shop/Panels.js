@@ -7,41 +7,49 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import RoastsGridList from './RoastsGridList';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: '80vw',
-    marginTop: '2%'
+    marginTop: '2%',
   },
   panel: {
     display: 'flex',
     minHeight: '20vh',
     flexDirection: 'column',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   summary: {
     display: 'flex',
-    padding: 0
+    padding: 0,
   },
   content: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   expandIcon: {
     marginRight: 0,
-    width: '30px'
+    width: '30px',
   },
   innerContent: {
     minHeight: '20vh',
-    backgroundColor: '#000000'
+    backgroundColor: '#000000',
   },
   logos: {
     maxWidth: '400px',
-    maxHeight: '250px'
-  }
+    maxHeight: '250px',
+    [theme.breakpoints.down(840)]: {
+      maxWidth: '300px',
+      maxHeight: '250px',
+    },
+    [theme.breakpoints.down(600)]: {
+      maxWidth: '220px',
+      maxHeight: '250px',
+    },
+  },
 }));
 
-const Panels = props => {
+const Panels = (props) => {
   const i = props.i + 1;
   const handleChange = props.handleChange;
   const expanded = props.expanded;

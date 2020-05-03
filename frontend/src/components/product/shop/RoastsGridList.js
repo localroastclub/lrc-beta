@@ -8,14 +8,14 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import AddShoppingCartOutlinedIcon from '@material-ui/icons/AddShoppingCartOutlined';
 // import tileData from './tileData';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
     width: '100%',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: theme.palette.background.paper,
   },
   gridList: {
     justifyContent: 'center',
@@ -24,19 +24,34 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: 250,
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
-    transform: 'translateZ(0)'
+    transform: 'translateZ(0)',
+    [theme.breakpoints.down(840)]: {
+      width: '60vw',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    [theme.breakpoints.down(600)]: {
+      minHeight: '50vh',
+      width: '70vw',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+  },
+  itemSquare: {
+    minWidth: 200,
+    minHeight: 200,
   },
   image: {
-    objectFit: 'scale-down'
+    objectFit: 'scale-down',
   },
   titleBar: {
     background:
       'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-      'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
+      'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
   },
   icon: {
-    color: 'white'
-  }
+    color: 'white',
+  },
 }));
 
 /**
@@ -57,7 +72,7 @@ const useStyles = makeStyles(theme => ({
  *   },
  * ];
  */
-const RoastsGridList = props => {
+const RoastsGridList = (props) => {
   const classes = useStyles();
   const { tileData } = props;
 
@@ -65,15 +80,16 @@ const RoastsGridList = props => {
     <div className={classes.root}>
       <GridList
         cellHeight={200}
-        cols={6}
+        cols={7}
         spacing={1}
         className={classes.gridList}
       >
-        {tileData.map(tile => (
+        {tileData.map((tile) => (
           <GridListTile
             key={tile.img}
             cols={tile.featured ? 2 : 1}
             rows={tile.featured ? 2 : 1}
+            className={classes.itemSquare}
           >
             <img src={tile.img} alt={tile.title} className={classes.image} />
             <GridListTileBar
