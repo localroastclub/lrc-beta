@@ -49,7 +49,7 @@ class Subscription(models.Model):
 class Roaster(models.Model):
     name = models.CharField(max_length=80)
     logo_url = models.CharField(max_length=255)
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -57,25 +57,36 @@ class Roaster(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
-    roast_type = models.CharField(max_length=30)
-    coffee_type = models.CharField(max_length=30)  # we'll call this the origin
-    bean_status = models.CharField(max_length=15)
-    bag_size = models.CharField(max_length=30, null=True)
-    price = models.IntegerField()
+    roast_type = models.CharField(max_length=30, blank=True, null=True)
+    origin = models.CharField(max_length=30)
+    # use for microlot, decaf, organic, etc
+    category = models.CharField(max_length=30, null=True, blank=True)
+    bag_size = models.CharField(max_length=30, null=True, default='12oz')
+    price = models.IntegerField(default=20)
     available = models.BooleanField(default=True)
-    image_url = models.CharField(max_length=255)
+    image_url = models.CharField(max_length=255, blank=True, null=True)
     merchant_id = models.ForeignKey(Roaster, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.name + ', ' + self.bag_size
 
 
 class Order_item(models.Model):
     id = models.CharField(max_length=30, primary_key=True)
     roaster_name = models.CharField(max_length=80)
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
+    bean_status = models.CharField(max_length=15, default='Whole')
     note = models.CharField(max_length=255, null=True)
     order_id = models.ForeignKey(
         Order, on_delete=models.CASCADE, null=True, blank=True, default=None)
+
+
+class Subscription_item(models.Model):
+    id = models.CharField(max_length=30, primary_key=True)
+    roaster_name = models.CharField(max_length=80)
+    product_id = models.ForeignKey(
+        Product, on_delete=models.CASCADE, blank=True)
+    bean_status = models.CharField(max_length=15, default='Whole')
+    note = models.CharField(max_length=255, null=True)
     subscription_id = models.ForeignKey(
         Subscription, on_delete=models.CASCADE, null=True, blank=True, default=None)
