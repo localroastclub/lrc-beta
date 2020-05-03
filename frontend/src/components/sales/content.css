@@ -13,7 +13,7 @@
 }
 
 .header-box {
-  background-image: url('https://lrcimages.s3.us-east-2.amazonaws.com/coffeebeans.jpg');
+  background-image: url('../../coffeebeans.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
