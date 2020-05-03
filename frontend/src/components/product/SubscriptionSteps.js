@@ -11,43 +11,43 @@ import TastersTrio from './TastersTrio';
 import ChooseYourAdventure from './ChooseYourAdventure';
 import ConfirmOrder from './ConfirmOrder';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     marginTop: '5%',
-    marginBottom: '5%'
+    marginBottom: '5%',
   },
   nextButton: {
-    backgroundColor: '#f18f36'
+    backgroundColor: '#f18f36',
   },
   backButton: {
     marginRight: theme.spacing(1),
-    backgroundColor: '#f18f36'
+    backgroundColor: '#f18f36',
   },
   instructions: {
     marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1)
+    marginBottom: theme.spacing(1),
   },
   stepper: {
-    backgroundColor: '#f18f36'
+    backgroundColor: '#f18f36',
   },
   buttons: {
     display: 'flex',
     justifyContent: 'flex-end',
-    marginRight: '10%'
+    marginRight: '10%',
   },
   stepIcon: {
     '& circle, & path': {
-      color: '#f18f36'
-    }
-  }
+      color: '#f18f36',
+    },
+  },
 }));
 
 function getSteps() {
   return [
     'Choose your subscription level',
     'Select your roasts',
-    'Confirm your subscription date'
+    'Confirm your subscription date',
   ];
 }
 
@@ -75,8 +75,8 @@ function getStepContent(
           {
             roaster: 'Coffee of the month',
             roast: 'Club Choice',
-            size: '12 oz'
-          }
+            size: '12 oz',
+          },
         ];
         localStorage.setItem('orderCoffeeOfMonth', JSON.stringify(roastItems));
         handleNext();
@@ -111,14 +111,14 @@ const SubscriptionSteps = () => {
         setDisplayError(true);
       }
     } else {
-      setActiveStep(prevActiveStep => prevActiveStep + 1);
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
   };
 
   const handleBack = () => {
-    setActiveStep(prevActiveStep => prevActiveStep - 1);
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
     if (localStorage.getItem('subscriptionChoice') === 'Coffee of the month') {
-      setActiveStep(prevActiveStep => activeStep - 2);
+      setActiveStep((prevActiveStep) => activeStep - 2);
     }
   };
 
@@ -142,7 +142,7 @@ const SubscriptionSteps = () => {
       roastItems = JSON.parse(localStorage.getItem('orderTrio'));
     }
 
-    const needsInput = _.find(roastItems, function(obj) {
+    const needsInput = _.find(roastItems, function (obj) {
       return _.includes(obj, '');
     });
     if (needsInput && !needsRequiredInput) {
@@ -151,11 +151,11 @@ const SubscriptionSteps = () => {
 
     if (!needsInput) {
       setNeedsRequiredInput(false);
-      setActiveStep(prevActiveStep => prevActiveStep + 1);
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
   };
 
-  const handleSubscriptionType = event => {
+  const handleSubscriptionType = (event) => {
     const subType = event.target.getAttribute('name');
     setSubscriptionType(subType);
     localStorage.setItem('subscriptionChoice', subType);
@@ -165,15 +165,15 @@ const SubscriptionSteps = () => {
   return (
     <div className={classes.root}>
       <Stepper activeStep={activeStep} alternativeLabel>
-        {steps.map(label => (
+        {steps.map((label) => (
           <Step key={label}>
             <StepLabel
               StepIconProps={{
                 classes: {
                   active: classes.stepIcon,
-                  completed: classes.stepIcon
+                  completed: classes.stepIcon,
                   // error:
-                }
+                },
               }}
             >
               {label}
@@ -208,7 +208,7 @@ const SubscriptionSteps = () => {
                 Back
               </Button>
               <Button
-                variant="contained"
+                variant='contained'
                 className={classes.nextButton}
                 onClick={handleNext}
               >

@@ -25,7 +25,6 @@ const ChooseYourAdventure = () => {
 
   const removeItem = (index) => {
     if (roastItems.length > 1) {
-      console.log('removing index', index);
       roastItems.splice(index, 1);
       if (index === 0) {
         roastItems[0].size = '12 oz';
