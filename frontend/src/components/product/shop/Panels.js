@@ -63,7 +63,7 @@ const Panels = (props) => {
         className={classes.panel}
       >
         <ExpansionPanelSummary
-          classes={classes}
+          classes={{ root: classes.root, content: classes.content }}
           className={classes.summary}
           expandIcon={<ExpandMoreIcon />}
         >
