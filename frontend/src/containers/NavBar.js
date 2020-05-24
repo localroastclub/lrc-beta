@@ -7,43 +7,44 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import MenuDropdown from './MenuDropdown';
 import AccountButton from './AccountButton';
 import { ReactComponent as LrcLogo } from '../lrclogo.svg';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     background: 'black',
     height: '15vh',
     justifyContent: 'center',
-    flexGrow: 1
+    flexGrow: 1,
   },
   menuButton: {
     display: 'none',
     marginLeft: -12,
     marginRight: 20,
     [theme.breakpoints.down(768)]: {
-      display: 'inline'
-    }
+      display: 'inline',
+    },
   },
   grow: {
     // flexGrow: 1
   },
   links: {
     margin: '2vw',
-    flexGrow: 2
+    flexGrow: 2,
   },
   item: {
     marginLeft: '1.25vw',
     marginRight: '1.25vw',
     [theme.breakpoints.down(768)]: {
-      display: 'none'
-    }
+      display: 'none',
+    },
   },
   logo: {
     height: '100px',
     width: '100px',
-    flexGrow: 1
-  }
+    flexGrow: 1,
+  },
 }));
 
 function NavBar(props) {
@@ -59,7 +60,7 @@ function NavBar(props) {
             color='inherit'
             aria-label='Menu'
           >
-            <MenuIcon />
+            <MenuDropdown />
           </IconButton>
           <div className={classes.grow}>
             <Link to='/'>
