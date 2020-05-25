@@ -3,38 +3,46 @@ import Axios from 'axios';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
-const AccountIcon = withStyles({
-  root: {
+const useStyles = makeStyles((theme) => ({
+  accountBtn: {
     width: '4.5vw',
-    height: '4.5vh'
-  }
-})(AccountBoxIcon);
+    height: '4.5vh',
+    [theme.breakpoints.down(768)]: {
+      width: '35px',
+      height: '35px',
+    },
+  },
+}));
+
+const AccountIcon = withStyles({})(AccountBoxIcon);
 
 const AccountButton = () => {
+  const classes = useStyles();
   const isAuthenticated = localStorage.getItem('isMember') === 'true';
   const { dispatch } = React.useContext(AuthContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleLogout = event => {
+  const handleLogout = (event) => {
     event.preventDefault();
     console.log('we are logging out....');
     Axios.post('http://localhost:8000/rest-auth/logout/')
-      .then(res => {
+      .then((res) => {
         console.log('here is the response', res.status);
         if (res.status === 200) {
           return dispatch({
-            type: 'LOGOUT'
+            type: 'LOGOUT',
           });
         }
       })
       .then(() => {
         window.location.href = '/';
       })
-      .catch(err => {
+      .catch((err) => {
         console.log('error!', err);
         // const errorMsg = [];
         // _.forEach(err.response.data, e => {
@@ -47,7 +55,7 @@ const AccountButton = () => {
       });
   };
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -57,9 +65,10 @@ const AccountButton = () => {
 
   return (
     <div>
-      <AccountIcon
+      <AccountBoxIcon
         aria-controls='account-menu'
         aria-haspopup='true'
+        className={classes.accountBtn}
         onClick={handleClick}
       />
       <Menu
