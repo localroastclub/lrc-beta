@@ -253,7 +253,7 @@ const RoastListItem = (props) => {
               image={
                 roasterData[value.roaster]
                   ? roasterData[value.roaster]['logo']
-                  : ''
+                  : 'https://lrcimages.s3.us-east-2.amazonaws.com/roasterlogos/lrclogo.svg'
               }
               // title={props.item.roaster}
             />
