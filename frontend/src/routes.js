@@ -8,7 +8,7 @@ import Dashboard from './components/userdashboard/Dashboard';
 import Cart from './components/cart/Cart';
 import Product from './components/product/Product';
 import SubscriptionSteps from './components/product/SubscriptionSteps';
-import Shop from './components/product/shop/Shop';
+// import Shop from './components/product/shop/Shop';
 import NotFound from './components/NotFound';
 
 const BaseRouter = () => (
@@ -21,7 +21,7 @@ const BaseRouter = () => (
       <Route exact path='/cart' component={Cart} />
       <Route exact path='/order' component={Product} />
       <Route exact path='/subscribe' component={SubscriptionSteps} />
-      <Route exact path='/shop' component={Shop} />
+      {/* <Route exact path='/shop' component={Shop} /> */}
       <NotFound default={true} component={NotFound} />
     </Switch>
   </div>

@@ -71,9 +71,9 @@ function NavBar(props) {
             <span className={classes.item}>
               <Link to='/subscribe'>Subscriptions</Link>
             </span>
-            <span className={classes.item}>
+            {/* <span className={classes.item}>
               <Link to='/shop'>Shop</Link>
-            </span>
+            </span> */}
           </Typography>
           <AccountButton />
           {isAuthenticated ? (
