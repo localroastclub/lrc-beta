@@ -110,6 +110,9 @@ const SubscriptionSteps = () => {
       if (needsRequiredInput && pressedNext) {
         setDisplayError(true);
       }
+    } else if (activeStep === 2) {
+      // redirect to dashboard
+      window.location.href = '/dashboard';
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
