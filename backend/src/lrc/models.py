@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.signals import post_save
 from django.contrib.auth.models import User as User_auth
 
 
@@ -8,18 +9,26 @@ class User(models.Model):
     lastname = models.CharField(max_length=50, null=True)
     email = models.CharField(max_length=150)
     street_address = models.CharField(max_length=150, null=True)
-    street_address_two = models.CharField(max_length=60, null=True)
+    street_address_two = models.CharField(max_length=60, null=True, blank=True)
     city = models.CharField(max_length=100, null=True)
     state = models.CharField(max_length=2, null=True)
     zipcode = models.BigIntegerField(null=True)
     order_rotation_id = models.CharField(
-        max_length=20, null=True)  # group1, group2, inactive
+        max_length=20, blank=True, null=True)  # group1, group2, inactive
     created_at = models.DateField(auto_now_add=True)
     auth_user_id = models.ForeignKey(
         User_auth, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.email
+
+
+def user_created_receiver(sender, instance, created, *args, **kwargs):
+    if created:
+        User.objects.get_or_create(user=instance)
+
+
+post_save.connect(user_created_receiver, sender=User_auth)
 
 
 # This will be posted from one time orders
@@ -37,7 +46,7 @@ class Order(models.Model):
 class Subscription(models.Model):
     id = models.CharField(max_length=30, primary_key=True)
     order_date = models.DateField(auto_now_add=True)
-    ship_date = models.DateField(auto_now=False)
+    ship_date = models.DateField(auto_now=False, blank=True)
     order_total = models.IntegerField()
     note = models.CharField(max_length=255, null=True)
     status = models.CharField(max_length=255)
