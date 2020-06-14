@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
   itemSquare: {
     width: 200,
     height: 200,
+    padding: 2,
   },
   image: {
     objectFit: 'scale-down',
