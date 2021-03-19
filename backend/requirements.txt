@@ -3,7 +3,7 @@ autopep8==1.4.4
 certifi==2018.11.29
 Django==2.2.10
 django-cors-headers==3.0.2
-djangorestframework==3.9.4
+djangorestframework==3.11.2
 future==0.17.1
 macholib==1.11
 pefile==2018.8.8
